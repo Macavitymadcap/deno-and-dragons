@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "run": "deno run ./src/main.ts",
+    "compile": "deno compile --output build/evaluate src/main.ts",
+    "clean": "rm -rf build"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
