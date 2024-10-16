@@ -1,0 +1,262 @@
+{
+    "core": {
+      "characterName": "Aragorn",
+      "class": "Range",
+      "level": 5,
+      "background": "Noble",
+      "playerName": "John Doe",
+      "race": "Human",
+      "alignment": "Chaotic Good",
+      "experiencePoints": 14000
+    },
+    "inspiration": true,
+    "proficiencyBonus": 3,
+    "armorClass": 16,
+    "initiative": 2,
+    "speed": 30,
+    "hitPoints": {
+      "hitPointMaximum": 45,
+      "currentHitPoints": 45,
+      "temporaryHitPoints": 5,
+      "hitDiceTotal": "5d10",
+      "hitDiceCurrent": "5d10",
+      "deathSaves": {
+        "successes": 0,
+        "failures": 0
+      }
+    },
+    "abilities": {
+      "strength": {
+        "score": 18,
+        "modifier": 4
+      },
+      "dexterity": {
+        "score": 14,
+        "modifier": 2
+      },
+      "constitution": {
+        "score": 16,
+        "modifier": 3
+      },
+      "intelligence": {
+        "score": 12,
+        "modifier": 1
+      },
+      "wisdom": {
+        "score": 15,
+        "modifier": 2
+      },
+      "charisma": {
+        "score": 10,
+        "modifier": 0
+      }
+    },
+    "savingThrows": {
+      "strength": {
+        "proficient": true,
+        "value": 7
+      },
+      "dexterity": {
+        "proficient": false,
+        "value": 2
+      },
+      "constitution": {
+        "proficient": true,
+        "value": 6
+      },
+      "intelligence": {
+        "proficient": false,
+        "value": 1
+      },
+      "wisdom": {
+        "proficient": false,
+        "value": 2
+      },
+      "charisma": {
+        "proficient": false,
+        "value": 0
+      }
+    },
+    "skills": {
+      "acrobatics": {
+        "proficient": false,
+        "value": 2
+      },
+      "animalHandling": {
+        "proficient": true,
+        "value": 5
+      },
+      "arcana": {
+        "proficient": false,
+        "value": 1
+      },
+      "athletics": {
+        "proficient": true,
+        "value": 7
+      },
+      "deception": {
+        "proficient": false,
+        "value": 0
+      },
+      "history": {
+        "proficient": false,
+        "value": 1
+      },
+      "insight": {
+        "proficient": true,
+        "value": 5
+      },
+      "intimidation": {
+        "proficient": false,
+        "value": 0
+      },
+      "investigation": {
+        "proficient": false,
+        "value": 1
+      },
+      "medicine": {
+        "proficient": false,
+        "value": 2
+      },
+      "nature": {
+        "proficient": true,
+        "value": 4
+      },
+      "perception": {
+        "proficient": true,
+        "value": 5
+      },
+      "persuasion": {
+        "proficient": false,
+        "value": 0
+      },
+      "religion": {
+        "proficient": false,
+        "value": 1
+      },
+      "sleightOfHand": {
+        "proficient": false,
+        "value": 2
+      },
+      "stealth": {
+        "proficient": true,
+        "value": 5
+      },
+      "survival": {
+        "proficient": true,
+        "value": 5
+      }
+    },
+    "passiveWisdom": 15,
+    "otherProficienciesAndLanguages": [
+      "Common",
+      "Elvish",
+      "Sylvan"
+    ],
+    "attacksAndSpellcasting": [
+      {
+        "name": "Longsword",
+        "attackBonus": 7,
+        "damageType": "1d8+4 slashing"
+      },
+      {
+        "name": "Longbow",
+        "attackBonus": 6,
+        "damageType": "1d8+2 piercing"
+      }
+    ],
+    "equipment": [
+      "Longsword",
+      "Longbow",
+      "Quiver with 20 arrows",
+      "Explorer's pack",
+      "Noble clothes",
+      "Signet ring",
+      "Map of Middle Earth"
+    ],
+    "personality": {
+      "traits": [
+        "I am always calm, no matter what the situation.",
+        "I never raise my voice or let my emotions control me."
+      ],
+      "ideals": [
+        "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe."
+      ],
+      "bonds": [
+        "I will bring terrible wrath down on the evildoers who destroyed my homeland."
+      ],
+      "flaws": [
+        "I am too enamored of ale, wine, and other intoxicants."
+      ]
+    },
+    "featuresAndTraits": [
+      "Fighting Style: Two-Weapon Fighting",
+      "Second Wind",
+      "Primeval Awareness"
+    ],
+    "description": {
+      "age": "87",
+      "height": "6'6\"",
+      "weight": "200 lbs",
+      "eyes": "Grey",
+      "skin": "Fair",
+      "hair": "Dark"
+    },
+    "backstory": "Aragorn, son of Arathorn, is the heir to the throne of Gondor. Raised in the wild, he has become a skilled ranger and tracker, dedicated to protecting Middle-earth from the forces of Sauron.",
+    "alliesAndOrganizations": [
+      "The Fellowship of the Ring",
+      "Rangers of the North"
+    ],
+    "characterAppearance": "A tall, rugged man with a commanding presence, often seen wearing a green cloak and carrying a longbow and sword.",
+    "additionalFeaturesAndTraits": [
+      "Favored Enemy: Orcs",
+      "Natural Explorer: Forest"
+    ],
+    "treasure": [
+      "Ancient Elven ring",
+      "Bag of holding"
+    ],
+    "spellcasting": {
+      "spellcastingClass": "Ranger",
+      "spellcastingAbility": "Wisdom",
+      "spellSaveDC": 13,
+      "spellAttackBonus": 5,
+      "spellsKnown": 6,
+      "spellSlots": {
+        "1": {
+          "slotsTotal": 4,
+          "slotsExpended": 1
+        },
+        "2": {
+          "slotsTotal": 2,
+          "slotsExpended": 0
+        }
+      },
+      "spells": {
+        "1": [
+          {
+            "name": "Hunter's Mark",
+            "prepared": true
+          },
+          {
+            "name": "Cure Wounds",
+            "prepared": true
+          },
+          {
+            "name": "Detect Magic",
+            "prepared": true
+          }
+        ],
+        "2": [
+          {
+            "name": "Pass without Trace",
+            "prepared": true
+          },
+          {
+            "name": "Lesser Restoration",
+            "prepared": false
+          }
+        ]
+      }
+    }
+  }
