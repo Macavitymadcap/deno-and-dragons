@@ -1,8 +1,8 @@
 
 import { Dice, DiceRoll, RollType } from "../../dice/index.ts";
-import { IRollable } from "./rollable.model.ts";
+import { ID20Check } from "./d20-check.model.ts";
 
-export class Rollable implements IRollable {
+export class D20Check implements ID20Check {
     name: string;
     value: number;
 

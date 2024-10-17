@@ -44,16 +44,14 @@ export class Sheet implements ICharacter {
     constructor(
         characterSheet: ICharacter
     ) {
-        this.core = new Core(characterSheet.core);
+        
         this.inspiration = characterSheet.inspiration;
         this.proficiencyBonus = characterSheet.proficiencyBonus;
         this.armorClass = characterSheet.armorClass;
         this.initiative = characterSheet.initiative;
         this.speed = characterSheet.speed;
-        this.hitPoints = new HitPoints(characterSheet.hitPoints);
         this.abilities = characterSheet.abilities;
         this.savingThrows = characterSheet.savingThrows;
-        this.skills = new Skills(characterSheet.skills);
         this.passivePerception = characterSheet.passivePerception;
         this.otherProficienciesAndLanguages = characterSheet.otherProficienciesAndLanguages;
         this.attacksAndSpellcasting = characterSheet.attacksAndSpellcasting;
@@ -67,6 +65,10 @@ export class Sheet implements ICharacter {
         this.additionalFeaturesAndTraits = characterSheet.additionalFeaturesAndTraits;
         this.treasure = characterSheet.treasure;
         this.spellcasting = characterSheet.spellcasting;
+        
+        this.core = new Core(characterSheet.core);
+        this.hitPoints = new HitPoints(characterSheet.hitPoints);
+        this.skills = new Skills(characterSheet.skills);
     }
 
     static async getCharacterSheet(filePath: string): Promise<Sheet> {

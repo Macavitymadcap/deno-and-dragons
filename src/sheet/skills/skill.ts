@@ -1,14 +1,14 @@
-import { ISkill } from './skills.model.ts';
-import { Rollable } from '../rollable/rollable.ts';
+import { ISkill, SkillName } from './skills.model.ts';
+import { D20Check } from '../d20-check/d20-check.ts';
 import { RollType } from "../../dice/dice.model.ts";
 import { IAbilityScore } from "../sheet.model.ts";
 
-export class Skill extends Rollable implements ISkill {
+export class Skill extends D20Check implements ISkill {
     proficient: boolean;
     proficiencyBonus?: number;
     expertise?: boolean;
     bonus?: number | undefined;;
-    name: string;
+    name: SkillName;
     abilityScore: IAbilityScore;
 
     constructor(data: ISkill) {
@@ -28,7 +28,7 @@ export class Skill extends Rollable implements ISkill {
       return roll.total;
     }
 
-    print(): void {
+    log(): void {
         const ability = this.abilityScore.name.slice(2).toUpperCase();
         const proficiencyBonus = this.proficient ? this.proficiencyBonus?.toString() : '';
         const expertise = this.expertise ? `${this.proficiencyBonus! * 2}` : '';

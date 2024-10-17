@@ -1,7 +1,29 @@
 import { IAbilityScore } from "../sheet.model.ts";
 
+const SKILLS = {
+    acrobatics: 'acrobatics',
+    animalHandling: 'animalHandling',
+    arcana: 'arcana',
+    athletics: 'athletics',
+    deception: 'deception',
+    history: 'history',
+    insight: 'insight',
+    intimidation: 'intimidation',
+    investigation: 'investigation',
+    medicine: 'medicine',
+    nature: 'nature',
+    perception: 'perception',
+    persuasion: 'persuasion',
+    religion: 'religion',
+    sleightOfHand: 'sleightOfHand',
+    stealth: 'stealth',
+    survival: 'survival'
+} as const;
+
+export type SkillName = typeof SKILLS[keyof typeof SKILLS];
+
 export interface ISkill {
-    name: string;
+    name: SkillName;
     abilityScore: IAbilityScore;
     proficient: boolean;
     proficiencyBonus?: number;
@@ -10,22 +32,6 @@ export interface ISkill {
     value: number;
 }
 
-export interface ISkills {
-    acrobatics: ISkill;
-    animalHandling: ISkill;
-    arcana: ISkill;
-    athletics: ISkill;
-    deception: ISkill;
-    history: ISkill;
-    insight: ISkill;
-    intimidation: ISkill;
-    investigation: ISkill;
-    medicine: ISkill;
-    nature: ISkill;
-    perception: ISkill;
-    persuasion: ISkill;
-    religion: ISkill;
-    sleightOfHand: ISkill;
-    stealth: ISkill;
-    survival: ISkill;
-}
+export type ISkills = {
+  [key in SkillName]: ISkill;
+};
