@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "run:evaluate": "deno run ./src/evaluate/main.ts",
-    "compile:evaluate": "deno compile --output build/evaluate src/evaluate-encounter/main.ts",
+    "run:evaluate": "deno run ./src/evaluate-encounter/cli.ts",
+    "compile:evaluate": "deno compile --output build/evaluate src/evaluate-encounter/cli.ts",
     "clean": "rm -rf build"
   },
   "imports": {
