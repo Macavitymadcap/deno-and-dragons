@@ -21,7 +21,7 @@ export class Core implements ICore {
         this.experiencePoints = data.experiencePoints;
     }
 
-    public print(): void {
+    public log(): void {
         console.log(`${this.characterName}`);
         console.log(`${this.class} ${this.level} ${this.background} ${this.playerName}`);
         console.log(`${this.race} ${this.alignment} ${this.experiencePoints}`);

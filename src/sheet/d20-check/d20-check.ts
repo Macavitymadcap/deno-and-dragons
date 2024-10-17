@@ -11,8 +11,12 @@ export class D20Check implements ID20Check {
         this.value = value;
     }
 
+    getModifierString(): string {
+        return `${this.value >= 0 ? '+' : '-'}${this.value}`;
+    }
+
     getDiceString(): string {
-        return `d20${this.value >= 0 ? '+' : '-'}${Math.abs(this.value)}`;
+        return `d20${this.getModifierString()}`;
     }
 
     rollDice(rollType: RollType = 'standard'): DiceRoll {

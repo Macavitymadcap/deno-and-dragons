@@ -1,31 +1,33 @@
 import { ISkill, SkillName } from './skills.model.ts';
-import { D20Check } from '../d20-check/d20-check.ts';
-import { RollType } from "../../dice/dice.model.ts";
-import { IAbilityScore } from "../sheet.model.ts";
+import { D20Check } from '../d20-check/index.ts';
+import { RollType } from "../../dice/index.ts";
+import { IAbilityScore } from "../abilities/index.ts";
+import { DiceRoll } from "../../dice/index.ts";
 
 export class Skill extends D20Check implements ISkill {
+    name: SkillName;
+    abilityScore: IAbilityScore;
     proficient: boolean;
     proficiencyBonus?: number;
     expertise?: boolean;
-    bonus?: number | undefined;;
-    name: SkillName;
-    abilityScore: IAbilityScore;
+    bonus?: number;
 
-    constructor(data: ISkill) {
-        super(data.value, data.name);
-        this.proficient = data.proficient;
-        this.proficiencyBonus = data.proficiencyBonus;
-        this.expertise = data.expertise;
-        this.bonus = data.bonus;
-        this.name = data.name;
-        this.abilityScore = data.abilityScore;
+    constructor(skill: ISkill) {
+        super(skill.value, skill.name as string);
+        this.proficient = skill.proficient;
+        this.proficiencyBonus = skill.proficiencyBonus;
+        this.expertise = skill.expertise;
+        this.bonus = skill.bonus;
+        this.name = skill.name;
+        this.abilityScore = skill.abilityScore;
     }
 
-    roll(rollType?: RollType): number {
+    roll(rollType?: RollType): DiceRoll {
       const roll = this.rollDice(rollType);
-      console.log(`Rolling ${this.name} (${rollType}): ${roll.rolls.join(' / ')} ${roll.operator} ${roll.modifier} = ${roll.total}`);
+      const seperator = rollType === 'advantage' ? ' / ' : ' + ';
+      console.log(`Rolling ${this.name} Check (${rollType}): ${roll.rolls.join(seperator)} ${roll.operator} ${roll.modifier} = ${roll.total}`);
 
-      return roll.total;
+      return roll;
     }
 
     log(): void {

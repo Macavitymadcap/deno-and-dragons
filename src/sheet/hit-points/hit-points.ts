@@ -40,7 +40,9 @@ export class HitPoints implements IHitPoints {
         console.log(`Healed ${amount} hit points. Current hit points: ${this.currentHitPoints}`);
     }
 
-    display(): void {
+    log(): void {
         console.log(`Hit Points: ${this.currentHitPoints}/${this.hitPointMaximum} (+${this.temporaryHitPoints} temporary)`);
+        console.log(`Hit Dice: ${this.hitDiceCurrent}/${this.hitDiceTotal}`);
+        console.log(`Death Saves: ${this.deathSaves.successes} successes, ${this.deathSaves.failures} failures`);
     }
 }

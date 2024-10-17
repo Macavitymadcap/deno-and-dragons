@@ -1,7 +1,8 @@
 import { Cost } from "../lookup/model.ts";
 import { ICore } from "./core/index.ts";
 import { IHitPoints } from "./hit-points/index.ts";
-import { ISkills } from "./skills/index.ts";
+import { SkillsMap } from "./skills/index.ts";
+import { IAbilities } from "./abilities/index.ts";
 
 export interface ICharacter {
     core: ICore;
@@ -12,8 +13,7 @@ export interface ICharacter {
     speed: number;
     hitPoints: IHitPoints;
     abilities: IAbilities;
-    savingThrows: ISavingThrows;
-    skills: ISkills;
+    skills: SkillsMap;
     passivePerception: number;
     otherProficienciesAndLanguages: IOtherProficiencies;
     attacksAndSpellcasting: IAttack[];
@@ -27,47 +27,6 @@ export interface ICharacter {
     additionalFeaturesAndTraits?: string[];
     treasure?: string[];
     spellcasting?: ISpellcasting;
-}
-
-const ABILITY_SCORE = {
-    STRENGTH: 'strength',
-    DEXTERITY: 'dexterity',
-    CONSTITUTION: 'constitution',
-    INTELLIGENCE: 'intelligence',
-    WISDOM: 'wisdom',
-    CHARISMA: 'charisma'
-
-} as const;
-
-type AbilityScoreName = typeof ABILITY_SCORE[keyof typeof ABILITY_SCORE];
-
-export interface IAbilityScore {
-    name: AbilityScoreName;
-    score: number;
-    modifier: number;
-}
-
-export interface IAbilities {
-    strength: IAbilityScore;
-    dexterity: IAbilityScore;
-    constitution: IAbilityScore;
-    intelligence: IAbilityScore;
-    wisdom: IAbilityScore;
-    charisma: IAbilityScore;
-}
-
-export interface ISavingThrow {
-    proficient: boolean;
-    value: number;
-}
-
-export interface ISavingThrows {
-    strength: ISavingThrow;
-    dexterity: ISavingThrow;
-    constitution: ISavingThrow;
-    intelligence: ISavingThrow;
-    wisdom: ISavingThrow;
-    charisma: ISavingThrow;
 }
 
 export interface IInventoryItem {

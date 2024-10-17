@@ -18,13 +18,13 @@ export type Difficulty = typeof DIFFICULTY[keyof typeof DIFFICULTY];
 export type Level = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 
 // The XP thresholds for each difficulty level for a character.
-export type XPThresholds = {
+export type XpThresholds = {
     [key in Difficulty]: number;
 };
 
 // The XP thresholds for each difficulty level for a character at each level.
 export type XPThresholdsByLevel = {
-    [key in Level]: XPThresholds;
+    [key in Level]: XpThresholds;
 }
 
 // The XP thresholds for each difficulty level for a character at each level.
@@ -74,7 +74,7 @@ export interface Evaluation {
     opponents: number[];
     actualXp: number;
     adjustedXp: number;
-    partyXpThresholds: XPThresholds;
+    partyXpThresholds: XpThresholds;
     multiplier: EncounterMultiplier;
     difficulty: Difficulty;
 }

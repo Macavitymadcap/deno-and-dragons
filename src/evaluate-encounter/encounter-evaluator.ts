@@ -1,12 +1,12 @@
 
-import { Encounter, XPThresholds, Level, Difficulty, XP_THRESHOLDS_BY_LEVEL, EncounterMultiplier, ENCOUNTER_MULTIPLIERS, Evaluation } from "./encounter-evaluator.model.ts";
+import { Encounter, XpThresholds, Level, Difficulty, XP_THRESHOLDS_BY_LEVEL, EncounterMultiplier, ENCOUNTER_MULTIPLIERS, Evaluation } from "./encounter-evaluator.model.ts";
 
 export class EncounterEvaluator implements Evaluation {
     party: number[];
     opponents: number[];
     actualXp: number;
     adjustedXp: number;
-    partyXpThresholds: XPThresholds;
+    partyXpThresholds: XpThresholds;
     multiplier: EncounterMultiplier;
     difficulty: Difficulty;
 
@@ -33,17 +33,17 @@ export class EncounterEvaluator implements Evaluation {
     /**
      * Returns the XP thresholds for a given character level.
      * @param level The level of the character.
-     * @returns {XPThresholds} The XP thresholds for the character based on their level.
+     * @returns {XpThresholds} The XP thresholds for the character based on their level.
      */
-    private getCharacterXPThresholds(level: Level): XPThresholds {
+    private getCharacterXPThresholds(level: Level): XpThresholds {
         return XP_THRESHOLDS_BY_LEVEL[level]
     };
 
     /**
      * Returns the total XP thresholds for the party.
-     * @returns {XPThresholds} The total XP thresholds for the party.
+     * @returns {XpThresholds} The total XP thresholds for the party.
      */
-    private getPartyXPThresholds(): XPThresholds {
+    private getPartyXPThresholds(): XpThresholds {
         const party = this.party.map((level) => this.getCharacterXPThresholds(level as Level));
         return party.reduce((acc, level) => {
             Object.keys(level).forEach((key) => {
@@ -51,7 +51,7 @@ export class EncounterEvaluator implements Evaluation {
             });
 
             return acc;
-        }, {} as XPThresholds);
+        }, {} as XpThresholds);
     }
 
     /**
@@ -66,16 +66,13 @@ export class EncounterEvaluator implements Evaluation {
             return ENCOUNTER_MULTIPLIERS[5];
         }
         return ENCOUNTER_MULTIPLIERS.find((multiplier, index) => {
-            numberOfOpponents >= multiplier.numberOfMonsters &&
+            return numberOfOpponents >= multiplier.numberOfMonsters &&
                 numberOfOpponents < ENCOUNTER_MULTIPLIERS[index + 1].numberOfMonsters
         })!;
     }
 
     /**
      * Return the adjusted XP based on the party size and the multiplier set.
-     * @param actualXP The total XP of the monsters in the encounter.
-     * @param partySize The number of characters in the party.
-     * @param multiplier The set of multipiers to apply based on the number of monsters.
      * @returns {number} The adjusted Xp value.
      */
     private getAdjustedXP(): number {
@@ -94,7 +91,7 @@ export class EncounterEvaluator implements Evaluation {
 
     private getDifficulty(): Difficulty {
         return Object.keys(this.partyXpThresholds).find((key) => {
-            this.partyXpThresholds[key as Difficulty] >= this.adjustedXp
+            return this.partyXpThresholds[key as Difficulty] >= this.adjustedXp
         }) as Difficulty;
     }
 }

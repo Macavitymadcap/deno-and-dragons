@@ -1,4 +1,4 @@
-import { IAbilityScore } from "../sheet.model.ts";
+import { IAbilityScore } from "../abilities/index.ts";
 
 const SKILLS = {
     acrobatics: 'acrobatics',
@@ -32,6 +32,6 @@ export interface ISkill {
     value: number;
 }
 
-export type ISkills = {
+export type SkillsMap = {
   [key in SkillName]: ISkill;
 };
