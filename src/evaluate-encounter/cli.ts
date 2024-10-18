@@ -1,7 +1,7 @@
 import { parseArgs } from "jsr:@std/cli/parse-args";
 import { EncounterEvaluator } from "./encounter-evaluator.ts";
 
-const usageText = `Usage: ./evaluate --monsterXPs <monsterXPs> --partyLevels <partyLevels>`;
+const usageText = `Usage: ./evaluate --monsterXPs=<monsterXPs> --partyLevels=<partyLevels>`;
 
 const helpText = `
 Evaluate the difficulty of an encounter based on the monster XPs and party levels provided.
@@ -33,7 +33,7 @@ export const cli = () => {
   
   const opponents = args.opponents!.split(",").map((xp) => parseInt(xp));
   const party = args.party!.split(",").map((level) => parseInt(level));
-  const evaluation = new EncounterEvaluator({ opponents, party})
+  const evaluation = new EncounterEvaluator({ opponents, party })
   
   console.log(`Evaluated Encounter:`);
   console.log(`\tParty Levels: ${evaluation.party}`);

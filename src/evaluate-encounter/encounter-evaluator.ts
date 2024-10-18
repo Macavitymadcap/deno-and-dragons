@@ -44,14 +44,14 @@ export class EncounterEvaluator implements Evaluation {
      * @returns {XpThresholds} The total XP thresholds for the party.
      */
     private getPartyXPThresholds(): XpThresholds {
+        const initialThresholds: XpThresholds = { Easy: 0, Medium: 0, Hard: 0, Deadly: 0 };
         const party = this.party.map((level) => this.getCharacterXPThresholds(level as Level));
         return party.reduce((acc, level) => {
             Object.keys(level).forEach((key) => {
-                acc[key as Difficulty] = (acc[key as Difficulty] || 0) + level[key as Difficulty];
+                acc[key as Difficulty] += level[key as Difficulty];
             });
-
             return acc;
-        }, {} as XpThresholds);
+        }, initialThresholds);
     }
 
     /**
