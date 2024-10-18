@@ -1,6 +1,28 @@
 
 import { Encounter, XpThresholds, Level, Difficulty, XP_THRESHOLDS_BY_LEVEL, EncounterMultiplier, ENCOUNTER_MULTIPLIERS, Evaluation } from "./encounter-evaluator.model.ts";
 
+/**
+ * Evaluates an encounter based on the party and opponents.
+ * 
+ * @class EncounterEvaluator
+ * @implements {Evaluation}
+ * @param {Encounter} encounter The encounter to evaluate.
+ * @property {number[]} party The levels of the party members.
+ * @property {number[]} opponents The XP values of the opponents.
+ * @property {number} actualXp The combined XP of all opponents.
+ * @property {number} adjustedXp The adjusted XP based on the party size and the multiplier set.
+ * @property {XpThresholds} partyXpThresholds The total XP thresholds for the party.
+ * @property {EncounterMultiplier} multiplier The set of multipliers to apply to the encounter based on the number of monsters and party size.
+ * @property {Difficulty} difficulty The difficulty of the encounter.
+ * @constructor
+ * @method getActualXP Returns the sum of alll opponent's XP values.
+ * @method getCharacterXPThresholds Returns the XP thresholds for a given character level.
+ * @method getPartyXPThresholds Returns the total XP thresholds for the party.
+ * @method getMultiplier Returns the set of multipliers to apply to the encounter based on the number of monsters and party size.
+ * @method getAdjustedXP Return the adjusted XP based on the party size and the multiplier set.
+ * @method getDifficulty Returns the difficulty of the encounter.
+ * 
+ */
 export class EncounterEvaluator implements Evaluation {
     party: number[];
     opponents: number[];
@@ -13,7 +35,6 @@ export class EncounterEvaluator implements Evaluation {
     constructor(encounter: Encounter) {
         this.party = encounter.party;
         this.opponents = encounter.opponents;
-
         this.actualXp = this.getActualXP();
         this.partyXpThresholds = this.getPartyXPThresholds();
         this.multiplier = this.getMultiplier();
@@ -82,16 +103,27 @@ export class EncounterEvaluator implements Evaluation {
             return this.actualXp * this.multiplier.fewerThanThree;
         }
 
-        if (partySize > 3 && partySize < 6) {
+        if (partySize >= 3 && partySize <= 5) {
             return this.actualXp * this.multiplier.threeToFive;
         }
 
         return this.actualXp * this.multiplier.sixOrMore;
     }
 
+    /**
+     * Returns the difficulty of the encounter.
+     * 
+     * @returns {Difficulty} The difficulty of the encounter.
+     */
     private getDifficulty(): Difficulty {
-        return Object.keys(this.partyXpThresholds).find((key) => {
-            return this.partyXpThresholds[key as Difficulty] >= this.adjustedXp
-        }) as Difficulty;
+        if (this.adjustedXp >= this.partyXpThresholds.Deadly) {
+            return 'Deadly';
+        } else if (this.adjustedXp >= this.partyXpThresholds.Hard) {
+            return 'Hard'
+        } else if (this.adjustedXp >= this.partyXpThresholds.Medium) {
+            return 'Medium'
+        } else {
+            return 'Easy'
+        }
     }
 }
