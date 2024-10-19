@@ -19,10 +19,11 @@ import { DiceRoll, DieRoll, RollsAndModifier, RollType } from "./dice.model.ts";
  * @public
  */
 export class Dice {
-    private readonly dice: string;
+    private regex = /(\d*)d(\d+)([+\-*/]\d+)?/g;
+    diceString: string;
 
     constructor(dice: string) {
-        this.dice = dice;
+        this.diceString = dice;
     }
 
     /** 
@@ -79,9 +80,8 @@ export class Dice {
         let match;
         const rolls: number[] = [];
         let mod: string | undefined;
-        const regex = /(\d*)d(\d+)([+\-*/]\d+)?/g;
 
-        while ((match = regex.exec(this.dice)) !== null) {
+        while ((match = this.regex.exec(this.diceString)) !== null) {
             const { quantity, faces, modifier } = this.parseRoll(match);
             const totalRolls = (rollType === 'advantage' || rollType === 'disadvantage' || rollType === 'critical') ? quantity * 2 : quantity;
             for (let i = 0; i < totalRolls; i++) {
