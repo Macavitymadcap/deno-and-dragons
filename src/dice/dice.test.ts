@@ -1,7 +1,7 @@
 import { assertGreaterOrEqual, assertLessOrEqual } from 'jsr:@std/assert';
 
 import { Dice } from './dice.ts';
-import { DieRoll, DiceRoll, RollsAndModifier, RollType } from './dice.model.ts';
+import { ParsedDice, DiceRoll, RollsAndModifier, RollType } from './dice.model.ts';
 
 [
     { diceString: 'd4', expectedRange: { min: 1, max: 4 } },
@@ -24,6 +24,3 @@ import { DieRoll, DiceRoll, RollsAndModifier, RollType } from './dice.model.ts';
         assertLessOrEqual(result, test.expectedRange.max);
     });
 });
-
-
-[]

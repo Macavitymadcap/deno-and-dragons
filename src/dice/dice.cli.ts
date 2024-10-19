@@ -2,7 +2,7 @@ import { parseArgs } from "jsr:@std/cli/parse-args";
 import type { RollType } from "./dice.model.ts";
 import { Dice } from "./index.ts";
 
-const usageText = `Usage: ./roll [string] --rollType=<RollType>`;
+const usageText = `Usage: ./roll [string] --type <RollType>`;
 
 const helpText = `
 Roll a given string of dice notation following the format (X)dY(?Z), where:
@@ -17,13 +17,13 @@ Additionally, the dice can be rolled:
     standard     Roll dice as written
     advantage    Roll twice and return highest to lowest
     disadvantage Roll dice twice and return lowest to highest
-    critical     Roll double the amount of dice and then apply any modifiers
+    critical     Roll double the amount of dice then apply any modifiers
 `;
 
 
 export const cli = () => {
     const args = parseArgs(Deno.args, {
-        string: ["rollType"],
+        string: ["type"],
         boolean: ["help"]
     })
 
@@ -39,14 +39,15 @@ export const cli = () => {
     }
 
     const diceString = args._[0] as string;
-    const rollType: RollType = args.rollType ? args.rollType as RollType : 'standard';
+    const rollType: RollType = args.type ? args.type as RollType : 'standard';
     const dice = new Dice(diceString);
     const roll = dice.roll(rollType);
     const sum = rollType === 'advantage' || rollType === 'disadvantage' ? `${roll.rolls[0]} | ${roll.rolls[1]}` : `${roll.rolls.join(' + ')}`;
-    const isD20Roll = diceString.match(/^1?d20/);
+    const mod = roll.operator && roll.modifier ? ` ${roll.operator} ${roll.modifier}` : '';
+    const crit = diceString.match(/^1?d20/) && roll.isCriticalHit ? ' CRIT' : ''
 
-    console.log(`Dice: ${diceString}\tType: ${rollType}`);
-    console.log(`Total: ${roll.total}\tRolls: ${sum} ${isD20Roll && roll.isCriticalHit ? ' CRIT' : ''}`)
+    console.log(`Dice: ${diceString} (${rollType})`);
+    console.log(`Total: ${roll.total}${crit} (${sum})${mod}`)
 }
 
 if (import.meta.main) {

@@ -5,11 +5,16 @@ const ROLL_TYPE = {
     CRITICAL: 'critical'
 } as const;
 
+export type Operator = '+' | '-' | '*' | '/';
+
 export type RollType = typeof ROLL_TYPE[keyof typeof ROLL_TYPE];
 
-export type DieRoll = {
+export type Dice = {
     quantity: number;
     faces: number;
+};
+
+export type ParsedDice = Dice & {
     modifier?: string;
 };
 
@@ -24,6 +29,6 @@ export type DiceRoll = {
     sum: number;
     total: number;
     isCriticalHit: boolean;
-    operator?: string;
+    operator?: Operator;
     modifier?: number;
 };

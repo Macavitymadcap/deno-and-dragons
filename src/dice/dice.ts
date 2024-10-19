@@ -1,4 +1,4 @@
-import { DiceRoll, DieRoll, RollsAndModifier, RollType } from "./dice.model.ts";
+import { DiceRoll, ParsedDice, RollsAndModifier, RollType, type Operator } from "./dice.model.ts";
 
 /**
  * The `Dice` class represents a dice notation parser and roller.
@@ -40,10 +40,10 @@ export class Dice {
      * Parses a regular expression match array into a DieRoll object.
      *
      * @param match - The regular expression match array containing the parsed dice notation.
-     * @returns {DieRoll} A DieRoll object containing the quantity, faces, and modifier of the dice roll.
+     * @returns {ParsedDice} A DieRoll object containing the quantity, faces, and modifier of the dice roll.
      * @throws Will throw an error if the match array is invalid.
      */
-    private parseRoll(match: RegExpExecArray): DieRoll {
+    private parseRoll(match: RegExpExecArray): ParsedDice {
         if (!match) {
             throw new Error('Invalid dice notation');
         }
@@ -51,7 +51,7 @@ export class Dice {
         return {
             quantity: match[1] ? parseInt(match[1]) : 1,
             faces: parseInt(match[2]),
-            modifier: match[3] ? eval(match[3]) : null,
+            modifier: match[3] ? match[3] : undefined,
         };
     }
 
@@ -89,7 +89,7 @@ export class Dice {
                 rolls.push(roll);
             }
 
-            if (modifier) {
+            if (modifier !== undefined) {
                 mod = modifier;
             }
 
@@ -113,9 +113,10 @@ export class Dice {
      * @returns {DiceRoll} The updated dice roll object with the applied modifier.
      */
     private applyModifier(roll: DiceRoll, modifier: string) {
-        roll.modifier = parseInt(modifier.substring(0, 1));
-        roll.operator = modifier.substring(1);
-        roll.total = eval(`${roll.sum}${roll.operator}${roll.modifier}`);
+        roll.operator = modifier.charAt(0) as Operator;
+        roll.modifier = parseInt(modifier.substring(1));
+        roll.total = eval(`${roll.total}${roll.operator}${roll.modifier}`);
+        
         return roll;
     }
 

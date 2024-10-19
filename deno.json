@@ -3,6 +3,7 @@
     "run:evaluate": "deno run .src/encounter-evaluator/encounter-evaluator.cli.ts",
     "compile:evaluate": "deno compile --output bin/evaluate src/encounter-evaluator/encounter-evaluator.cli.ts",
     "run:dice": "deno run ./src/dice/dice.cli.ts",
+    "compile:dice": "deno compile --output bin/dice src/dice/dice.cli.ts",
     "clean": "rm -rf build"
   },
   "imports": {
