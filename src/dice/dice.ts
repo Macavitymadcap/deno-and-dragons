@@ -19,7 +19,7 @@ import { DiceRoll, ParsedDice, RollsAndModifier, RollType, type Operator } from 
  * @public
  */
 export class Dice {
-    private regex = /(\d*)d(\d+)([+\-*/]\d+)?/g;
+    private regex = /(\d*)d(\d+)([+\-*\/]\d+)?/g;
     diceString: string;
 
     constructor(dice: string) {
@@ -108,8 +108,8 @@ export class Dice {
     /**
      * Applies a modifier to a dice roll.
      *
-     * @param {DiceRoll} roll - The dice roll object to which the modifier will be applied.
-     * @param {string} modifier - The modifier string, where the first character is the modifier value and the rest is the operator.
+     * @param {DiceRoll} roll The dice roll object to which the modifier will be applied.
+     * @param {string} modifier The modifier string, first character is the operator and the rest is the modifier value.
      * @returns {DiceRoll} The updated dice roll object with the applied modifier.
      */
     private applyModifier(roll: DiceRoll, modifier: string) {
