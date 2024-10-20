@@ -1,5 +1,5 @@
 build/
-dist/
+bin/
 
 .idea
 .vscode
