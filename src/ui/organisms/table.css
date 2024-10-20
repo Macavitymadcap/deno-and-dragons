@@ -1,0 +1,32 @@
+table {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr repeat(3, 0.5fr) 2fr 0.5fr;
+  width: 100%;
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D&D Tools</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.2"
+      integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <script src="static/script.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <header class="container navigation">
+        <nav
+          hx-get="organisms/navbar.html"
+          hx-trigger="load"
+          hx-swap="outerHTML"
+        >
+        </nav>
+      </header>
+      <section
+        id="content"
+        hx-get="pages/info.html"
+        hx-trigger="load"
+        hx-swap="outerHTML"
+      >
+      </section>
+    </main>
+  </body>
+</html>

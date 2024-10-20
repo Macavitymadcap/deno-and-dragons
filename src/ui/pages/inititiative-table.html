@@ -1,0 +1,50 @@
+<section id="content" class="card">
+  <h2>Initiative Tracker</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="initiative-header" title="Sort By Initiative">
+          <span>
+            Init
+          </span>
+          <button _="on click call sortInitiativeTable()">
+            Sort
+          </button>
+        </th>
+        <th>Name</th>
+        <th>AC</th>
+        <th>HP</th>
+        <th>Temp HP</th>
+        <th>Conditions</th>
+        <th>
+          <button
+            hx-get="organisms/combatant.html"
+            hx-trigger="click"
+            hx-target="#combatants"
+            hx-swap="beforeend"
+            title="Add a Combatant"
+          >
+            &#65291;
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="combatants"></tbody>
+  </table>
+  <datalist id="conditions">
+    <option>Blinded</option>
+    <option>Charmed</option>
+    <option>Exhaustion</option>
+    <option>Frightened</option>
+    <option>Grappled</option>
+    <option>Incapacitated</option>
+    <option>Invisible</option>
+    <option>Paralyzed</option>
+    <option>Petrified</option>
+    <option>Poisoned</option>
+    <option>Prone</option>
+    <option>Restrained</option>
+    <option>Stunned</option>
+    <option>Unconscious</option>
+  </datalist>
+</section>

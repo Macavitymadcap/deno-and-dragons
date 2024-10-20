@@ -4,9 +4,12 @@
     "compile:evaluate": "deno compile --output bin/evaluate src/encounter-evaluator/encounter-evaluator.cli.ts",
     "run:dice": "deno run ./src/dice/dice.cli.ts",
     "compile:dice": "deno compile --output bin/dice src/dice/dice.cli.ts",
+    "build:ui": "./scripts/build-css.sh && ./scripts/build-html.sh",
+    "serve:dev": "deno run --allow-read=. --allow-net src/ui/server.ts", 
     "clean": "rm -rf build"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/http": "jsr:@std/http@^1.0.8"
   }
 }

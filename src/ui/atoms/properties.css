@@ -1,0 +1,25 @@
+:root {
+  /* Colour Properties*/
+  --text-color: #f1f1f1;
+  --primary-color: #2196f3;
+  --secondary-color: #333;
+  --link-color: #2196f3;
+  --link-hover-color: #1e88e5;
+  --card-background: #444;
+  --card-border: #333;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --button-background: #2196f3;
+  --button-hover-background: #1e88e5;
+  --button-color: #fff;
+  --destructive-action-backgound: #db1b1b;
+  --destructive-action-hover-background: #db1b1b8e;
+  --input-background: #555;
+  --input-border: #444;
+  --input-text-color: #fff;
+
+  /* Size Properties*/
+  --button-minimum-diameter: 3.2em;
+
+  /* Typography Properties */
+  --font-size: 16px;
+}

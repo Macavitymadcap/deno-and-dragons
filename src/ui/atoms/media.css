@@ -1,0 +1,60 @@
+/* Small devices */
+@media (min-width: 640px) {
+  main {
+    max-width: 640px;
+  }
+}
+
+/* Mobile menu styles */
+@media (max-width: 767px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Medium devices */
+@media (min-width: 768px) {
+  main {
+    max-width: 768px;
+  }
+}
+
+/* Large devices */
+@media (min-width: 1024px) {
+  main {
+    max-width: 1024px;
+  }
+}
+
+/* Extra large devices */
+@media (min-width: 1280px) {
+  main {
+    max-width: 1280px;
+  }
+}
+
+/* Extra extra large devices */
+@media (min-width: 1536px) {
+  main {
+    max-width: 1536px;
+  }
+}

@@ -1,0 +1,68 @@
+<tr>
+  <td>
+    <input type="number" class="initiative-input" />
+  </td>
+  <td>
+    <input type="text" class="name-input" />
+  </td>
+  <td>
+    <input type="number" class="armour-class-input" />
+  </td>
+  <td>
+    <input type="number" class="hit-points-input" />
+  </td>
+  <td>
+    <input type="number" class="temporary-hit-points-input" />
+  </td>
+  <td class="conditions-cell">
+    <output></output>
+    <span class="condition-select">
+      <input type="text" list="conditions" />
+      <button
+        _="on click 
+                set condition to the (value of the previous <input/>) 
+                if condition is not empty
+                    make a <span.chip/> called conditionChip
+                    make a <span.chip-label/> called conditionLabel
+                    set conditionLabel.innerHTML to condition
+                    put conditionLabel at the start of conditionChip
+
+                    if condition is 'Exhaustion'
+                        make a <button/> called decrementer
+                        set decrementer's innerHTML to '&#8722;'
+                        set decrementer's @_ to 'on click if (the next <output/>).textContent is greater than 1 decrement (the next <output/>).textContent'
+                        put decrementer at the end of conditionChip
+
+                        make an <output/> called exhaustionLevel
+                        set exhaustionLevel's textContent to 1
+                        put exhaustionLevel at the end of conditionChip
+
+                        make a <button/> called incrementer
+                        set incrementer's innerHTML to '&#43;'
+                        set incrementer's @_ to 'on click if (the previous <output/>).textContent is less than 6 increment (the previous <output/>).textContent'
+                        put incrementer at the end of conditionChip
+                    end
+
+                    make a <button.destructive/> called deleteConditionButton
+                    set deleteConditionButton's innerHTML to '&#10006;' 
+                    set deleteConditionButton's @_ to 'on click remove closest <span.chip/>'
+                    set deleteConditionButton's @title to 'Remove Condition'
+                    put deleteConditionButton at the end of conditionChip
+                    put conditionChip at the end of the previous <output/>
+                end"
+        title="Add Condition"
+      >
+        &#65291;
+      </button>
+    </span>
+  </td>
+  <td class="remove-combatant-cell">
+    <button
+      class="destructive"
+      _="on click remove the closest <tr/>"
+      title="Remove Combatant"
+    >
+      &#10006;
+    </button>
+  </td>
+</tr>
