@@ -1,27 +1,27 @@
 # Junderoth
 
-A blend of the Americas and Polynesia. A huge landmass with expansive rain 
+A blend of the Americas and Polynesia. A huge landmass with expansive rain
 forests, mountains and coastlines with sister islands off to it's west and a
-prismatic reef to it's east. 
+prismatic reef to it's east.
 
 ## History
 
 Junderoth appeared on Qor'thos only 2 years ago. Where it came from scholars
 cannot argue over, but what they do agree upon is that the place is brimming
-with magic. The Prismatic Reef on it's eastern side bedazzled many sailors 
-when they enocuntered it, and strange mirages visible over landmass have 
-also been reported.
+with magic. The Prismatic Reef on it's eastern side bedazzled many sailors when
+they enocuntered it, and strange mirages visible over landmass have also been
+reported.
 
-The first nation to take an interest was Bay-Tsao followed by Käs. Both being
-to the west of Junderoth they managed to easily navigate the Misty Archipelago
-and establish trade routes with the Tideweaver Islanders. The Jade throne has 
+The first nation to take an interest was Bay-Tsao followed by Käs. Both being to
+the west of Junderoth they managed to easily navigate the Misty Archipelago and
+establish trade routes with the Tideweaver Islanders. The Jade throne has
 extended it's reach by pushing into the interior with their eyes on the wonders
 and resources of the Sunspirer Mountains.
 
-Käs has been more interested in the Obsidian Valleys and the Thundering Plains, 
+Käs has been more interested in the Obsidian Valleys and the Thundering Plains,
 establishing trade routes with the Obsidian League and the Thunderbird Nomads.
-They have no great colonial ambition but are more interested in the resources, 
-but their aggressive trade policies have made them enemies with the Sunspire 
+They have no great colonial ambition but are more interested in the resources,
+but their aggressive trade policies have made them enemies with the Sunspire
 Confederation.
 
 ## Cultures
@@ -132,7 +132,6 @@ Confederation.
 - Trees with bark as hard as stone
 - Wood is prized for crafting magical staves and wands
 
-
 ### Whisperweed
 
 - Grass that records and repeats snippets of conversation
@@ -195,5 +194,11 @@ Confederation.
 - Horse-headed humanoids that can run at incredible speeds
 - Known to lead travelers astray in the Thundering Plains
 
-
-Generate a DnD Fantasy Map of the Continent of Junderoth, which is rougly the size of South America contains these environemnts; The Emerald Canopy: a vast rainforest covering much of central Junderoth; The Misty Archipelago: a chain of volcanic islands off the western coast; The Sunspire Mountains:  a towering mountain range in the north; The Thundering Plains: an expansive grasslands in the east; The Obsidian Valleys: a network of mountain valleys in the south; The Prismatic Reef: a massive, magical coral reef off the eastern coast and The Whispering Desert: a mysterious desert in the northwest.
+Generate a DnD Fantasy Map of the Continent of Junderoth, which is rougly the
+size of South America contains these environemnts; The Emerald Canopy: a vast
+rainforest covering much of central Junderoth; The Misty Archipelago: a chain of
+volcanic islands off the western coast; The Sunspire Mountains: a towering
+mountain range in the north; The Thundering Plains: an expansive grasslands in
+the east; The Obsidian Valleys: a network of mountain valleys in the south; The
+Prismatic Reef: a massive, magical coral reef off the eastern coast and The
+Whispering Desert: a mysterious desert in the northwest.

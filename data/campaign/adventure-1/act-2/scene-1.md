@@ -7,7 +7,7 @@ Roll on the below table to see what they encounter. The party will have to make
 checks (DC 13) to avoid or overcome the hazards.
 
 | Hazard                | Description                                                                       | Challenge                                                                  |
-|-----------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| --------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | Carnivorous Vines     | Animated vines that attempt to ensnare and slowly digest creatures                | Dexterity checks to avoid, Strength checks to break free                   |
 | Hallucinogenic Spores | Patches of mushrooms release spores causing vivid hallucinations                  | Constitution saves to resist, Wisdom checks to discern reality             |
 | Quicksand Pools       | Deceptive patches of ground that rapidly pull creatures down                      | Survival checks to spot, Athletics checks to escape                        |

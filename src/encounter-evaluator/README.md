@@ -1,7 +1,8 @@
 # Evaluate Encounter
 
-A program that evaluates the difficulty of a combat encounter based on the number of players and
-their levels, as well as the number and XP value of their opponents.
+A program that evaluates the difficulty of a combat encounter based on the
+number of players and their levels, as well as the number and XP value of their
+opponents.
 
 ## Usage
 
@@ -20,4 +21,5 @@ deno task compile:evaluate
 ./build/evaluate --oponents=25,25,25,25 --party=1,1,1,1
 ```
 
-Alternatively the `EncounterEvaluator` class can be imported and used in other programs.
+Alternatively the `EncounterEvaluator` class can be imported and used in other
+programs.

@@ -1,212 +1,211 @@
 {
-    "core": {
-        "characterName": "Afrohorse",
-        "class": "Wizard",
-        "level": 5,
-        "background": "Sage",
-        "playerName": "Dank",
-        "race": "Human",
-        "alignment": "Chaotic Neutral",
-        "experiencePoints": 14000
-    },
-    "inspiration": false,
-    "proficiencyBonus": 3,
-    "armorClass": 12,
-    "initiative": 2,
-    "speed": 30,
-    "hitPoints": {
-        "hitPointMaximum": 25,
-        "currentHitPoints": 25,
-        "temporaryHitPoints": 0,
-        "hitDiceTotal": "5d6",
-        "hitDiceCurrent": "5d6",
-        "deathSaves": {
-            "successes": 0,
-            "failures": 0
-        }
-    },
-    "abilities": {
-        "strength": {
-            "score": 8,
-            "modifier": -1
-        },
-        "dexterity": {
-            "score": 14,
-            "modifier": 2
-        },
-        "constitution": {
-            "score": 12,
-            "modifier": 1
-        },
-        "intelligence": {
-            "score": 18,
-            "modifier": 4
-        },
-        "wisdom": {
-            "score": 10,
-            "modifier": 0
-        },
-        "charisma": {
-            "score": 16,
-            "modifier": 3
-        }
-    },
-    "savingThrows": {
-        "strength": {
-            "proficient": false,
-            "value": -1
-        },
-        "dexterity": {
-            "proficient": false,
-            "value": 2
-        },
-        "constitution": {
-            "proficient": false,
-            "value": 1
-        },
-        "intelligence": {
-            "proficient": true,
-            "value": 7
-        },
-        "wisdom": {
-            "proficient": false,
-            "value": 0
-        },
-        "charisma": {
-            "proficient": false,
-            "value": 3
-        }
-    },
-    "skills": {
-        "acrobatics": {
-            "name": "Acrobatics",
-            "proficient": false,
-            "value": 2
-        },
-        "animalHandling": {
-            "proficient": false,
-            "value": 0
-        },
-        "arcana": {
-            "proficient": true,
-            "value": 7
-        },
-        "athletics": {
-            "proficient": false,
-            "value": -1
-        },
-        "deception": {
-            "proficient": false,
-            "value": 3
-        },
-        "history": {
-            "proficient": true,
-            "value": 7
-        },
-        "insight": {
-            "proficient": false,
-            "value": 0
-        },
-        "intimidation": {
-            "proficient": false,
-            "value": 3
-        },
-        "investigation": {
-            "proficient": true,
-            "value": 7
-        },
-        "medicine": {
-            "proficient": false,
-            "value": 0
-        },
-        "nature": {
-            "proficient": true,
-            "value": 7
-        },
-        "perception": {
-            "proficient": false,
-            "value": 0
-        },
-        "performance": {
-            "proficient": false,
-            "value": 3
-        },
-        "persuasion": {
-            "proficient": false,
-            "value": 3
-        },
-        "religion": {
-            "proficient": true,
-            "value": 7
-        },
-        "sleightOfHand": {
-            "proficient": false,
-            "value": 2
-        },
-        "stealth": {
-            "proficient": false,
-            "value": 2
-        },
-        "survival": {
-            "proficient": false,
-            "value": 0
-        }
-    },
-    "passivePerception": 10,
-    "otherProficienciesAndLanguages": {
-        "languages": ["common", "elvish", "draconic"],
-        "armor": [],
-        "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
-        "tools": ["herbalism kit"],
-        "savingThrows": ["intelligence", "wisdom"],
-        "skills": ["arcana", "history", "investigation", "nature", "religion"]
-    },
-    "attacksAndSpellcasting": [],
-    "spellcasting": {
-        "spellcastingClass": "wizard",
-        "spellcastingAbility": "intelligence",
-        "spellSaveDC": 15,
-        "spellAttackBonus": 7,
-        "cantripsKnown": 4,
-        "spellsKnown": 10,
-        "spellsPrepared": 9,
-        "spellSlots": {
-            "1": {
-                "total": 4,
-                "expended": 0
-            },
-            "2": {
-                "total": 3,
-                "expended": 0
-            },
-            "3": {
-                "total": 2,
-                "expended": 0
-            }
-        },
-        "spells": {
-            "0": [
-                { "name": "mage hand", "level": 0 },
-                { "name": "firebolt", "level": 0 },
-                { "name": "ray of frost", "level": 0 },
-                { "name": "prestidigitation", "level": 0 }
-            ],
-            "1": [
-                { "name": "mage armor", "level": 1, "prepared": true },
-                { "name": "magic missile", "level": 1, "prepared": true },
-                { "name": "shield", "level": 1, "prepared": true },
-                { "name": "sleep", "level": 1, "prepared": true }
-            ],
-            "2": [
-                { "name": "invisibility", "level": 2, "prepared": true },
-                { "name": "web", "level": 2, "prepared": true },
-                { "name": "mirror image", "level": 2, "prepared": true }
-            ],
-            "3": [
-                { "name": "fireball", "level": 3, "prepared": true },
-                { "name": "lightning bolt", "level": 3, "prepared": true }
-            ]
-        }
-
+  "core": {
+    "characterName": "Afrohorse",
+    "class": "Wizard",
+    "level": 5,
+    "background": "Sage",
+    "playerName": "Dank",
+    "race": "Human",
+    "alignment": "Chaotic Neutral",
+    "experiencePoints": 14000
+  },
+  "inspiration": false,
+  "proficiencyBonus": 3,
+  "armorClass": 12,
+  "initiative": 2,
+  "speed": 30,
+  "hitPoints": {
+    "hitPointMaximum": 25,
+    "currentHitPoints": 25,
+    "temporaryHitPoints": 0,
+    "hitDiceTotal": "5d6",
+    "hitDiceCurrent": "5d6",
+    "deathSaves": {
+      "successes": 0,
+      "failures": 0
     }
+  },
+  "abilities": {
+    "strength": {
+      "score": 8,
+      "modifier": -1
+    },
+    "dexterity": {
+      "score": 14,
+      "modifier": 2
+    },
+    "constitution": {
+      "score": 12,
+      "modifier": 1
+    },
+    "intelligence": {
+      "score": 18,
+      "modifier": 4
+    },
+    "wisdom": {
+      "score": 10,
+      "modifier": 0
+    },
+    "charisma": {
+      "score": 16,
+      "modifier": 3
+    }
+  },
+  "savingThrows": {
+    "strength": {
+      "proficient": false,
+      "value": -1
+    },
+    "dexterity": {
+      "proficient": false,
+      "value": 2
+    },
+    "constitution": {
+      "proficient": false,
+      "value": 1
+    },
+    "intelligence": {
+      "proficient": true,
+      "value": 7
+    },
+    "wisdom": {
+      "proficient": false,
+      "value": 0
+    },
+    "charisma": {
+      "proficient": false,
+      "value": 3
+    }
+  },
+  "skills": {
+    "acrobatics": {
+      "name": "Acrobatics",
+      "proficient": false,
+      "value": 2
+    },
+    "animalHandling": {
+      "proficient": false,
+      "value": 0
+    },
+    "arcana": {
+      "proficient": true,
+      "value": 7
+    },
+    "athletics": {
+      "proficient": false,
+      "value": -1
+    },
+    "deception": {
+      "proficient": false,
+      "value": 3
+    },
+    "history": {
+      "proficient": true,
+      "value": 7
+    },
+    "insight": {
+      "proficient": false,
+      "value": 0
+    },
+    "intimidation": {
+      "proficient": false,
+      "value": 3
+    },
+    "investigation": {
+      "proficient": true,
+      "value": 7
+    },
+    "medicine": {
+      "proficient": false,
+      "value": 0
+    },
+    "nature": {
+      "proficient": true,
+      "value": 7
+    },
+    "perception": {
+      "proficient": false,
+      "value": 0
+    },
+    "performance": {
+      "proficient": false,
+      "value": 3
+    },
+    "persuasion": {
+      "proficient": false,
+      "value": 3
+    },
+    "religion": {
+      "proficient": true,
+      "value": 7
+    },
+    "sleightOfHand": {
+      "proficient": false,
+      "value": 2
+    },
+    "stealth": {
+      "proficient": false,
+      "value": 2
+    },
+    "survival": {
+      "proficient": false,
+      "value": 0
+    }
+  },
+  "passivePerception": 10,
+  "otherProficienciesAndLanguages": {
+    "languages": ["common", "elvish", "draconic"],
+    "armor": [],
+    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+    "tools": ["herbalism kit"],
+    "savingThrows": ["intelligence", "wisdom"],
+    "skills": ["arcana", "history", "investigation", "nature", "religion"]
+  },
+  "attacksAndSpellcasting": [],
+  "spellcasting": {
+    "spellcastingClass": "wizard",
+    "spellcastingAbility": "intelligence",
+    "spellSaveDC": 15,
+    "spellAttackBonus": 7,
+    "cantripsKnown": 4,
+    "spellsKnown": 10,
+    "spellsPrepared": 9,
+    "spellSlots": {
+      "1": {
+        "total": 4,
+        "expended": 0
+      },
+      "2": {
+        "total": 3,
+        "expended": 0
+      },
+      "3": {
+        "total": 2,
+        "expended": 0
+      }
+    },
+    "spells": {
+      "0": [
+        { "name": "mage hand", "level": 0 },
+        { "name": "firebolt", "level": 0 },
+        { "name": "ray of frost", "level": 0 },
+        { "name": "prestidigitation", "level": 0 }
+      ],
+      "1": [
+        { "name": "mage armor", "level": 1, "prepared": true },
+        { "name": "magic missile", "level": 1, "prepared": true },
+        { "name": "shield", "level": 1, "prepared": true },
+        { "name": "sleep", "level": 1, "prepared": true }
+      ],
+      "2": [
+        { "name": "invisibility", "level": 2, "prepared": true },
+        { "name": "web", "level": 2, "prepared": true },
+        { "name": "mirror image", "level": 2, "prepared": true }
+      ],
+      "3": [
+        { "name": "fireball", "level": 3, "prepared": true },
+        { "name": "lightning bolt", "level": 3, "prepared": true }
+      ]
+    }
+  }
 }

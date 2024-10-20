@@ -1,12 +1,12 @@
 {
-    "core": {
-        "characterName": "Gargax",
-        "class": "Artificer",
-        "level": 1,
-        "background": "Guild Artisan",
-        "playerName": "Dank",
-        "race": "Dragonborn",
-        "alignment": "Neutral",
-        "experiencePoints": 0
-    }
+  "core": {
+    "characterName": "Gargax",
+    "class": "Artificer",
+    "level": 1,
+    "background": "Guild Artisan",
+    "playerName": "Dank",
+    "race": "Dragonborn",
+    "alignment": "Neutral",
+    "experiencePoints": 0
+  }
 }
