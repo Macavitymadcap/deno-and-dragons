@@ -7,6 +7,14 @@ old. It's a mix of hastily constructed buildings, tents, and some sturdier
 structures, sprawling from a natural cove inland. The town is surrounded by a
 wooden palisade, constantly being expanded as the settlement grows.
 
+## Atmosphere 
+
+The air in Port Walen is thick with anticipation and tension. The
+smell of salt water mixes with the earthy scent of the nearby forest. The
+constant sound of construction and the shouts of workers and guards create a
+bustling atmosphere. Despite attempts at order, there's an underlying sense of
+lawlessness and opportunity that permeates the settlement.
+
 ## Key Locations
 
 ### The Docks
@@ -60,16 +68,3 @@ wooden palisade, constantly being expanded as the settlement grows.
 
 - Wooden structures spaced along the palisade
 - Manned by guards keeping an eye on both the forest and the town
-
-Notable NPCs
-
-Governor Elara Brightstone (Governor's Mansion) Foreman Grok Ironfist (The
-Clearing Yards) Dr. Lydia Thornwind (Arcanium Workshop) "Old Salt" Maris (owner
-of The Rusty Anchor Tavern) Tinker Sprocketspring (proprietor of Expedition
-Outfitters)
-
-Atmosphere The air in Port Walen is thick with anticipation and tension. The
-smell of salt water mixes with the earthy scent of the nearby forest. The
-constant sound of construction and the shouts of workers and guards create a
-bustling atmosphere. Despite attempts at order, there's an underlying sense of
-lawlessness and opportunity that permeates the settlement.
