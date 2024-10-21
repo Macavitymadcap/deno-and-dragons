@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
     <script src="static/script.js" type="module"></script>
   </head>
+
   <body>
     <main>
       <header class="container navigation">
@@ -23,6 +24,13 @@
         >
         </nav>
       </header>
+      <section
+        id="dice-roller"
+        hx-get="molecules/roller.html"
+        hx-trigger="load"
+        hx-swap="innerHTML"
+      >
+      </section>
       <section
         id="content"
         hx-get="pages/info.html"

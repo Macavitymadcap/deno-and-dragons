@@ -1,0 +1,29 @@
+fieldset.dice-roller {
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  button {
+    max-width: 1.2rem;
+    max-height: 1.2rem;
+  }
+
+  label {
+    padding-right: 0.5rem;
+  }
+
+  input {
+    width: 5em;
+  }
+
+  select {
+    width: 8em;
+  }
+
+  output {
+    padding-left: 0.5rem;
+  }
+}
