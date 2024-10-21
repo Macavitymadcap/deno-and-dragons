@@ -1,6 +1,6 @@
 import { IDeathSaves } from "./hit-points.model.ts";
 import { Dice, DiceRoll, RollType } from "../../dice/index.ts";
-import { XP_THRESHOLDS_BY_LEVEL } from "../../encounter-evaluator/encounter-evaluator.model.ts";
+import { XP_THRESHOLDS_BY_LEVEL } from "../../evaluate/encounter-evaluator.model.ts";
 
 export class DeathSaves implements IDeathSaves {
   successes!: number;

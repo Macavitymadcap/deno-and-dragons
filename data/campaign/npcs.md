@@ -1,20 +1,4 @@
-# NPCs
-
-## Confederacy
-
-### Magistrate Vex Shadowmere (Tiefling, female)
-
-|                Image                 | Background                               | Personality                          | Goal                                         |
-| :----------------------------------: | ---------------------------------------- | ------------------------------------ | -------------------------------------------- |
-| ![Vex Shadowmere](./images/vex.webp) | High-ranking official in the Confederacy | Charismatic, manipulative, ambitious | Expand the Confederacy's influence and power |
-
-## Prison Ship
-
-### Captain Thorne Blackwater (Human, male)
-
-|                   Image                    | Background                          | Personality                    | Goal                                     |
-| :----------------------------------------: | ----------------------------------- | ------------------------------ | ---------------------------------------- |
-| ![Thorne Blackwater](./images/thorne.webp) | Grizzled captain of the prison ship | Cynical, world-weary, but fair | Deliver prisoners safely and return home |
+# NPCs by Location
 
 ## Port Walen
 

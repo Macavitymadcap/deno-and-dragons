@@ -1,5 +1,4 @@
 import { serveDir } from "@std/http/file-server";
-import * as path from "jsr:@std/path";
 
 Deno.serve(async (req) => {
   const rootPath = `${Deno.cwd()}/build`;
@@ -11,10 +10,20 @@ Deno.serve(async (req) => {
       fsRoot: `${rootPath}`,
     });
   }
-  const filePath = pathname === "/"
-    ? `${rootPath}/index.html`
-    : `${rootPath}${pathname}`;
-  const file = await Deno.open(filePath, { read: true });
 
-  return new Response(file.readable);
+  let file;
+
+  if (pathname === "/" || pathname === "/index.html") {
+    file = await Deno.open(`${rootPath}/index.html`, { read: true });
+    return new Response(file.readable);
+  }
+
+  try {
+    file = await Deno.open(`${rootPath}${pathname}`, { read: true });
+    return new Response(file.readable);
+  } catch (error) {
+    return new Response(`Not Found\nError: ${JSON.stringify(error, null, 2)}`, {
+      status: 404,
+    });
+  }
 });
