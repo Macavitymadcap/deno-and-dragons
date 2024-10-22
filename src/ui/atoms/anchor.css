@@ -1,9 +1,9 @@
 a {
-  color: var(--link-color);
+  color: var(--link-colour);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--link-hover-colour);
 }

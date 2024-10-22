@@ -2,6 +2,7 @@ input[type="text"],
 input[type="number"],
 select {
   padding: 10px;
+  height: var(--button-minimum-diameter);
   width: 100%;
   margin: 8px 0;
   box-sizing: border-box;
@@ -9,13 +10,13 @@ select {
   border-radius: 4px;
   font-size: 1rem;
   background: var(--input-background);
-  color: var(--input-text-color);
+  color: var(--input-text-colour);
   transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 select {
-  border-color: var(--primary-color);
+  border-color: var(--primary-colour);
   outline: transparent;
 }

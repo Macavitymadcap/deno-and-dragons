@@ -1,4 +1,4 @@
-export const sortInitiativeTable = () => {
+export const sortInitiativeTable = (): void => {
   const table = document.querySelector("table");
   const tbody = table!.querySelector("tbody");
   const rows = Array.from(tbody!.querySelectorAll("tr"));

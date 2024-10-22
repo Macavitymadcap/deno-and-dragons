@@ -1,5 +1,26 @@
-<section id="content" class="card">
+<article id="content" class="card">
   <h2>Initiative Tracker</h2>
+  <div class="status">
+    <label for="currentround">
+      Current Round:
+      <output id="currentround">0</output>
+    </label>
+    <label for="currentinitiative">
+      Current Turn:
+      <output id="currentinitiative"></output>
+    </label>
+    <button
+      _="on click 
+          set round to (value of #currentround)
+          if round is 0
+            increment round
+            set the value of #currentround to round
+            get the first <tr.combatant/>
+            log it
+            toggle .active on it
+          end"
+    >&#8649;</button>
+  </div>
   <table>
     <thead>
       <tr>
@@ -47,4 +68,4 @@
     <option>Stunned</option>
     <option>Unconscious</option>
   </datalist>
-</section>
+</article>

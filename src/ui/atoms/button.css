@@ -7,7 +7,7 @@ button {
   min-height: var(--button-minimum-diameter);
   min-width: var(--button-minimum-diameter);
   background-color: var(--button-background);
-  color: var(--button-color);
+  color: var(--button-colour);
   text-decoration: none;
   text-align: center;
   border: none;

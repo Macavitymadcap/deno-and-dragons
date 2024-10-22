@@ -161,3 +161,8 @@ export class Dice {
     return diceRoll;
   }
 }
+
+export const roll = (dice: string, rollType?: RollType): DiceRoll => {
+  const diceRoll = new Dice(dice);
+  return diceRoll.roll(rollType);
+};

@@ -1,29 +1,57 @@
-fieldset.dice-roller {
-  div {
+#dice-roller:popover-open {
+  border: none;
+  background: var(--card-background);
+  color: var(--font-color);
+  display: gird;
+  grid-template-rows: 1fr 1fr;
+  width: 25vw;
+  height: 15vh;
+
+  button.destructive {
+    float: right;
+  }
+
+  div.dice-roller {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-  }
 
-  button {
-    max-width: 1.2rem;
-    max-height: 1.2rem;
-  }
+    button {
+      max-width: 1.2rem;
+      max-height: 1.2rem;
+    }
 
-  label {
-    padding-right: 0.5rem;
-  }
+    label {
+      padding-right: 0.25rem;
+    }
 
-  input {
-    width: 5em;
-  }
+    input {
+      width: 5em;
+    }
 
-  select {
-    width: 8em;
+    select {
+      width: 9em;
+    }
   }
 
   output {
-    padding-left: 0.5rem;
+    text-wrap: pretty;
+    white-space: pre-wrap;
+
+    span.roll,
+    span.rolls,
+    span.modifier,
+    span.vantage {
+      padding-left: 0.5rem;
+    }
+
+    span.roll {
+      span.total {
+        padding-right: 0.25rem;
+        font-size: large;
+        font-weight: bold;
+      }
+    }
   }
 }

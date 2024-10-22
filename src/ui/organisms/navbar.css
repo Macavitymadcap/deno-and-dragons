@@ -1,5 +1,5 @@
 nav.navbar {
-  background-color: var(--background-color);
+  background-color: var(--secondary-colour);
   padding: 1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -17,7 +17,7 @@ nav.navbar {
   }
 
   .logo {
-    color: var(--text-color);
+    color: var(--text-colour);
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -32,13 +32,13 @@ nav.navbar {
     margin-left: 1.5rem;
   }
   a {
-    color: var(--text-color);
+    color: var(--text-colour);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
   }
 
   a:hover {
-    color: var(--link-hover-color);
+    color: var(--link-hover-colour);
   }
 }
