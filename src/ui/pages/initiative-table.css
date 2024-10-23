@@ -1,6 +1,16 @@
 div.status {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  label {
+    font-size: 1.1rem;
+
+    output {
+      font-size: 1.1rem;;
+    }
+  }
 
   button {
     width: min-content;
@@ -18,10 +28,9 @@ td.remove-combatant-cell {
 }
 
 th.initiative-header {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items: center;
+  button {
+    float: right;
+  }
 }
 
 td.conditions-cell {
