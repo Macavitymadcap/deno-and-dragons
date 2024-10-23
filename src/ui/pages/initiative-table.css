@@ -7,16 +7,14 @@ div.status {
   }
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #ff33cc;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #e495e4;
-}
-
 td.remove-combatant-cell {
   text-align: center;
+}
+
+.current-turn {
+  td {
+    background: var(--secondary-colour);
+  }
 }
 
 th.initiative-header {

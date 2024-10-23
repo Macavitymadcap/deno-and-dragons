@@ -59,7 +59,19 @@
   <td class="remove-combatant-cell">
     <button
       class="destructive"
-      _="on click remove the closest <tr/>"
+      _="on click 
+          if the (closest <tr.combatant/>) matches .current-turn
+            if the next <tr.combatant/> from me is not empty
+              get the next <tr.combatant/> from me
+              toggle .current-turn on it
+              set #current-turn's value to the value of the first <input.name-input/> in it
+            else
+              toggle .current-turn on the first <tr.combatant/>
+              set #current-turn's value to the value of the first <input.name-input/> in the first <tr.combatant/>
+              increment #current-round's value
+            end
+          end
+          remove the closest <tr.combatant/>"
       title="Remove Combatant"
     >
       &#10006;

@@ -1,23 +1,36 @@
 <article id="content" class="card">
   <h2>Initiative Tracker</h2>
   <div class="status">
-    <label for="currentround">
+    <label for="current-round">
       Current Round:
-      <output id="currentround">0</output>
+      <output id="current-round">0</output>
     </label>
-    <label for="currentinitiative">
+    <label for="current-turn">
       Current Turn:
-      <output id="currentinitiative"></output>
+      <output id="current-turn"></output>
     </label>
     <button
       _="on click 
-          set round to (value of #currentround)
-          if round is 0
-            increment round
-            set the value of #currentround to round
-            get the first <tr.combatant/>
-            log it
-            toggle .active on it
+          set round to (value of #current-round)
+          set turn to (value of #current-turn)
+          set lastCombatant to the value of the first <input.name-input/> in the last <tr.combatant/>
+
+          if round is 0 and turn is empty
+            increment #current-round's value
+            toggle .current-turn on the first <tr.combatant/>
+            set the value of #current-turn to the value of the first <input.name-input/>
+
+          else if turn matches lastCombatant
+            increment #current-round's value 
+            toggle .current-turn on the last <tr.combatant/>
+            toggle .current-turn on the first <tr.combatant/>
+            set the value of #current-turn to the value of the first <input.name-input/>
+          else
+            get the first <tr.combatant.current-turn/>
+            toggle .current-turn on it
+            get the next <tr.combatant/> from it
+            toggle .current-turn on it
+            set the value of #current-turn to the value of the <input.name-input/> in it
           end"
     >&#8649;</button>
   </div>

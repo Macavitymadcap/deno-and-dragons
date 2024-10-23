@@ -2,6 +2,7 @@ table {
   display: grid;
   grid-template-columns: 0.5fr 1fr repeat(3, 0.5fr) 2fr 0.5fr;
   width: 100%;
+  border-collapse: collapse;
 }
 
 thead,
