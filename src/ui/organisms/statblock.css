@@ -3,8 +3,26 @@ article.statblock {
     list-style-type: none;
   }
 
+  table {
+    width: unset;
+  }
+
+  th,
+  tr {
+    padding: unset;
+    background: unset;
+  }
+
+  tr:hover td {
+    background-color: unset;
+  }
+
   thead th {
     font-size: x-small;
+  }
+
+  thead td {
+    border-bottom: unset;
   }
 
   td.mod-save {

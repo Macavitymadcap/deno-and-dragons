@@ -1,14 +1,19 @@
 <nav class="navbar">
-  <menu class="navbar-menu">
-    <a href="index.html" class="logo">&#8962;</a>
-    <button popovertarget="dice-roller" popovertargetaction="toggle">
-      &#127922;
-    </button>
-    <button popovertarget="search" popovertargetaction="toggle">
-      &#x1F50D;
-    </button>
-    <ul class="nav-links centred-row" hx-boost="true">
+  <menu class="navbar-menu centred">
       <li>
+        <a href="index.html" class="logo">&#8962;</a>
+      </li>
+      <li>
+        <button popovertarget="dice-roller" popovertargetaction="toggle">
+          &#127922;
+        </button>
+      </li>
+      <li>
+        <button popovertarget="search" popovertargetaction="toggle">
+          &#x1F50D;
+        </button>
+      </li>
+      <li hx-boost="true">
         <a
           href="pages/inititiative-table.html"
           hx-target="#content"
@@ -16,6 +21,5 @@
           hx-replace-url="false"
         >Initiative Tracker</a>
       </li>
-    </ul>
   </menu>
 </nav>

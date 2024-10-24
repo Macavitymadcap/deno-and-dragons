@@ -1,8 +1,21 @@
 .card {
-  background-color: var(--card-background);
+  background: var(--card-background);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  box-shadow: 0 4px 8px var(--card-shadow);
-  padding: 1rem;
-  margin-bottom: 2rem;
+  box-shadow: var(--surface-shadow);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  
+  /* &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  } */
+
+  h2 {
+    margin-top: 0;
+    color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));
+    font-size: 1.5rem;
+    text-shadow: var(--text-shadow);
+  }
 }

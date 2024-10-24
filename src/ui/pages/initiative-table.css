@@ -3,17 +3,21 @@ div.status {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-
+  background: rgba(68, 68, 68, 0.3);
+  border-radius: var(--card-radius);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
   label {
-    font-size: 1.1rem;
-
-    output {
-      font-size: 1.1rem;
-    }
+    font-weight: 500;
+    color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));
   }
-
-  button {
-    width: min-content;
+  
+  output {
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 }
 
@@ -38,8 +42,6 @@ table.initiative-table {
   }
 
   th {
-    position: sticky;
-    top: 0;
     text-align: center;
     font-weight: normal;
     font-size: 1.1rem;

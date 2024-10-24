@@ -7,14 +7,18 @@
     0 4px 12px rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   border: none;
-  width: 30vw;
+  width: 35vw;
   height: 70vh;
   position: absolute;
   inset: unset;
-  right: 5em;
-  bottom: 6em;
+  right: 2.5em;
+  bottom: 2.5em;
   color: var(--font-color);
   animation: popover-slide 0.2s ease-out;
+
+  input[type="search"] {
+    width:100%;
+  }
 
   /* Glass highlight effect */
   &::before {

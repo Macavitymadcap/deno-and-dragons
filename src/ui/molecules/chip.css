@@ -1,8 +1,7 @@
-span.chip {
-  display: inline-flex;
+/* span.chip {
   align-items: center;
   padding: 0 8px;
-  height: var(--button-minimum-diameter);
+  
   line-height: 2em;
   border-radius: 24px;
   background-color: var(--secondary-colour);
@@ -10,22 +9,46 @@ span.chip {
   margin: 4px;
   border: 1px solid var(--input-border);
   transition: background-color 0.3s ease;
-
+  
+  
+  output {
+      font-size: larger;
+      font-weight: bold;
+      margin: 0.5rem;
+      }
+      } */
+      
+span.chip {
+  display: inline-flex;
+  line-height: var(--spacing-xl);
+  height: var(--button-minimum-diameter);
+  background: var(--secondary-gradient);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+  box-shadow: var(--surface-shadow);
+  
   span.chip-label {
     padding-right: 6px;
     padding-left: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
+  button {
+    height: var(--button-minimum-diameter);
+  }
+  
   output {
-    font-size: larger;
-    font-weight: bold;
-    margin: 0.5rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));
   }
-}
-
-span.chip:hover {
-  background-color: var(--input-background);
 }
