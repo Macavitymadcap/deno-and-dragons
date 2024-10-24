@@ -1,0 +1,18 @@
+<div class="card">
+  <h2>Bestiary</h2>
+    <input 
+        id="bestiary-search-input"
+        placeholder="Search Bestiary"
+        type="search" 
+        name="bestiary-search-input" 
+        list="bestiary-pages"
+        hx-get="/bestiary/search"
+        hx-trigger="input changed delay:500ms, search"
+        hx-target="#bestiary-search-output"
+        hx-params="bestiary-search-input"
+    />
+  <datalist id="bestiary-pages">
+    <option value="pages/twig-blight.html" label="Twig Blight">Twig Blight</option>
+  </datalist>
+  <output id="bestiary-search-output"></output>
+</div>

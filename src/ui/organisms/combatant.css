@@ -1,0 +1,39 @@
+tr.combatant {
+  td.remove-combatant-cell {
+    text-align: center;
+  }
+
+  td.conditions-cell {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+
+    output {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    span.condition-select {
+      display: grid;
+      grid-template-columns: 1.25fr 0.25fr;
+
+      input {
+        height: min-content;
+      }
+
+      button {
+        height: min-content;
+        width: min-content;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.current-turn {
+  td {
+    background: var(--secondary-colour);
+  }
+}

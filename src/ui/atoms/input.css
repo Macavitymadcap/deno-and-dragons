@@ -1,5 +1,6 @@
 input[type="text"],
 input[type="number"],
+input[type="search"],
 select {
   padding: 10px;
   height: var(--button-minimum-diameter);
@@ -16,6 +17,7 @@ select {
 
 input[type="text"]:focus,
 input[type="number"]:focus,
+input[type="search"]:focus,
 select {
   border-color: var(--primary-colour);
   outline: transparent;

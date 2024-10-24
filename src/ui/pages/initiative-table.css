@@ -8,7 +8,7 @@ div.status {
     font-size: 1.1rem;
 
     output {
-      font-size: 1.1rem;;
+      font-size: 1.1rem;
     }
   }
 
@@ -17,46 +17,42 @@ div.status {
   }
 }
 
-td.remove-combatant-cell {
-  text-align: center;
-}
-
-.current-turn {
-  td {
-    background: var(--secondary-colour);
-  }
-}
-
-th.initiative-header {
-  button {
-    float: right;
-  }
-}
-
-td.conditions-cell {
+table.initiative-table {
   display: grid;
-  grid-template-columns: 1fr 0.75fr;
+  grid-template-columns: 0.5fr 0.75fr repeat(3, 0.5fr) 1.75fr 0.5fr;
+  width: 100%;
+  border-collapse: collapse;
 
-  output {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
+  thead,
+  tbody,
+  tr {
+    display: contents;
   }
 
-  span.condition-select {
-    display: grid;
-    grid-template-columns: 1.25fr 0.25fr;
+  th,
+  td {
+    padding: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
-    input {
-      height: min-content;
-    }
+  th {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.1rem;
+  }
 
+  td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  th.initiative-header {
     button {
-      height: min-content;
-      width: min-content;
-      margin-left: 1em;
+      float: right;
     }
   }
 }
