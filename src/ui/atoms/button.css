@@ -4,6 +4,7 @@ button {
   justify-content: center;
   padding: 0;
   margin: 0;
+  font-size: larger;
   min-height: var(--button-minimum-diameter);
   min-width: var(--button-minimum-diameter);
   color: var(--button-colour);

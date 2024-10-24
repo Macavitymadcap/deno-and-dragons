@@ -5,8 +5,10 @@
   box-shadow: var(--surface-shadow);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
-  
+  transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium);
+
   /* &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);

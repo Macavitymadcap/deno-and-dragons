@@ -1,7 +1,7 @@
 input[type="text"],
 input[type="number"],
 input[type="search"],
-select {  
+select {
   background: var(--input-background);
   border: 1px solid var(--input-border);
   border-radius: 4px;
@@ -10,11 +10,11 @@ select {
   transition: all var(--transition-fast);
   backdrop-filter: blur(4px);
   height: var(--button-minimum-diameter);
-  
+
   &:hover {
     border-color: rgba(33, 150, 243, 0.5);
   }
-  
+
   &:focus {
     border-color: var(--primary-colour);
     box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.25);

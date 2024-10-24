@@ -1,5 +1,6 @@
 article.statblock {
   ul {
+    all: unset;
     list-style-type: none;
   }
 

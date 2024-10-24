@@ -9,12 +9,12 @@ div.status {
   margin-bottom: var(--spacing-lg);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  
+
   label {
     font-weight: 500;
     color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));
   }
-  
+
   output {
     font-weight: 600;
     font-size: 1.2rem;

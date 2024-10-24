@@ -1,0 +1,69 @@
+<div class="card">
+  <h2>Encounter Evaluator</h2>
+  <div class="inputs centred">
+    <fieldset>
+      <legend>
+        Party
+      </legend>
+      <span class="centred">
+        <label for="level-input">
+          Level
+          <input type="number" name="level-input" />
+        </label>
+        <button
+            _="on click
+                set level to the (value of the previous <input/>)
+                if level is not empty
+                    make a <span.chip/> called levelChip
+                    make a <span.chip-label/> called levelLabel
+                    set levelLabel.innerHTML to level
+                    put levelLabel at the start of levelChip
+                    
+                    make a <button.destructive/> called deleteLevelButton
+                    set deleteLevelButton's innerHTML to '&#10006;' 
+                    set deleteLevelButton's @_ to 'on click remove closest <span.chip/>'
+                    set deleteLevelButton's @title to 'Remove Condition'
+                    put deleteLevelButton at the end of levelChip
+                    put levelChip at the end of the next <output/>
+                end"
+        >
+          &#65291;
+        </button>
+      </span>
+      <output class="centred"></output>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Opponents
+      </legend>
+      <span class="centred">
+        <label for="xp-input">
+          XP
+          <input type="number" name="xp-input" />
+        </label>
+        <button
+            _="on click
+                set xp to the (value of the previous <input/>)
+                if xp is not empty
+                    make a <span.chip/> called xpChip
+                    make a <span.chip-label/> called xpLabel
+                    set xpLabel.innerHTML to xp
+                    put xpLabel at the start of xpChip
+                    
+                    make a <button.destructive/> called deletexpButton
+                    set deletexpButton's innerHTML to '&#10006;' 
+                    set deletexpButton's @_ to 'on click remove closest <span.chip/>'
+                    set deletexpButton's @title to 'Remove Condition'
+                    put deletexpButton at the end of xpChip
+                    put xpChip at the end of the next <output/>
+                end"
+        >
+          &#65291;
+        </button>
+      </span>
+      <output class="centred"></output>
+    </fieldset>
+    <button id="evaluate-button">Evaluate</button>
+  </div>
+  <output id="evaluation"></output>
+</div>

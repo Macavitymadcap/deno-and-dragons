@@ -1,0 +1,36 @@
+div.inputs {
+    flex-direction: row;
+    padding: var(--spacing-md);
+
+    fieldset {
+        width: 25vw;
+    }
+    
+    fieldset span {
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        align-items: center;
+        
+        input {
+            margin: var(--spacing-md);
+            width: 5rem;
+        }
+    }
+
+    fieldset output {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    
+    button#evaluate-button {
+        height: min-content;
+        width: fit-content;
+        font-size: large;
+        padding: var(--spacing-md);
+        margin: var(--spacing-sm);
+        border-radius: var(--text-button-radius);
+    }
+}
+
