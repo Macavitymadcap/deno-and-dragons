@@ -14,4 +14,8 @@ for dir in "${directories[@]}"; do
     fi
 done
 
+for file in src/ui/organisms/statblocks/*.html; do
+    cp "$file" build/organisms
+done
+
 echo "HTML compilation complete."

@@ -1,0 +1,27 @@
+<div class="search-bar">
+  <button
+    class="destructive"
+    popovertarget="search"
+    popoveraction="hide"
+  >
+    &#10006;
+  </button>
+  <h2>Search</h2>
+  <input
+    id="search-input"
+    placeholder="Search"
+    type="search"
+    name="search-input"
+    list="pages"
+    hx-get="/search"
+    hx-trigger="input changed delay:500ms, search"
+    hx-target="#search-output"
+    hx-params="search-input"
+  />
+</div>
+<datalist id="pages">
+  <option value="organisms/twig-blight.html" label="Twig Blight"></option>
+  <option value="organisms/needle-blight.html" label="Needle Blight"></option>
+  <option value="organisms/vine-blight.html" label="Vine Blight"></option>
+</datalist>
+<output id="search-output"></output>

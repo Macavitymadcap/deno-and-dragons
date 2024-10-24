@@ -1,5 +1,4 @@
-/* Dice roller popover specific styles */
-#dice-roller:popover-open {
+#search:popover-open {
   border: 1px solid var(--popover-border);
   background: var(--popover-background);
   backdrop-filter: blur(var(--popover-blur));
@@ -7,9 +6,14 @@
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 30vw;
+  height: 70vh;
+  position: absolute;
+  inset: unset;
+  right: 5em;
+  bottom: 6em;
   color: var(--font-color);
-  width: 25vw;
-  height: 15vh;
   animation: popover-slide 0.2s ease-out;
 
   /* Glass highlight effect */
@@ -32,59 +36,6 @@
   button.destructive {
     float: right;
   }
-
-  div.dice-roller {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-
-    button {
-      max-width: 1.2rem;
-      max-height: 1.2rem;
-    }
-
-    label {
-      padding-right: 0.25rem;
-    }
-
-    input {
-      width: 5em;
-    }
-
-    select {
-      width: 9em;
-    }
-  }
-
-  label {
-    font-size: large;
-  }
-
-  output {
-    text-wrap: pretty;
-    white-space: pre-wrap;
-    position: relative;
-    z-index: 1;
-    text-shadow: var(--text-shadow);
-
-    span.roll,
-    span.rolls,
-    span.modifier,
-    span.vantage {
-      padding-left: 0.5rem;
-    }
-
-    span.roll {
-      span.total {
-        padding-right: 0.25rem;
-        font-size: large;
-        font-weight: bold;
-      }
-    }
-  }
 }
 
 /* Smooth entrance animation */
@@ -100,8 +51,10 @@
 }
 
 /* Enhance form elements inside popover for better contrast */
-#dice-roller:popover-open input:focus {
+#search:popover-open input:focus,
+#search:popover-open button:focus {
   background: rgba(85, 85, 85, 0.8);
   border-color: var(--primary-colour);
+  border-radius: var(--card-radius);
   box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
 }

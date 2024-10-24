@@ -1,5 +1,5 @@
 export const sortInitiativeTable = (): void => {
-  const table = document.querySelector("table");
+  const table = document.querySelector("table.initiative-table");
   const tbody = table!.querySelector("tbody");
   const rows = Array.from(tbody!.querySelectorAll("tr"));
 

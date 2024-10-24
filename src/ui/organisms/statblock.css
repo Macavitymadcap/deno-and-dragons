@@ -1,0 +1,23 @@
+article.statblock {
+  ul {
+    list-style-type: none;
+  }
+
+  thead th {
+    font-size: x-small;
+  }
+
+  td.mod-save {
+    text-align: center;
+  }
+
+  button.roller {
+    all: unset;
+    color: var(--link-colour);
+  }
+
+  button.roller:hover {
+    color: var(--link-hover-colour);
+    cursor: pointer;
+  }
+}
