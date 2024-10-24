@@ -5,11 +5,13 @@ const addFunctionToScript = async (
   name: string,
   destination: string,
 ) => {
-  const transpiledCode = (await transpile(source)).values().next().value!;
-  Deno.writeTextFileSync(destination, transpiledCode, { append: true });
+  const transpiledSource = await transpile(source);
+  const code = Array.from(transpiledSource.values()).join("\n");
+
+  Deno.writeTextFileSync(destination, code, { append: true });
   Deno.writeTextFileSync(
     destination,
-    `\nglobalThis.window.${name} = ${name};`,
+    `\nglobalThis.window.${name} = ${name};\n`,
     { append: true },
   );
 };
