@@ -1,11 +1,9 @@
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-family-sans);
   font-size: var(--font-size);
   line-height: 1.6;
   color: var(--text-colour);
   background-color: var(--secondary-colour);
-  /* margin: 0;
-  padding: 0; */
   max-width: 90%;
   margin: 0 auto;
   padding: 1rem;

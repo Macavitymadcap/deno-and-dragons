@@ -7,15 +7,15 @@
     &#10006;
   </button>
   <h2>Search</h2>
-  <input 
+  <input
     id="search-value"
     name="search-value"
-    type="hidden" 
+    type="hidden"
     hx-get="/search"
     hx-trigger="changed delay:500ms, search"
     hx-target="#search-output"
     hx-params="search-value"
-  >
+  />
   <input
     id="search-input"
     placeholder="Search"

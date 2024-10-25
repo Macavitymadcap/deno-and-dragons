@@ -1,4 +1,4 @@
-export { Dice } from "./dice.ts";
+export { Dice, roll } from "./dice.ts";
 export type {
   DiceRoll,
   ParsedDice,

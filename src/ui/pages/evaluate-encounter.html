@@ -11,7 +11,7 @@
           <input type="number" name="level-input" />
         </label>
         <button
-            _="on click
+          _="on click
                 set level to the (value of the previous <input/>)
                 if level is not empty
                     make a <span.chip/> called levelChip
@@ -30,7 +30,7 @@
           &#65291;
         </button>
       </span>
-      <output class="centred"></output>
+      <output id="party-output" class="centred"></output>
     </fieldset>
     <fieldset>
       <legend>
@@ -42,7 +42,7 @@
           <input type="number" name="xp-input" />
         </label>
         <button
-            _="on click
+          _="on click
                 set xp to the (value of the previous <input/>)
                 if xp is not empty
                     make a <span.chip/> called xpChip
@@ -61,9 +61,30 @@
           &#65291;
         </button>
       </span>
-      <output class="centred"></output>
+      <output id="opponents-output" class="centred"></output>
     </fieldset>
-    <button id="evaluate-button">Evaluate</button>
+    <button
+      id="evaluate-button"
+      _="on click
+          set party to the children of #party-output
+          set opponents to the children of #opponents-output
+          if party is not empty and opponents is not empty
+            set levels to []
+            repeat for member in party
+              get the (textContent of <span.chip-label/> in member) as an Int
+              append the result to levels
+            end
+            set xp to []
+            repeat for opponent in opponents
+              get the (textContent of <span.chip-label/> in opponent) as an Int
+              append the result to xp
+            end
+            call evaluateEncounter(levels, xp)
+            log the result
+          end"
+    >
+      Evaluate
+    </button>
   </div>
   <output id="evaluation"></output>
 </div>

@@ -193,12 +193,3 @@ Confederation.
 
 - Horse-headed humanoids that can run at incredible speeds
 - Known to lead travelers astray in the Thundering Plains
-
-Generate a DnD Fantasy Map of the Continent of Junderoth, which is rougly the
-size of South America contains these environemnts; The Emerald Canopy: a vast
-rainforest covering much of central Junderoth; The Misty Archipelago: a chain of
-volcanic islands off the western coast; The Sunspire Mountains: a towering
-mountain range in the north; The Thundering Plains: an expansive grasslands in
-the east; The Obsidian Valleys: a network of mountain valleys in the south; The
-Prismatic Reef: a massive, magical coral reef off the eastern coast and The
-Whispering Desert: a mysterious desert in the northwest.

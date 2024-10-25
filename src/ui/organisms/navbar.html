@@ -1,21 +1,46 @@
 <nav class="navbar">
-  <menu class="navbar-menu centred">
+  <menu class="navbar-menu centred" hx-boost="true">
     <li>
-      <a href="index.html" class="logo">&#8962;</a>
+      <a 
+        href="pages/info.html" 
+        class="logo"
+        hx-target="#content"
+        hx-swap="innerHTML"
+        hx-replace-url="false"
+      >
+        &#8962;
+      </a>
     </li>
     <li>
-      <button popovertarget="dice-roller" popovertargetaction="toggle" title="Dice Roller">
+      <button
+        popovertarget="dice-roller"
+        popovertargetaction="toggle"
+        title="Dice Roller"
+      >
         &#127922;
       </button>
     </li>
     <li>
-      <button popovertarget="search" popovertargetaction="toggle" title="Search Data">
+      <button
+        popovertarget="search"
+        popovertargetaction="toggle"
+        title="Search Data"
+      >
         &#x1F50D;
       </button>
     </li>
     <li>
       <a
-        hx-boost="true"
+        href="pages/junderoth-campaign.html"
+        hx-target="#content"
+        hx-swap="innerHTML"
+        hx-replace-url="false"
+      >
+        Junderoth Campaign
+      </a>
+    </li>
+    <li>
+      <a
         href="pages/inititiative-table.html"
         hx-target="#content"
         hx-swap="innerHTML"
@@ -24,7 +49,6 @@
     </li>
     <li>
       <a
-        hx-boost="true"
         href="pages/evaluate-encounter.html"
         hx-target="#content"
         hx-swap="innerHTML"

@@ -1,4 +1,3 @@
-// An encounter with a list of party levels and monster xp values.
 export type Encounter = {
   party: number[];
   opponents: number[];
@@ -11,10 +10,8 @@ const DIFFICULTY = {
   DEADLY: "Deadly",
 } as const;
 
-// The difficulty of an encounter.
 export type Difficulty = typeof DIFFICULTY[keyof typeof DIFFICULTY];
 
-// The level of a character.
 export type Level =
   | 1
   | 2
@@ -37,17 +34,14 @@ export type Level =
   | 19
   | 20;
 
-// The XP thresholds for each difficulty level for a character.
 export type XpThresholds = {
   [key in Difficulty]: number;
 };
 
-// The XP thresholds for each difficulty level for a character at each level.
 export type XPThresholdsByLevel = {
   [key in Level]: XpThresholds;
 };
 
-// The XP thresholds for each difficulty level for a character at each level.
 export const XP_THRESHOLDS_BY_LEVEL: XPThresholdsByLevel = {
   1: { Easy: 25, Medium: 50, Hard: 75, Deadly: 100 },
   2: { Easy: 50, Medium: 100, Hard: 150, Deadly: 200 },
@@ -71,7 +65,6 @@ export const XP_THRESHOLDS_BY_LEVEL: XPThresholdsByLevel = {
   20: { Easy: 2_800, Medium: 5_700, Hard: 8_500, Deadly: 12_700 },
 } as const;
 
-// The multiplier to apply to an encounter's total XP based on the number of monsters and the size of the party.
 export type EncounterMultiplier = {
   numberOfMonsters: number;
   fewerThanThree: number;
@@ -79,7 +72,6 @@ export type EncounterMultiplier = {
   sixOrMore: number;
 };
 
-// The multipliers for the number of monsters in an encounter base on party size.
 export const ENCOUNTER_MULTIPLIERS: EncounterMultiplier[] = [
   { numberOfMonsters: 1, fewerThanThree: 1.5, threeToFive: 1, sixOrMore: .5 },
   { numberOfMonsters: 2, fewerThanThree: 2, threeToFive: 1.5, sixOrMore: 1 },

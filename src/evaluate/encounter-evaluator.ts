@@ -91,3 +91,7 @@ export class EncounterEvaluator implements Evaluation {
     }
   }
 }
+
+export const evaluateEncounter = (levels: number[], xp: number[]): Evaluation => {
+  return new EncounterEvaluator({ party: levels, opponents: xp });
+}

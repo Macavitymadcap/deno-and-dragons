@@ -1,31 +1,47 @@
 import { transpile } from "jsr:@deno/emit";
 
-const addFunctionToScript = async (
+const addIndexToScript = async (
   source: string,
-  name: string,
   destination: string,
 ) => {
   const transpiledSource = await transpile(source);
-  const code = Array.from(transpiledSource.values()).join("\n");
+  const codeArray = Array.from(transpiledSource.values())
+  const noImportExport = []
+
+  for (const element of codeArray) {
+    if (element.startsWith("import {") || element.startsWith("export {")) {
+      const lines = element.split("\n").map(line => {
+        if (!line.startsWith("import {") && !line.startsWith("export {")) {
+          return line;
+        }
+      }).join("\n");
+      noImportExport.push(lines);
+    } else {
+      noImportExport.push(element);
+    }
+  }
+
+  const code = [... new Set(noImportExport)].join("\n");
 
   Deno.writeTextFileSync(destination, code, { append: true });
-  Deno.writeTextFileSync(
-    destination,
-    `\nglobalThis.window.${name} = ${name};\n`,
-    { append: true },
-  );
 };
 
 const BUILD_SCRIPT = "build/static/script.js";
 
 const functions = [
-  {
-    source: "src/inititiative/initiative-table.ts",
-    name: "sortInitiativeTable",
-  },
-  { source: "src/dice/dice.ts", name: "roll" },
+  "roll",
+  "sortInitiativeTable",
+  "evaluateEncounter"
 ];
 
-functions.forEach(async ({ source, name }) => {
-  await addFunctionToScript(source, name, BUILD_SCRIPT);
+const source = "src/index.ts";
+
+await addIndexToScript(source, BUILD_SCRIPT);
+
+functions.forEach((name ) => {
+  Deno.writeTextFileSync(
+    BUILD_SCRIPT,
+    `\nglobalThis.window.${name} = ${name};`,
+    { append: true },
+  );
 });
