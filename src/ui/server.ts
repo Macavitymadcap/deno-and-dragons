@@ -20,7 +20,7 @@ Deno.serve(async (req) => {
 
   if (url.pathname === "/search") {
     const params = new URLSearchParams(url.search);
-    const query = params.get("search-input");
+    const query = params.get("search-value");
 
     if (query?.endsWith(".html")) {
       try {

@@ -20,6 +20,10 @@
     width: 100%;
   }
 
+  input[type="search"].found {
+    color: transparent;
+  }
+
   /* Glass highlight effect */
   &::before {
     content: "";

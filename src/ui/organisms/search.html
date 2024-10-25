@@ -7,21 +7,31 @@
     &#10006;
   </button>
   <h2>Search</h2>
+  <input 
+    id="search-value"
+    name="search-value"
+    type="hidden" 
+    hx-get="/search"
+    hx-trigger="changed delay:500ms, search"
+    hx-target="#search-output"
+    hx-params="search-value"
+  >
   <input
     id="search-input"
     placeholder="Search"
     type="search"
     name="search-input"
     list="pages"
-    hx-get="/search"
-    hx-trigger="input changed delay:500ms, search"
-    hx-target="#search-output"
-    hx-params="search-input"
+    _="on input
+          set the value of #search-value to my value 
+          send changed to #search-value
+          set my value to my value.replace('organisms/', '').replace('.html', '').replace('-', ' ')
+        end"
   />
 </div>
 <datalist id="pages">
-  <option value="organisms/twig-blight.html" label="Twig Blight"></option>
-  <option value="organisms/needle-blight.html" label="Needle Blight"></option>
-  <option value="organisms/vine-blight.html" label="Vine Blight"></option>
+  <option value="organisms/twig-blight.html" label="twig blight"></option>
+  <option value="organisms/needle-blight.html" label="needle blight"></option>
+  <option value="organisms/vine-blight.html" label="vine blight"></option>
 </datalist>
 <output id="search-output"></output>

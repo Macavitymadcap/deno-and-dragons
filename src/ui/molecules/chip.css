@@ -9,6 +9,8 @@ span.chip {
   transition: all var(--transition-fast);
   box-shadow: var(--surface-shadow);
   width: min-content;
+  align-items: center;
+  justify-content: center;
 
   span.chip-label {
     padding-right: 6px;

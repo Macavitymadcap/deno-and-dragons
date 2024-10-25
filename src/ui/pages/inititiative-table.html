@@ -32,6 +32,7 @@
             toggle .current-turn on it
             set the value of #current-turn to the value of the <input.name-input/> in it
           end"
+      title="Next Turn"
     >
       &#8649;
     </button>
@@ -39,11 +40,11 @@
   <table class="initiative-table">
     <thead>
       <tr>
-        <th class="initiative-header" title="Sort By Initiative">
+        <th class="initiative-header">
           <span>
             Initiative
           </span>
-          <button _="on click call sortInitiativeTable()">
+          <button _="on click call sortInitiativeTable()" title="Sort By Initiative">
             &#8645;
           </button>
         </th>
