@@ -14,7 +14,7 @@ for dir in "${directories[@]}"; do
     fi
 done
 
-for file in src/ui/organisms/statblocks/*.html; do
+for file in src/ui/organisms/*/*.html; do
     cp "$file" build/organisms
 done
 

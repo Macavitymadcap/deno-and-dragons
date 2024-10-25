@@ -6,6 +6,7 @@ tr.combatant {
   td.conditions-cell {
     display: grid;
     grid-template-columns: 1fr 0.75fr;
+    align-items: center;
 
     output {
       display: flex;

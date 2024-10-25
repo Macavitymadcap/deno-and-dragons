@@ -1,9 +1,15 @@
-div.inputs {
-  flex-direction: row;
-  padding: var(--spacing-md);
+div.evaluator {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 0.125fr 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-items: center;
+  padding: var(--spacing-xl);
 
   fieldset {
-    width: 25vw;
+    height: 20rem;
+    width: 25rem;
+    overflow-y: scroll;
   }
 
   fieldset span {
@@ -31,5 +37,13 @@ div.inputs {
     padding: var(--spacing-md);
     margin: var(--spacing-sm);
     border-radius: var(--text-button-radius);
+  }
+
+  output#evaluation {
+    font-size: 1.2rem;
+
+    dd {
+      margin-bottom: var(--spacing-sm);
+    }
   }
 }

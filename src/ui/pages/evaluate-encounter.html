@@ -1,6 +1,6 @@
 <div class="card">
   <h2>Encounter Evaluator</h2>
-  <div class="inputs centred">
+  <div class="evaluator">
     <fieldset>
       <legend>
         Party
@@ -22,7 +22,7 @@
                     make a <button.destructive/> called deleteLevelButton
                     set deleteLevelButton's innerHTML to '&#10006;' 
                     set deleteLevelButton's @_ to 'on click remove closest <span.chip/>'
-                    set deleteLevelButton's @title to 'Remove Condition'
+                    set deleteLevelButton's @title to 'Remove Party Member'
                     put deleteLevelButton at the end of levelChip
                     put levelChip at the end of the next <output/>
                 end"
@@ -53,7 +53,7 @@
                     make a <button.destructive/> called deletexpButton
                     set deletexpButton's innerHTML to '&#10006;' 
                     set deletexpButton's @_ to 'on click remove closest <span.chip/>'
-                    set deletexpButton's @title to 'Remove Condition'
+                    set deletexpButton's @title to 'Remove Opponent'
                     put deletexpButton at the end of xpChip
                     put xpChip at the end of the next <output/>
                 end"
@@ -74,17 +74,43 @@
               get the (textContent of <span.chip-label/> in member) as an Int
               append the result to levels
             end
+
             set xp to []
             repeat for opponent in opponents
               get the (textContent of <span.chip-label/> in opponent) as an Int
               append the result to xp
             end
+
             call evaluateEncounter(levels, xp)
-            log the result
+            set evaluation to the result
+            make a <dl/> called evaluationDescription
+
+            make a <dt/> called difficultyTerm
+            set it's textContent to 'Difficulty'
+            put it at the end of evaluationDescription
+            make a <dd/> called difficultyDescription
+            set it's textContent to evaluation.difficulty
+            put it at the end of evaluationDescription
+
+            make a <dt/> called actualXpTerm
+            set it's textContent to 'Actual XP'
+            put it at the end of evaluationDescription
+            make a <dd/> called actualXpDescription
+            set it's textContent to evaluation.actualXp
+            put it at the end of evaluationDescription
+
+            make a <dt/> called adjustedXpTerm
+            set it's textContent to 'Adjusted XP'
+            put it at the end of evaluationDescription
+            make a <dd/> called adjustedXpDescription
+            set it's textContent to evaluation.adjustedXp
+            put it at the end of evaluationDescription
+
+            put evaluationDescription into #evaluation
           end"
     >
       Evaluate
     </button>
+    <output id="evaluation"></output>
   </div>
-  <output id="evaluation"></output>
 </div>

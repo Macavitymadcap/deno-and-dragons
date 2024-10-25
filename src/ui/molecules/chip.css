@@ -32,6 +32,9 @@ span.chip {
 
   output {
     font-weight: 600;
+    font-size: 1.2rem;
+    margin-left: var(--spacing-sm);
+    margin-right: var(--spacing-sm);
     color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));
   }
 }

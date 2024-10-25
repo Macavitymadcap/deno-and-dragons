@@ -1,1 +1,1 @@
-export { sortInitiativeTable } from "./initiative-table.ts"
+export { sortInitiativeTable } from "./initiative-table.ts";

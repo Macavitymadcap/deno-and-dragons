@@ -5,12 +5,12 @@ const addIndexToScript = async (
   destination: string,
 ) => {
   const transpiledSource = await transpile(source);
-  const codeArray = Array.from(transpiledSource.values())
-  const noImportExport = []
+  const codeArray = Array.from(transpiledSource.values());
+  const noImportExport = [];
 
   for (const element of codeArray) {
     if (element.startsWith("import {") || element.startsWith("export {")) {
-      const lines = element.split("\n").map(line => {
+      const lines = element.split("\n").map((line) => {
         if (!line.startsWith("import {") && !line.startsWith("export {")) {
           return line;
         }
@@ -21,7 +21,7 @@ const addIndexToScript = async (
     }
   }
 
-  const code = [... new Set(noImportExport)].join("\n");
+  const code = [...new Set(noImportExport)].join("\n");
 
   Deno.writeTextFileSync(destination, code, { append: true });
 };
@@ -31,14 +31,14 @@ const BUILD_SCRIPT = "build/static/script.js";
 const functions = [
   "roll",
   "sortInitiativeTable",
-  "evaluateEncounter"
+  "evaluateEncounter",
 ];
 
 const source = "src/index.ts";
 
 await addIndexToScript(source, BUILD_SCRIPT);
 
-functions.forEach((name ) => {
+functions.forEach((name) => {
   Deno.writeTextFileSync(
     BUILD_SCRIPT,
     `\nglobalThis.window.${name} = ${name};`,
