@@ -6,7 +6,7 @@
     "compile:dice": "deno compile --output bin/dice src/dice/dice.cli.ts",
     "transpile:ui": "deno run --allow-read --allow-env --allow-write scripts/build-js.ts",
     "build:ui": "./scripts/build-css.sh && ./scripts/build-html.sh && deno task transpile:ui",
-    "serve:dev": "deno run --allow-read=. --allow-net src/ui/server.ts",
+    "serve:dev": "deno run --allow-read=. --allow-net server.ts",
     "refresh:dev": "deno task clean && deno task build:ui && deno task serve:dev",
     "clean": "rm -rf build"
   },
