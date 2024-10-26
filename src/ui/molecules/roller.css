@@ -9,7 +9,7 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   color: var(--font-color);
   width: 25vw;
-  height: 15vh;
+  height: 18vh;
   animation: popover-slide 0.2s ease-out;
 
   /* Glass highlight effect */
@@ -38,8 +38,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    padding-bottom: 1rem;
 
     button {
       max-width: 1.2rem;
@@ -47,6 +46,8 @@
     }
 
     label {
+      font-size: .8rem;
+      text-align: center;
       padding-right: 0.25rem;
     }
 
@@ -60,7 +61,7 @@
   }
 
   label {
-    font-size: large;
+    font-size: 1.5rem;
   }
 
   output {
@@ -80,7 +81,6 @@
     span.roll {
       span.total {
         padding-right: 0.25rem;
-        font-size: large;
         font-weight: bold;
       }
     }

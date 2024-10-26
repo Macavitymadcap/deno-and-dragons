@@ -30,6 +30,8 @@ for dir in "${directories[@]}"; do
     fi
 done
 
+cp -r src/ui/images/ build/images
+
 append_file "src/atoms/media.css"
 
 echo "CSS compilation complete."
