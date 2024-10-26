@@ -9,7 +9,7 @@
   border: none;
   width: 35vw;
   height: 70vh;
-  position: absolute;
+  position: fixed;
   inset: unset;
   right: 2.5em;
   bottom: 2.5em;
