@@ -25,5 +25,6 @@ deno install
   executable.
 - `deno task build:ui`- Populate the build dir with compile html and css.
 - `deno task serve:dev` - Serve the buld dir on a dev server.
+- `deno task refresh:dev` Run theclean, build and serve scripts for dev.
 - `deno task clean` - Remove the build dir.
 - `deno test` - Run the tests.
