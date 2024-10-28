@@ -1,49 +1,53 @@
 div.evaluator {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) 0.125fr 1fr;
-  gap: var(--spacing-md);
-  align-items: center;
-  justify-items: center;
-  padding: var(--spacing-xl);
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
 
-  fieldset {
-    height: 20rem;
-    width: 25rem;
-    overflow-y: scroll;
-  }
-
-  fieldset span {
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
+  div.combatant-stats {
+    columns: 16rem 2;
     align-items: center;
+    justify-items: center;
 
-    input {
-      margin: var(--spacing-md);
-      width: 5rem;
+    fieldset {
+      height: 15rem;
+      width: 15rem;
+      overflow-y: scroll;
+    }
+
+    fieldset span {
+      display: flex;
+      flex-direction: row;
+      justify-content: baseline;
+      align-items: center;
+
+      input {
+        margin: var(--spacing-md);
+        width: 5rem;
+      }
+    }
+
+    fieldset output {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
   }
+  div.evaluation {
+    button#evaluate-button {
+      height: min-content;
+      width: fit-content;
+      font-size: large;
+      padding: var(--spacing-md);
+      margin: var(--spacing-sm);
+      border-radius: var(--text-button-radius);
+    }
 
-  fieldset output {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
+    output#evaluation {
+      font-size: 1.2rem;
 
-  button#evaluate-button {
-    height: min-content;
-    width: fit-content;
-    font-size: large;
-    padding: var(--spacing-md);
-    margin: var(--spacing-sm);
-    border-radius: var(--text-button-radius);
-  }
-
-  output#evaluation {
-    font-size: 1.2rem;
-
-    dd {
-      margin-bottom: var(--spacing-sm);
+      dd {
+        margin-bottom: var(--spacing-sm);
+      }
     }
   }
 }

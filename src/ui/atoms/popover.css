@@ -46,12 +46,3 @@
     transform: translateY(0);
   }
 }
-
-/* Enhance form elements inside popover for better contrast */
-:popover-open input:focus,
-:popover-open button:focus {
-  background: rgba(85, 85, 85, 0.8);
-  border-color: var(--primary-colour);
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
-}

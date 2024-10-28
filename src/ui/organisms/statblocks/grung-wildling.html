@@ -1,21 +1,21 @@
 <article class="statblock">
-  <h2>Grung</h2>
+  <h2>Grung Wildling</h2>
   <hr />
   <ul>
     <li>
       <i>Small Humanoid, Any Alignment</i>
     </li>
     <li>
-      <b>AC</b> 12
+      <b>AC</b> 16 (natural armour)
     </li>
     <li>
-      <b>HP</b> 11 (<button
+      <b>HP</b> 27 (<button
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
-        _="on click set #dice-input's value to '2d6+4' send click to the last <button/> in #dice-roller"
+        _="on click set #dice-input's value to '5d6+10' send click to the last <button/> in #dice-roller"
       >
-        2d6 + 4
+        5d10 + 10
       </button>)
     </li>
     <li>
@@ -68,15 +68,15 @@
             <td>
               <b>DEX</b>
             </td>
-            <td>14</td>
+            <td>16</td>
             <td class="mod-save">
               <button
                 class="roller"
                 popovertarget="dice-roller"
                 popoveraction="show"
-                _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
+                _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
               >
-                +2
+                +3
               </button>
             </td>
             <td class="mod-save">
@@ -84,9 +84,9 @@
                 class="roller"
                 popovertarget="dice-roller"
                 popoveraction="show"
-                _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
+                _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
               >
-                +4
+                +5
               </button>
             </td>
             <td>
@@ -142,15 +142,15 @@
             <td>
               <b>WIS</b>
             </td>
-            <td>11</td>
+            <td>15</td>
             <td class="mod-save">
               <button
                 class="roller"
                 popovertarget="dice-roller"
                 popoveraction="show"
-                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
               >
-                +0
+                +2
               </button>
             </td>
             <td class="mod-save">
@@ -158,9 +158,9 @@
                 class="roller"
                 popovertarget="dice-roller"
                 popoveraction="show"
-                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
               >
-                +0
+                +2
               </button>
             </td>
             <td>
@@ -203,23 +203,23 @@
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
-        _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
+        _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
       >
-        +2
+        +4
       </button>, Stealth <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
+      >
+        +5
+      </button>, Survival <button
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
         _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
       >
         +4
-      </button>, Survival <button
-        class="roller"
-        popovertarget="dice-roller"
-        popoveraction="show"
-        _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
-      >
-        +2
       </button>
     </li>
     <li>
@@ -232,7 +232,7 @@
       <b>Languages</b> Grung
     </li>
     <li>
-      <b>CR</b> &#188; (50 XP)
+      <b>CR</b> 1 (200 XP)
     </li>
   </ul>
   <h3>TRAITS</h3>
@@ -269,18 +269,19 @@
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
-        _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
+        _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
       >
-        +4
+        +5
       </button> to hit, reach 5 ft. or range 20/60 ft., one target. <i>Hit:</i>
-      4 (<button
+      5 (<button
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
-        _="on click set #dice-input's value to 'd4+2' send click to the last <button/> in #dice-roller"
+        _="on click set #dice-input's value to 'd4+3' send click to the last <button/> in #dice-roller"
       >
         1d4 + 2
-      </button>) piercing damage plus 5 (<button
+      </button>) piercing damage plus 5 (
+      <button
         class="roller"
         popovertarget="dice-roller"
         popoveraction="show"
@@ -288,6 +289,47 @@
       >
         2d4
       </button>) poison damage.
+    </li>
+    <li>
+      <i><b>Shortbow.</b> Ranged Weapon Attack:</i>
+      <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
+      >
+        +5
+      </button> to hit, range 80/320 ft., one target. Hit: 6 (<button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd6+3' send click to the last <button/> in #dice-roller"
+      >
+        1d6 + 3
+      </button>) piercing damage plus 5 (2d4
+      <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to '2d4' send click to the last <button/> in #dice-roller"
+      >
+        2d4
+      </button>) poison damage.
+    </li>
+    <li>
+      <i><b>Spellcasting.</b></i> The grung casts one of the following spells, using Wisdom
+      as the spellcasting ability (spell save DC 12):
+      <ul>
+        <li>
+          At will: <i>druidcraft</i>
+        </li>
+        <li>
+          3/day each: <i>cure wounds, spike growth</i>
+        </li>
+        <li>
+          2/day: <i>plant growth</i>
+        </li>
+      </ul>
     </li>
   </ul>
   <details class="variant" open>
