@@ -4,7 +4,7 @@ table {
 
   th {
     background: var(--secondary-gradient);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-sm);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.875rem;
@@ -14,7 +14,7 @@ table {
   }
 
   td {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-sm);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color var(--transition-fast);
   }

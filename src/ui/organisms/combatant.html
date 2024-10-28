@@ -6,13 +6,13 @@
     <input type="text" class="name-input" />
   </td>
   <td>
-    <input type="number" class="armour-class-input" />
+    <input type="number" />
   </td>
   <td>
-    <input type="number" class="hit-points-input" />
+    <input type="number" />
   </td>
   <td>
-    <input type="number" class="temporary-hit-points-input" />
+    <input type="number" />
   </td>
   <td class="conditions-cell">
     <output></output>
@@ -50,7 +50,7 @@
                     set deleteConditionButton's @_ to 'on click remove closest <span.chip/>'
                     set deleteConditionButton's @title to 'Remove Condition'
                     put deleteConditionButton at the end of conditionChip
-                    put conditionChip at the end of the previous <output/>
+                    put conditionChip at the end of the first <output/> in the closest <td.conditions-cell/>
                 end"
         title="Add Condition"
       >

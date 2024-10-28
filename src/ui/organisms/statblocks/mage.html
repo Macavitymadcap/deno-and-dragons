@@ -1,268 +1,277 @@
 <article class="statblock">
-    <h2>Mage</h2>
-    <hr />
-    <ul>
-      <li>
-        <i>Medium humanoid (any race), any alignment</i>
-      </li>
-      <li>
-        <b>AC</b> 12 (15 with mage armour)
-      </li>
-      <li>
-        <b>HP</b> 40 (<button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to '9d8' send click to the last <button/> in #dice-roller"
-        >
-          9d8
-        </button>)
-      </li>
-      <li>
-        <b>Speed</b> 30 ft.
-      </li>
-      <li>
-        <table class="abilities">
-          <thead>
-            <tr>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <b>STR</b>
-              </td>
-              <td>9</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-1' send click to the last <button/> in #dice-roller"
-                >
-                  -1
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-1' send click to the last <button/> in #dice-roller"
-                >
-                  -1
-                </button>
-              </td>
-              <td>
-                <b>DEX</b>
-              </td>
-              <td>14</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
-                >
-                  +2
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
-                >
-                  +2
-                </button>
-              </td>
-              <td>
-                <b>CON</b>
-              </td>
-              <td>11</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
-                >
-                  +0
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
-                >
-                  +0
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <b>INT</b>
-              </td>
-              <td>17</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
-                >
-                  +3
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
-                >
-                  +6
-                </button>
-              </td>
-              <td>
-                <b>WIS</b>
-              </td>
-              <td>12</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
-                >
-                  +1
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
-                >
-                  +4
-                </button>
-              </td>
-              <td>
-                <b>CHA</b>
-              </td>
-              <td>11</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
-                >
-                  +0
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
-                >
-                  +0
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <b>Saving Throws</b> Int +6, Wis +4
-      </li>
-      <li>
-        <b>Skills</b> Arcana <button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
-        >
-          +6
-        </button>, History <button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
-        >
-          +6
-        </button>
-      </li>
-      <li>
-        <b>Senses</b> passive Perception 11
-      </li>
-      <li>
-        <b>Languages</b> any four languages
-      </li>
-      <li>
-        <b>CR</b> 6 (2,300 XP)
-      </li>
-    </ul>
-    <h3>TRAITS</h3>
-    <hr />
-    <ul>
-      <li>
-        <i><b>Spellcasting.</b></i> The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, <button
-            class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
-        >
-            +6
-        </button> to hit with spell attacks). The mage has the following wizard spells prepared:
-        <ul>
-            <li>Cantrips (at will): <i>fire bolt, light, mage hand, prestidigitation</i></li>
-            <li>1st level (4 slots): <i>detect magic, mage armour, magic missile, shield</i></li>
-            <li>2nd level (3 slots): <i>misty step, suggestion</i></li>
-            <li>3rd level (3 slots): <i>counterspell, fireball, fly</i></li>
-            <li>4th level (3 slots): <i>greater invisibility, ice storm</i></li>
-            <li>5th level (1 slot): <i>cone of cold</i></li>
-        </ul>
-      </li>
-    </ul>
-    <h3>ACTIONS</h3>
-    <hr />
-    <ul>
-      <li>
-        <i><b>Dagger.</b> Melee or Ranged Weapon Attack:</i>
-        <button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
-        >
-          +5
-        </button> to hit, reach 5 ft. or range 20/60 ft., one target. <i>Hit:</i> 4 (<button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to '1d4+2' send click to the last <button/> in #dice-roller"
-        >
-          1d4+2
-        </button>) piercing damage.
-      </li>
-    </ul>
+  <h2>Mage</h2>
+  <hr />
+  <ul>
+    <li>
+      <i>Medium humanoid (any race), any alignment</i>
+    </li>
+    <li>
+      <b>AC</b> 12 (15 with mage armour)
+    </li>
+    <li>
+      <b>HP</b> 40 (<button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to '9d8' send click to the last <button/> in #dice-roller"
+      >
+        9d8
+      </button>)
+    </li>
+    <li>
+      <b>Speed</b> 30 ft.
+    </li>
+    <li>
+      <table class="abilities">
+        <thead>
+          <tr>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>STR</b>
+            </td>
+            <td>9</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-1' send click to the last <button/> in #dice-roller"
+              >
+                -1
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-1' send click to the last <button/> in #dice-roller"
+              >
+                -1
+              </button>
+            </td>
+            <td>
+              <b>DEX</b>
+            </td>
+            <td>14</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
+              >
+                +2
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+2' send click to the last <button/> in #dice-roller"
+              >
+                +2
+              </button>
+            </td>
+            <td>
+              <b>CON</b>
+            </td>
+            <td>11</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+              >
+                +0
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+              >
+                +0
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>INT</b>
+            </td>
+            <td>17</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
+              >
+                +3
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
+              >
+                +6
+              </button>
+            </td>
+            <td>
+              <b>WIS</b>
+            </td>
+            <td>12</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
+              >
+                +1
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+4' send click to the last <button/> in #dice-roller"
+              >
+                +4
+              </button>
+            </td>
+            <td>
+              <b>CHA</b>
+            </td>
+            <td>11</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+              >
+                +0
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+              >
+                +0
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <b>Saving Throws</b> Int +6, Wis +4
+    </li>
+    <li>
+      <b>Skills</b> Arcana <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
+      >
+        +6
+      </button>, History <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
+      >
+        +6
+      </button>
+    </li>
+    <li>
+      <b>Senses</b> passive Perception 11
+    </li>
+    <li>
+      <b>Languages</b> any four languages
+    </li>
+    <li>
+      <b>CR</b> 6 (2,300 XP)
+    </li>
+  </ul>
+  <h3>TRAITS</h3>
+  <hr />
+  <ul>
+    <li>
+      <i><b>Spellcasting.</b></i> The mage is a 9th-level spellcaster. Its
+      spellcasting ability is Intelligence (spell save DC 14, <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+6' send click to the last <button/> in #dice-roller"
+      >
+        +6
+      </button> to hit with spell attacks). The mage has the following wizard
+      spells prepared:
+      <ul>
+        <li>
+          Cantrips (at will): <i>fire bolt, light, mage hand,
+            prestidigitation</i>
+        </li>
+        <li>
+          1st level (4 slots): <i>detect magic, mage armour, magic missile,
+            shield</i>
+        </li>
+        <li>2nd level (3 slots): <i>misty step, suggestion</i></li>
+        <li>3rd level (3 slots): <i>counterspell, fireball, fly</i></li>
+        <li>4th level (3 slots): <i>greater invisibility, ice storm</i></li>
+        <li>5th level (1 slot): <i>cone of cold</i></li>
+      </ul>
+    </li>
+  </ul>
+  <h3>ACTIONS</h3>
+  <hr />
+  <ul>
+    <li>
+      <i><b>Dagger.</b> Melee or Ranged Weapon Attack:</i>
+      <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+5' send click to the last <button/> in #dice-roller"
+      >
+        +5
+      </button> to hit, reach 5 ft. or range 20/60 ft., one target. <i>Hit:</i>
+      4 (<button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to '1d4+2' send click to the last <button/> in #dice-roller"
+      >
+        1d4+2
+      </button>) piercing damage.
+    </li>
+  </ul>
 </article>

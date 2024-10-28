@@ -1,249 +1,252 @@
 <article class="statblock">
-    <h2>Zombie</h2>
-    <hr />
-    <ul>
-      <li>
-        <i>Medium undead, neutral evil</i>
-      </li>
-      <li>
-        <b>AC</b> 8
-      </li>
-      <li>
-        <b>HP</b> 22 (<button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to '3d8+9' send click to the last <button/> in #dice-roller"
-        >
-          3d8+9
-        </button>)
-      </li>
-      <li>
-        <b>Speed</b> 20 ft.
-      </li>
-      <li>
-        <table class="abilities">
-          <thead>
-            <tr>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-              <td></td>
-              <td></td>
-              <th>MOD</th>
-              <th>SAVE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <b>STR</b>
-              </td>
-              <td>13</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
-                >
-                  +1
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
-                >
-                  +1
-                </button>
-              </td>
-              <td>
-                <b>DEX</b>
-              </td>
-              <td>6</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
-                >
-                  -2
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
-                >
-                  -2
-                </button>
-              </td>
-              <td>
-                <b>CON</b>
-              </td>
-              <td>16</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
-                >
-                  +3
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
-                >
-                  +3
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <b>INT</b>
-              </td>
-              <td>3</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-4' send click to the last <button/> in #dice-roller"
-                >
-                  -4
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-4' send click to the last <button/> in #dice-roller"
-                >
-                  -4
-                </button>
-              </td>
-              <td>
-                <b>WIS</b>
-              </td>
-              <td>6</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
-                >
-                  -2
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
-                >
-                  -2
-                </button>
-              </td>
-              <td>
-                <b>CHA</b>
-              </td>
-              <td>5</td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-3' send click to the last <button/> in #dice-roller"
-                >
-                  -3
-                </button>
-              </td>
-              <td class="mod-save">
-                <button
-                  class="roller"
-                  popovertarget="dice-roller"
-                  popoveraction="show"
-                  _="on click set #dice-input's value to 'd20-3' send click to the last <button/> in #dice-roller"
-                >
-                  -3
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <b>Saving Throws</b> Wis <button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
-        >
-          +0
-        </button>
-      </li>
-      <li>
-        <b>Damage Immunities</b> poison
-      </li>
-      <li>
-        <b>Condition Immunities</b> poisoned
-      </li>
-      <li>
-        <b>Senses</b> darkvision 60 ft., passive Perception 8
-      </li>
-      <li>
-        <b>Languages</b> understands the languages it knew in life but can't speak
-      </li>
-      <li>
-        <b>CR</b> &#188; (50 XP)
-      </li>
-    </ul>
-    <h3>TRAITS</h3>
-    <hr />
-    <ul>
-      <li>
-        <i><b>Undead Fortitude.</b></i> If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.
-      </li>
-    </ul>
-    <h3>ACTIONS</h3>
-    <hr />
-    <ul>
-      <li>
-        <i><b>Slam.</b> Melee Weapon Attack:</i>
-        <button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
-        >
-          +3
-        </button> to hit, reach 5 ft., one target. <i>Hit:</i> 4 (<button
-          class="roller"
-          popovertarget="dice-roller"
-          popoveraction="show"
-          _="on click set #dice-input's value to '1d6+1' send click to the last <button/> in #dice-roller"
-        >
-          1d6+1
-        </button>) bludgeoning damage.
-      </li>
-    </ul>
+  <h2>Zombie</h2>
+  <hr />
+  <ul>
+    <li>
+      <i>Medium undead, neutral evil</i>
+    </li>
+    <li>
+      <b>AC</b> 8
+    </li>
+    <li>
+      <b>HP</b> 22 (<button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to '3d8+9' send click to the last <button/> in #dice-roller"
+      >
+        3d8+9
+      </button>)
+    </li>
+    <li>
+      <b>Speed</b> 20 ft.
+    </li>
+    <li>
+      <table class="abilities">
+        <thead>
+          <tr>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+            <td></td>
+            <td></td>
+            <th>MOD</th>
+            <th>SAVE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>STR</b>
+            </td>
+            <td>13</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
+              >
+                +1
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+1' send click to the last <button/> in #dice-roller"
+              >
+                +1
+              </button>
+            </td>
+            <td>
+              <b>DEX</b>
+            </td>
+            <td>6</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
+              >
+                -2
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
+              >
+                -2
+              </button>
+            </td>
+            <td>
+              <b>CON</b>
+            </td>
+            <td>16</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
+              >
+                +3
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
+              >
+                +3
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>INT</b>
+            </td>
+            <td>3</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-4' send click to the last <button/> in #dice-roller"
+              >
+                -4
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-4' send click to the last <button/> in #dice-roller"
+              >
+                -4
+              </button>
+            </td>
+            <td>
+              <b>WIS</b>
+            </td>
+            <td>6</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
+              >
+                -2
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-2' send click to the last <button/> in #dice-roller"
+              >
+                -2
+              </button>
+            </td>
+            <td>
+              <b>CHA</b>
+            </td>
+            <td>5</td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-3' send click to the last <button/> in #dice-roller"
+              >
+                -3
+              </button>
+            </td>
+            <td class="mod-save">
+              <button
+                class="roller"
+                popovertarget="dice-roller"
+                popoveraction="show"
+                _="on click set #dice-input's value to 'd20-3' send click to the last <button/> in #dice-roller"
+              >
+                -3
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <b>Saving Throws</b> Wis <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+      >
+        +0
+      </button>
+    </li>
+    <li>
+      <b>Damage Immunities</b> poison
+    </li>
+    <li>
+      <b>Condition Immunities</b> poisoned
+    </li>
+    <li>
+      <b>Senses</b> darkvision 60 ft., passive Perception 8
+    </li>
+    <li>
+      <b>Languages</b> understands the languages it knew in life but can't speak
+    </li>
+    <li>
+      <b>CR</b> &#188; (50 XP)
+    </li>
+  </ul>
+  <h3>TRAITS</h3>
+  <hr />
+  <ul>
+    <li>
+      <i><b>Undead Fortitude.</b></i> If damage reduces the zombie to 0 hit
+      points, it must make a Constitution saving throw with a DC of 5 + the
+      damage taken, unless the damage is radiant or from a critical hit. On a
+      success, the zombie drops to 1 hit point instead.
+    </li>
+  </ul>
+  <h3>ACTIONS</h3>
+  <hr />
+  <ul>
+    <li>
+      <i><b>Slam.</b> Melee Weapon Attack:</i>
+      <button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to 'd20+3' send click to the last <button/> in #dice-roller"
+      >
+        +3
+      </button> to hit, reach 5 ft., one target. <i>Hit:</i> 4 (<button
+        class="roller"
+        popovertarget="dice-roller"
+        popoveraction="show"
+        _="on click set #dice-input's value to '1d6+1' send click to the last <button/> in #dice-roller"
+      >
+        1d6+1
+      </button>) bludgeoning damage.
+    </li>
+  </ul>
 </article>

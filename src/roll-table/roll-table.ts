@@ -8,7 +8,7 @@ export const rollTable = <T>(table: RollTable<T>): T | undefined => {
       ? row.range === result
       : row.range.lower <= result && row.range.upper >= result
   );
-  
+
   if (!row) {
     console.error(`No row found for result ${result}`);
   } else {

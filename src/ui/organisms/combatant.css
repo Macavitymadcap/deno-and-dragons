@@ -1,6 +1,8 @@
 tr.combatant {
-  input {
-    width: 80%;
+  td {
+    input.name-input {
+      width: 7em;
+    }
   }
 
   td.conditions-cell {
@@ -18,6 +20,7 @@ tr.combatant {
 
     span.condition-select {
       display: grid;
+      align-items: center;
       grid-template-columns: 1.25fr 0.25fr;
 
       button {

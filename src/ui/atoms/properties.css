@@ -8,7 +8,7 @@
   --link-colour: #2196f3;
   --link-hover-colour: #1e88e5;
   --card-background: rgba(85, 85, 85, 0.6);
-  --card-radius: 0.5rem;
+  --border-radius: 0.5rem;
   --card-border: #333;
   --card-shadow: rgba(0, 0, 0, 0.5);
   --button-background: #2196f3;
@@ -19,11 +19,12 @@
   --destructive-action-hover-background: #db1b1b8e;
   --input-background: rgba(85, 85, 85, 0.3);
   --input-border: #444;
+  --input-hover-colour: rgba(33, 150, 243, 0.5);
   --input-text-colour: #fff;
   --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
   /* Size Properties*/
-  --button-minimum-diameter: 2.5em;
+  --button-minimum-diameter: 2em;
 
   /* Typography Properties */
   --font-family-serif: "Almendra", serif;
