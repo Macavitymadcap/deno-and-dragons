@@ -25,13 +25,36 @@
     _="on input
           set the value of #search-value to my value 
           send changed to #search-value
-          set my value to my value.replace('organisms/', '').replace('.html', '').replace('-', ' ')
+          set my value to my value.replace('organisms/', '').replace('.html', '').replaceAll('-', ' ')
         end"
   />
 </div>
 <datalist id="pages">
+  <option value="organisms/ancient-gold-dragon.html" label="ancient gold dragon"></option>
+  <option value="organisms/ancient-red-dragon.html" label="ancient red dragon"></option>
+  <option value="organisms/archmage.html" label="archmage">
+  <option value="organisms/bandit.html" label="bandit"></option>
   <option value="organisms/twig-blight.html" label="twig blight"></option>
   <option value="organisms/needle-blight.html" label="needle blight"></option>
   <option value="organisms/vine-blight.html" label="vine blight"></option>
+  <option value="organisms/djinni.html" label="djinni"></option>
+  <option value="organisms/dryad.html" label="dryad"></option>
+  <option value="organisms/giant-rat.html" label="giant rat"></option>
+  <option value="organisms/goblin.html" label="goblin"></option>
+  <option value="organisms/goblin-boss.html" label="goblin boss"></option>
+  <option value="organisms/hobgoblin.html" label="hobgoblin"></option>
+  <option value="organisms/hobgoblin-captain.html" label="hobgoblin captain">
+  </option>
+  <option value="organisms/hobgoblin-warlord.html" label="hobgoblin warlord">
+  </option>
+  <option value="organisms/kraken.html" label="kraken"></option>
+  <option value="organisms/lich.html" label="lich"></option>
+  <option value="organisms/mage.html" label="mage"></option>
+  <option value="organisms/orc.html" label="orc"></option>
+  <option value="organisms/pixie.html" label="pixie"></option>
+  <option value="organisms/rakshasa.html" label="rakshasa"></option>
+  <option value="organisms/skeleton.html" label="skeleton"></option>
+  <option value="organisms/vampire.html" label="vampire"></option>
+  <option value="organisms/wolf.html" label="wolf"></option>
 </datalist>
 <output id="search-output"></output>

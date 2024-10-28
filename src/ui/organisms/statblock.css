@@ -1,7 +1,26 @@
 article.statblock {
+  h2,
+  h3,
+  h4 {
+    padding: unset;
+    margin: unset;
+    margin-top: var(--spacing-sm);
+    text-align: left;
+  }
+
+  hr {
+    margin: unset;
+    padding: unset;
+    margin-bottom: var(--spacing-sm);
+  }
+
   ul {
     all: unset;
     list-style-type: none;
+
+    li {
+      margin-bottom: var(--spacing-sm);
+    }
   }
 
   table {
