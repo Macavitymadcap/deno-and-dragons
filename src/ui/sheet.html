@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Character Sheet</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="icon" href="images/favicon.ico" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.2"
+      integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <script src="static/script.js" type="module"></script>
+  </head>
+
+  <body>
+    <main>
+      <div
+      id="dice-roller"
+      popover="manual"
+      class="card"
+      hx-get="molecules/roller.html"
+      hx-trigger="load"
+      hx-swap="innerHTML"
+      hx-
+    >
+    </div>
+  
+    <section class="character-sheet">
+      <fieldset class="character-sheet-main-heading">
+        <legend>
+          DANGEONS & DRAGONS
+        </legend>
+    
+        <fieldset class="character-sheet-name">
+          <legend>Character Name</legend>
+          <input type="text" name="character-name" />
+        </fieldset>
+    
+        <fieldset class="character-sheet-core">
+          <label for="character-class">
+            Class & Level
+            <span>
+              <input type="text" name="character-class" />
+              <input type="number" name="character-level" min="1" max="20" />
+            </span>
+          </label>
+    
+          <label for="character-background">
+            Background
+            <input type="text" name="character-background" />
+          </label>
+          <label for="player-name">
+            Player Name
+            <input type="text" name="player-name" />
+          </label>
+          <label for="character-race">
+            Race
+            <input type="text" name="character-race" />
+          </label>
+          <label for="character-alignment">
+            Alignment
+            <input type="text" name="character-alignment" />
+          </label>
+          <label for="character-experience-points">
+            Experience Points
+            <input type="number" name="character-experience-points" />
+          </label>
+        </fieldset>
+    
+      </fieldset>
+    
+      <div class="columns">
+        <fieldset class="character-sheet-abilities">
+          <legend>ABILITIES</legend>
+    
+          <fieldset name="character-sheet-abiility-strength-score" class="character-sheet-ability">
+            <legend>STRENGTH</legend>
+            <label for="character-sheet-abiility-strength-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-strength" />
+            </label>
+            <label for="character-sheet-ability-modifier-strength">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-strength" >
+            </label>
+            <label for="character-sheet-ability-save-strength">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-strength">
+                <input type="checkbox" name="character-sheet-ability-save-strength-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+          <fieldset name="character-sheet-abiility-dexterity-score" class="character-sheet-ability">
+            <legend>DEXTERITY</legend>
+            <label for="character-sheet-abiility-dexterity-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-dexterity" />
+            </label>
+            <label for="character-sheet-ability-modifier-dexterity">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-dexterity" >
+            </label>
+            <label for="character-sheet-ability-save-dexterity">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-dexterity">
+                <input type="checkbox" name="character-sheet-ability-save-dexterity-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+          <fieldset name="character-sheet-abiility-constitution-score" class="character-sheet-ability">
+            <legend>CONSTITUTION</legend>
+            <label for="character-sheet-abiility-constitution-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-constitution" />
+            </label>
+            <label for="character-sheet-ability-modifier-constitution">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-constitution" >
+            </label>
+            <label for="character-sheet-ability-save-constitution">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-constitution">
+                <input type="checkbox" name="character-sheet-ability-save-constitution-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+          <fieldset name="character-sheet-abiility-intelligence-score" class="character-sheet-ability">
+            <legend>INTELLIGENCE</legend>
+            <label for="character-sheet-abiility-intelligence-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-intelligence" />
+            </label>
+            <label for="character-sheet-ability-modifier-intelligence">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-intelligence" >
+            </label>
+            <label for="character-sheet-ability-save-intelligence">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-intelligence">
+                <input type="checkbox" name="character-sheet-ability-save-intelligence-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+          <fieldset name="character-sheet-abiility-wisdom-score" class="character-sheet-ability">
+            <legend>WISDOM</legend>
+            <label for="character-sheet-abiility-wisdom-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-wisdom" />
+            </label>
+            <label for="character-sheet-ability-modifier-wisdom">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-wisdom" >
+            </label>
+            <label for="character-sheet-ability-save-wisdom">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-wisdom">
+                <input type="checkbox" name="character-sheet-ability-save-wisdom-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+          <fieldset name="character-sheet-abiility-charisma-score" class="character-sheet-ability">
+            <legend>CHARISMA</legend>
+            <label for="character-sheet-abiility-charisma-score">
+              Score
+              <input type="number" min="0" max="30" name="character-sheet-ability-score-charisma" />
+            </label>
+            <label for="character-sheet-ability-modifier-charisma">
+              Mod
+              <input type="number" name="character-sheet-ability-modifier-charisma" >
+            </label>
+            <label for="character-sheet-ability-save-charisma">
+              Save
+              <span>
+                <input type="number" name="character-sheet-ability-save-charisma">
+                <input type="checkbox" name="character-sheet-ability-save-charisma-proficiency" />
+              </span>
+            </label>
+          </fieldset>
+    
+        </fieldset>
+    
+        <fieldset name="character-sheet-skills" class="character-sheet-skills">
+          <legend>SKILLS</legend>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Proficient</th>
+                <th>Expertise</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Acrobatics (Dex)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-acrobatics-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-acrobatics-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-acrobatics-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Animal Handling (Wis)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-animal-handling-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-animal-handling-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-animal-handling-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Arcana (Int)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-arcana-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-arcana-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-arcana-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Athletics (Str)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-athletics-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-athletics-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-athletics-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Deception (Cha)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-deception-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-deception-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-deception-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  History (Int)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-history-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-history-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-history-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Insight (Wis)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-insight-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-insight-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-insight-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Intimidation (Cha)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-intimidation-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-intimidation-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-intimidation-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Investigation (Int)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-investigation-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-investigation-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-investigation-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Medicine (Wis)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-medicine-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-medicine-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-medicine-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Nature (Int)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-nature-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-nature-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-nature-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Perception (Wis)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-perception-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-perception-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-perception-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Performance (Cha)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-performance-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-performance-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-performance-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Persuasion (Cha)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-persuasion-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-persuasion-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-persuasion-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Religion (Int)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-religion-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-religion-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-religion-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Sleight of Hand (Dex)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-sleight-of-hand-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-sleight-of-hand-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-sleight-of-hand-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Stealth (Dex)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-stealth-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-stealth-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-stealth-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  Survival (Wis)
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-survival-proficiency">
+                </td>
+                <td>
+                  <input type="checkbox" name="character-sheet-survival-expertise">
+                </td>
+                <td>
+                  <input type="number" name="character-sheet-survival-total">
+                </td>
+                <td>
+                  <button
+                    class="roller"
+                    popovertarget="dice-roller"
+                    popoveraction="show"
+                    _="on click set #dice-input's value to 'd20' send click to the last <button/> in #dice-roller"
+                  >
+                    &#127922;
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    
+    </section>
+    </main>
+
+  </body>
+</html>
+

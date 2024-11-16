@@ -18,6 +18,11 @@ Deno.serve(async (req) => {
     return new Response(file.readable);
   }
 
+  if (pathname === "/pages/sheet.html") {
+    file = await Deno.open(`${rootPath}/pages/sheet.html`, { read: true });
+    return new Response(file.readable);
+  }
+
   if (url.pathname === "/search") {
     const params = new URLSearchParams(url.search);
     const query = params.get("search-value");
