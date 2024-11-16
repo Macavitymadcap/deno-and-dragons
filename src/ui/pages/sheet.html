@@ -27,171 +27,174 @@
       hx-
     >
     </div>
-  
-    <section class="character-sheet">
-      <fieldset class="character-sheet-main-heading">
+    <section name="character-heading">
+      <fieldset class="character-sheet-heading">
         <legend>
           DANGEONS & DRAGONS
         </legend>
-    
-        <fieldset class="character-sheet-name">
-          <legend>Character Name</legend>
-          <input type="text" name="character-name" />
-        </fieldset>
-    
-        <fieldset class="character-sheet-core">
-          <label for="character-class">
-            Class & Level
-            <span>
-              <input type="text" name="character-class" />
-              <input type="number" name="character-level" min="1" max="20" />
-            </span>
-          </label>
-    
-          <label for="character-background">
-            Background
-            <input type="text" name="character-background" />
-          </label>
-          <label for="player-name">
-            Player Name
-            <input type="text" name="player-name" />
-          </label>
-          <label for="character-race">
-            Race
-            <input type="text" name="character-race" />
-          </label>
-          <label for="character-alignment">
-            Alignment
-            <input type="text" name="character-alignment" />
-          </label>
-          <label for="character-experience-points">
-            Experience Points
-            <input type="number" name="character-experience-points" />
-          </label>
-        </fieldset>
-    
+        <div class="rows columns-2">
+          <fieldset class="character-sheet-name">
+            <legend>Character Name</legend>
+            <input type="text" name="character-name" />
+          </fieldset>
+
+          <fieldset class="character-sheet-core">
+            <label for="character-class">
+              Class & Level
+              <span>
+                <input type="text" name="character-class" />
+                <input type="number" name="character-level" min="1" max="20" />
+              </span>
+            </label>
+      
+            <label for="character-background">
+              Background
+              <input type="text" name="character-background" />
+            </label>
+            <label for="player-name">
+              Player Name
+              <input type="text" name="player-name" />
+            </label>
+            <label for="character-race">
+              Race
+              <input type="text" name="character-race" />
+            </label>
+            <label for="character-alignment">
+              Alignment
+              <input type="text" name="character-alignment" />
+            </label>
+            <label for="character-experience-points">
+              Experience Points
+              <input type="number" name="character-experience-points" />
+            </label>
+          </fieldset>
+        </div>
       </fieldset>
-    
-      <div class="columns">
+    </section>
+  
+    <div class="rows columns-3">
+      <section name="row-1">
         <fieldset class="character-sheet-abilities">
-          <legend>ABILITIES</legend>
-    
-          <fieldset name="character-sheet-abiility-strength-score" class="character-sheet-ability">
-            <legend>STRENGTH</legend>
-            <label for="character-sheet-abiility-strength-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-strength" />
-            </label>
-            <label for="character-sheet-ability-modifier-strength">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-strength" >
-            </label>
-            <label for="character-sheet-ability-save-strength">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-strength">
-                <input type="checkbox" name="character-sheet-ability-save-strength-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
-          <fieldset name="character-sheet-abiility-dexterity-score" class="character-sheet-ability">
-            <legend>DEXTERITY</legend>
-            <label for="character-sheet-abiility-dexterity-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-dexterity" />
-            </label>
-            <label for="character-sheet-ability-modifier-dexterity">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-dexterity" >
-            </label>
-            <label for="character-sheet-ability-save-dexterity">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-dexterity">
-                <input type="checkbox" name="character-sheet-ability-save-dexterity-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
-          <fieldset name="character-sheet-abiility-constitution-score" class="character-sheet-ability">
-            <legend>CONSTITUTION</legend>
-            <label for="character-sheet-abiility-constitution-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-constitution" />
-            </label>
-            <label for="character-sheet-ability-modifier-constitution">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-constitution" >
-            </label>
-            <label for="character-sheet-ability-save-constitution">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-constitution">
-                <input type="checkbox" name="character-sheet-ability-save-constitution-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
-          <fieldset name="character-sheet-abiility-intelligence-score" class="character-sheet-ability">
-            <legend>INTELLIGENCE</legend>
-            <label for="character-sheet-abiility-intelligence-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-intelligence" />
-            </label>
-            <label for="character-sheet-ability-modifier-intelligence">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-intelligence" >
-            </label>
-            <label for="character-sheet-ability-save-intelligence">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-intelligence">
-                <input type="checkbox" name="character-sheet-ability-save-intelligence-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
-          <fieldset name="character-sheet-abiility-wisdom-score" class="character-sheet-ability">
-            <legend>WISDOM</legend>
-            <label for="character-sheet-abiility-wisdom-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-wisdom" />
-            </label>
-            <label for="character-sheet-ability-modifier-wisdom">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-wisdom" >
-            </label>
-            <label for="character-sheet-ability-save-wisdom">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-wisdom">
-                <input type="checkbox" name="character-sheet-ability-save-wisdom-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
-          <fieldset name="character-sheet-abiility-charisma-score" class="character-sheet-ability">
-            <legend>CHARISMA</legend>
-            <label for="character-sheet-abiility-charisma-score">
-              Score
-              <input type="number" min="0" max="30" name="character-sheet-ability-score-charisma" />
-            </label>
-            <label for="character-sheet-ability-modifier-charisma">
-              Mod
-              <input type="number" name="character-sheet-ability-modifier-charisma" >
-            </label>
-            <label for="character-sheet-ability-save-charisma">
-              Save
-              <span>
-                <input type="number" name="character-sheet-ability-save-charisma">
-                <input type="checkbox" name="character-sheet-ability-save-charisma-proficiency" />
-              </span>
-            </label>
-          </fieldset>
-    
+          <div class="rows colums-3">
+            <legend>ABILITIES</legend>
+            <fieldset name="character-sheet-abiility-strength-score" class="character-sheet-ability">
+              <legend>STRENGTH</legend>
+              <label for="character-sheet-abiility-strength-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-strength" />
+              </label>
+              <label for="character-sheet-ability-modifier-strength">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-strength" >
+              </label>
+              <label for="character-sheet-ability-save-strength">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-strength">
+                  <input type="checkbox" name="character-sheet-ability-save-strength-proficiency" />
+                </span>
+              </label>
+            </fieldset>
+              
+            <fieldset name="character-sheet-abiility-dexterity-score" class="character-sheet-ability">
+              <legend>DEXTERITY</legend>
+              <label for="character-sheet-abiility-dexterity-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-dexterity" />
+              </label>
+              <label for="character-sheet-ability-modifier-dexterity">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-dexterity" >
+              </label>
+              <label for="character-sheet-ability-save-dexterity">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-dexterity">
+                  <input type="checkbox" name="character-sheet-ability-save-dexterity-proficiency" />
+                </span>
+              </label>
+            </fieldset>
+      
+            <fieldset name="character-sheet-abiility-constitution-score" class="character-sheet-ability">
+              <legend>CONSTITUTION</legend>
+              <label for="character-sheet-abiility-constitution-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-constitution" />
+              </label>
+              <label for="character-sheet-ability-modifier-constitution">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-constitution" >
+              </label>
+              <label for="character-sheet-ability-save-constitution">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-constitution">
+                  <input type="checkbox" name="character-sheet-ability-save-constitution-proficiency" />
+                </span>
+              </label>
+            </fieldset>
+          </div>
+
+          <div class="rows colums-3">
+            <fieldset name="character-sheet-abiility-intelligence-score" class="character-sheet-ability">
+              <legend>INTELLIGENCE</legend>
+              <label for="character-sheet-abiility-intelligence-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-intelligence" />
+              </label>
+              <label for="character-sheet-ability-modifier-intelligence">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-intelligence" >
+              </label>
+              <label for="character-sheet-ability-save-intelligence">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-intelligence">
+                  <input type="checkbox" name="character-sheet-ability-save-intelligence-proficiency" />
+                </span>
+              </label>
+            </fieldset>
+            
+            <fieldset name="character-sheet-abiility-wisdom-score" class="character-sheet-ability">
+              <legend>WISDOM</legend>
+              <label for="character-sheet-abiility-wisdom-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-wisdom" />
+              </label>
+              <label for="character-sheet-ability-modifier-wisdom">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-wisdom" >
+              </label>
+              <label for="character-sheet-ability-save-wisdom">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-wisdom">
+                  <input type="checkbox" name="character-sheet-ability-save-wisdom-proficiency" />
+                </span>
+              </label>
+            </fieldset>
+                  
+            <fieldset name="character-sheet-abiility-charisma-score" class="character-sheet-ability">
+              <legend>CHARISMA</legend>
+              <label for="character-sheet-abiility-charisma-score">
+                Score
+                <input type="number" min="0" max="30" name="character-sheet-ability-score-charisma" />
+              </label>
+              <label for="character-sheet-ability-modifier-charisma">
+                Mod
+                <input type="number" name="character-sheet-ability-modifier-charisma" >
+              </label>
+              <label for="character-sheet-ability-save-charisma">
+                Save
+                <span>
+                  <input type="number" name="character-sheet-ability-save-charisma">
+                  <input type="checkbox" name="character-sheet-ability-save-charisma-proficiency" />
+                </span>
+              </label>
+            </fieldset>  
+          </div>
         </fieldset>
-    
+          
         <fieldset name="character-sheet-skills" class="character-sheet-skills">
           <legend>SKILLS</legend>
           <table>
@@ -656,11 +659,12 @@
               </tr>
             </tbody>
           </table>
+        </fieldset>
+      </section>
+      <section name="row-1"></section>
       </div>
-    
-    </section>
-    </main>
-
-  </body>
+  </main>
+</body>
 </html>
+
 

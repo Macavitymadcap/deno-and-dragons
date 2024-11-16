@@ -17,9 +17,8 @@ section.character-sheet {
     margin: 0.125em;
   }
 
-  fieldset.character-sheet-main-heading {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+  fieldset.character-sheet-heading {
+
     align-items: center;
 
     fieldset.character-sheet-name {

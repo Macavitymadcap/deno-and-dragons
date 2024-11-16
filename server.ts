@@ -18,7 +18,7 @@ Deno.serve(async (req) => {
     return new Response(file.readable);
   }
 
-  if (pathname === "/pages/sheet.html") {
+  if (pathname === "/pages/sheet.html" || pathname === "/sheet.html") {
     file = await Deno.open(`${rootPath}/pages/sheet.html`, { read: true });
     return new Response(file.readable);
   }

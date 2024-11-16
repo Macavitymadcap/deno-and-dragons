@@ -4,12 +4,4 @@ article.npc {
   img {
     height: 15em;
   }
-
-  div.npc-breakdown {
-    justify-items: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 0.75fr 1fr 1fr;
-    gap: var(--spacing-sm);
-  }
 }
