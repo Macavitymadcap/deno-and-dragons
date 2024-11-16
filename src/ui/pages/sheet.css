@@ -1,0 +1,42 @@
+form.character-sheet {
+
+    fieldset {
+        height:min-content;
+    }
+
+    input, 
+    label {
+        display: block;
+        /* width: 100%; */
+        margin: .125em;
+    }
+
+    fieldset.character-sheet-main-heading {
+        display: grid;
+        grid-template-columns: .5fr 1.5fr;
+
+        fieldset.character-sheet-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        fieldset.character-sheet-core {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+    
+            fieldset.character-sheet-class-and-level {
+                display: grid;
+                grid-template-columns: .75fr .25fr;
+            }
+
+            input[name="character-race"] {
+                width: 93%;
+            }
+        }
+    }
+
+}
