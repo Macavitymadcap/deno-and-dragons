@@ -1,8 +1,8 @@
 /* Dice roller popover specific styles */
 #dice-roller:popover-open {
-  width: 450px;
+  width: 22em;
   max-width: 90%;
-  height: 15vh;
+  height: 7em;
 
   div.dice-roller {
     display: flex;

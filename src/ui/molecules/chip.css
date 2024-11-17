@@ -1,14 +1,13 @@
 span.chip {
   display: inline-flex;
   line-height: var(--spacing-xl);
-  height: var(--button-minimum-diameter);
+  height: var(--input-height);
   background: var(--secondary-gradient);
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--transition-fast);
   box-shadow: var(--surface-shadow);
-  height: 2.5em;
   width: min-content;
   align-items: center;
   justify-content: center;
@@ -25,10 +24,6 @@ span.chip {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  button {
-    height: var(--button-minimum-diameter);
   }
 
   output {

@@ -10,7 +10,7 @@ select {
   color: var(--input-text-colour);
   transition: all var(--transition-fast);
   backdrop-filter: blur(4px);
-  height: var(--button-minimum-diameter);
+  height: var(--input-height);
 
   &:hover {
     border-color: var(--input-hover-colour);

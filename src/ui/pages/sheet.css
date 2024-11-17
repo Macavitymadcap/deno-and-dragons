@@ -25,28 +25,20 @@ section.character-sheet {
 
     align-items: center;
 
-    .character-name {
-      width: 92%;
+    #character-name {
+      width: 96%;
+      margin-bottom: var(--spacing-md);
 
     }
 
-    fieldset.character-sheet-core {
-      align-items: center;
-
-      input[name="character-race"],
-      input[name="character-background"],
-      input[name="player-name"],
-      input[name="character-alignment"],
-      input[name="character-experience-points"] {
-        width: 93%;
-      }
-
-      fieldset.character-sheet-class-and-level {
-        border: none;
-        display: grid;
-        grid-template-columns: 0.75fr 0.25fr;
-      }
+    input {
+      width: 10em;
     }
+
+    input[name="character-class"] {
+      width: 4.5em;
+    }
+
   }
 
   fieldset.character-sheet-ability {

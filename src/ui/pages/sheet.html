@@ -33,45 +33,103 @@
           <legend>DANGEONS & DRAGONS</legend>
           
           <div class="rows columns-2">
-            <label for="character-name">
-              Character Name
-              <input type="text" name="character-name" />
-            </label>
-            <fieldset class="character-sheet-core">
-              <div class="rows columns-3">
-                <label for="character-class">
-                  Class & Level
-                  <span>
-                    <input type="text" name="character-class" />
-                    <input type="number" name="character-level" min="1" max="20" />
-                  </span>
-                </label>
-                
-                <label for="character-background">
-                  Background
-                  <input type="text" name="character-background" />
-                </label>
+            <div>
+              <label for="character-name">
+                Character Name
+                <input id="character-name" type="text" name="character-name" />
+              </label>
   
-                <label for="player-name">
-                  Player Name
-                  <input type="text" name="player-name" />
+              <fieldset class="character-sheet-core">
+                <div class="rows columns-3">
+                  <label for="character-class">
+                    Class & Level
+                    <span>
+                      <input type="text" name="character-class" />
+                      <span class="chip">
+                        <button
+                        title="Decrement"
+                          _="on click 
+                              if (the next <output/>).textContent > 1 
+                                decrement (the next <output/>).textContent"
+                        >
+                          &#8722;
+                        </button>
+                        <output id="character-level" name="character-level">1</output>
+                        <button
+                          title="Increment"
+                          _="on click 
+                              if (the previous <output/>).textContent < 20 
+                                increment (the previous <output/>).textContent"
+                        >
+                          &#43;
+                        </button>
+
+                      </span>
+                    </span>
+                  </label>
+                  
+                  <label for="character-background">
+                    Background
+                    <input type="text" name="character-background" />
+                  </label>
+    
+                  <label for="player-name">
+                    Player Name
+                    <input type="text" name="player-name" />
+                  </label>
+                </div>
+  
+                <div class="rows columns-3">
+                  <label for="character-race">
+                    Race
+                    <input type="text" name="character-race" />
+                  </label>
+    
+                  <label for="character-alignment">
+                    Alignment
+                    <input type="text" name="character-alignment" />
+                  </label>
+    
+                  <label for="character-experience-points">
+                    Experience Points
+                    <input type="number" name="character-experience-points" />
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <fieldset class="character-sheet-description">
+              <div class="rows columns-3">
+                <label for="character-age">
+                  Age
+                  <input type="number" name="character-age"> 
+                </label>
+
+                <label for="character-height">
+                  Height
+                  <input type="text" name="character-height"> 
+                </label>
+
+                <label for="character-weight">
+                  Weight
+                  <input type="text" name="character-weight"> 
                 </label>
               </div>
 
               <div class="rows columns-3">
-                <label for="character-race">
-                  Race
-                  <input type="text" name="character-race" />
+                <label for="character-eyes">
+                  Eyes
+                  <input type="text" name="character-eyes">
                 </label>
-  
-                <label for="character-alignment">
-                  Alignment
-                  <input type="text" name="character-alignment" />
+
+                <label for="character-skin">
+                  Skin
+                  <input type="text" name="character-skin">
                 </label>
-  
-                <label for="character-experience-points">
-                  Experience Points
-                  <input type="number" name="character-experience-points" />
+
+                <label for="character-hair">
+                  Hair
+                  <input type="text" name="character-hair">
                 </label>
               </div>
             </fieldset>
@@ -91,29 +149,106 @@
                     <div class="rows columns-3">
                       <label for="strength-score">
                         Score
-                        <input 
-                          type="number"
-                          min="0"
-                          max="30"
-                          name="strength-score"
-                          _="on input send score-change to the next <input/>"
-                        >
+                        <span class="chip">
+                          <button
+                            title="Decrement"
+                            _="on click 
+                            set proficiency to 2
+                            if #strength-score.textContent >= 0 
+                              decrement #strength-score.textContent
+                              set score to (#strength-score.textContent) as an Int
+
+                              set modifier to Math.floor((score - 10) / 2)
+
+                              if modifier is greater than or equal to 0 
+                                set #strength-modifier.textContent to `+${modifier}`
+                                set #strength-save.textContent to `+${modifier}`
+
+                                if (#strength-save-proficiency.checked)
+                                  set #strength-save.textContent to `+${modifier + proficiency}`
+                                end
+                              end
+
+                              if modifier is less than 0 
+                                set #strength-modifier.textContent to modifier
+                                set #strength-save.textContent to modifier
+
+                                if (#strength-save-proficiency.checked)
+                                  set #strength-save.textContent to modifier + proficiency
+                                end
+                              end
+                            end"
+                          >
+                            &#8722;
+                          </button>
+                          <output id="strength-score" name="strength-score">10</output>
+                          <button
+                            title="Increment"
+                            _="on click 
+                            set proficiency to 2
+
+                            if #strength-score.textContent < 30 
+                              increment #strength-score.textContent
+                              set score to (#strength-score.textContent) as an Int
+
+                              set modifier to Math.floor((score - 10) / 2)
+
+                              if modifier is greater than or equal to 0 
+                                set #strength-modifier.textContent to `+${modifier}`
+                                set #strength-save.textContent to `+${modifier}`
+
+                                if (#strength-save-proficiency.checked)
+                                  set #strength-save.textContent to `+${modifier + proficiency}`
+                                end
+                              end
+
+                              if modifier is less than 0 
+                                set #strength-modifier.textContent to modifier
+                                set #strength-save.textContent to modifier
+
+                                if (#strength-save-proficiency.checked)
+                                  set #strength-save.textContent to modifier + proficiency
+                                end
+                              end
+                            end"
+                          >
+                            &#43;
+                          </button>
+                        </span>
                       </label>
                       <label for="strength-modifier">
                         Mod
-                        <input 
-                          type="number" 
-                          id="strength-modifier"
-                          _="on score-change
-                            set modifer to (the previous <input>'s value) as an Int
-                            set my @value modifier"
+                        <button
+                          class="roller"
+                          popovertarget="dice-roller"
+                          popoveraction="show"
+                          _="on click 
+                            set modifier to #strength-modifier.textContent
+                            set sign to '+'
+                            if modifier is less than 0 set sign to '-' end
+                            set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                            send click to the last <button/> in #dice-roller"
                         >
+                        <output id="strength-modifier" name="strength-modifier">+0</output>
+                        </button>
                       </label>
                       <label for="strength-save">
                         Save
                         <span>
-                          <input type="number" name="strength-save">
-                          <input type="checkbox" name="strength-save-proficiency" />
+                          <button
+                            class="roller"
+                            popovertarget="dice-roller"
+                            popoveraction="show"
+                            _="on click 
+                              set modifier to #strength-save.textContent
+                              set sign to '+'
+                              if modifier is less than 0 set sign to '-' end
+                              set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                              send click to the last <button/> in #dice-roller"
+                          >
+                            <output id="strength-save" name="strength-save">+0</output>
+                          </button>
+                          <input id="strength-save-proficiency" type="checkbox" name="strength-save-proficiency"/>
                         </span>
                       </label>
                     </div>  
@@ -239,30 +374,6 @@
                         class="roller"
                         popovertarget="dice-roller"
                         popoveraction="show"
-                        _="on click
-                        set modifier to the (value of #acrobatics-total) as an Int
-                        
-                        set proficient to 0
-                        if #acrobatics-proficiency/ is checked set proficient to 2 end
-                        
-                        set expertise to 0
-                        if #acrobatics-expertise/ is checked set expertise to 2 end
-
-                        set roll to 'd20'
-
-                            if modifier is not empty
-                              if modifier is less than 0
-                                set roll to 'd20' + `${modifier + proficient + expertise}`
-                              end
-                              if modifier is greater than or equal to 0
-                                set roll to `d20+${modifier + proficient + expertise}`
-                              end
-                            end
-
-                            set the value of the first <input/> in #dice-roller to roll
-
-                            send click to the last <button/> in #dice-roller
-                        "
                       >
                         Acrobatics (Dex)
                       </button>
