@@ -49,16 +49,6 @@ article.statblock {
     text-align: center;
   }
 
-  button.roller {
-    all: unset;
-    color: var(--link-colour);
-  }
-
-  button.roller:hover {
-    color: var(--link-hover-colour);
-    cursor: pointer;
-  }
-
   details.variant {
     background: var(--secondary-gradient);
     border: var(--card-border);

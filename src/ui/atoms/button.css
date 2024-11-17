@@ -54,6 +54,11 @@ button:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+button:focus-visible {
+  outline: 2px solid var(--primary-colour);
+  outline-offset: 2px;
+}
+
 button.destructive {
   background: linear-gradient(
     145deg,
@@ -80,7 +85,13 @@ button.destructive:hover {
   );
 }
 
-button:focus-visible {
-  outline: 2px solid var(--primary-colour);
-  outline-offset: 2px;
+
+button.roller {
+  all: unset;
+  color: var(--link-colour);
+}
+
+button.roller:hover {
+  color: var(--link-hover-colour);
+  cursor: pointer;
 }

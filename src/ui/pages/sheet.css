@@ -12,6 +12,10 @@ section.character-sheet {
     margin: 0.125em;
   }
 
+  div.sheet-heading {
+    grid-template-columns: .75 1.25fr;
+  }
+    
   fieldset {
     height: min-content;
     margin: 0.125em;
@@ -21,21 +25,12 @@ section.character-sheet {
 
     align-items: center;
 
-    fieldset.character-sheet-name {
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .character-name {
+      width: 92%;
 
-      input {
-        width: 92%;
-      }
     }
 
     fieldset.character-sheet-core {
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: repeat(3, 1fr);
       align-items: center;
 
       input[name="character-race"],
@@ -54,23 +49,12 @@ section.character-sheet {
     }
   }
 
-  div.columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  fieldset.character-sheet-ability {
+    display: flex;
+    flex-direction: row;
 
     input[type="number"] {
       width: 2em;
-    }
-
-    fieldset.character-sheet-abilities {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-
-      fieldset.character-sheet-ability {
-        display: flex;
-        flex-direction: row;
-      }
     }
   }
 }
