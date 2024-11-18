@@ -3,7 +3,7 @@ input[type="number"],
 input[type="search"],
 select {
   font-size: 1.25rem;
-  background: var(--input-background);
+  background: var(--secondary-gradient);
   border: 1px solid var(--input-border);
   border-radius: var(--border-radius);
   padding: 0 var(--spacing-sm);
@@ -31,4 +31,55 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type="checkbox"].switch {
+  margin: 1em;
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  background: var(--secondary-gradient);
+  height: var(--input-height);
+  width: 3em;
+  vertical-align: middle;
+  border-radius: 2em;
+  box-shadow: 0 1px 3px var(--surface-shadow) inset;
+  transition: 0.25s linear background;
+}
+
+input[type="checkbox"].switch:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"].switch::before {
+  content: "";
+  display: block;
+  width: var(--button-minimum-hw);
+  height: var(--button-minimum-hw);
+  background: var(--button-colour);
+  border-radius: 1.2em;
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  box-shadow: 0 1px 3px #0003;
+  transition: 0.25s linear transform;
+  transform: translateX(0rem);
+}
+
+input[type="checkbox"].switch:checked {
+  background: var(--primary-gradient);
+}
+
+input[type="checkbox"].switch:checked::before {
+  transform: translateX(1rem);
+}
+
+input[type="checkbox"].switch:not(:checked),
+input[type="checkbox"].switch:not(:checked):focus-visible {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"].switch:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }

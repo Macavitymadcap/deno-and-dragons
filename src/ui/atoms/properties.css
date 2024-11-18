@@ -19,8 +19,13 @@
   --input-border: #444;
   --input-hover-colour: rgba(33, 150, 243, 0.5);
   --input-text-colour: #fff;
-  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  
+
+  /* Enhanced colour system */
+  --primary-gradient: linear-gradient(135deg, #2196f3, #1e88e5b6);
+  --secondary-gradient: linear-gradient(135deg, #444, #333);
+  --surface-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
   /* Size Properties*/
   --text-button-radius: 2rem;
   --border-radius: 0.5rem;
@@ -44,12 +49,6 @@
   --popover-backdrop: rgba(0, 0, 0, 0.2);
   --popover-border: rgba(255, 255, 255, 0.1);
   --popover-blur: 12px;
-
-  /* Enhanced color system */
-  --primary-gradient: linear-gradient(135deg, #2196f3, #1e88e5b6);
-  --secondary-gradient: linear-gradient(135deg, #444, #333);
-  --surface-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

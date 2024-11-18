@@ -1,0 +1,825 @@
+<fieldset class="character-sheet-abilities">
+  <legend>ABILITIES</legend>
+  <fieldset
+    name="character-sheet-abiility-strength-score"
+    class="character-sheet-ability"
+  >
+    <legend>STRENGTH</legend>
+    <label for="strength-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #strength-score.textContent >= 0 
+                decrement #strength-score.textContent
+                set score to (#strength-score.textContent) as an Int
+                set modifier to Math.floor((score - 10) / 2)
+
+                if modifier is greater than or equal to 0 
+                  set #strength-modifier.textContent to `+${modifier}`
+                  set #strength-save.textContent to `+${modifier}`
+                  if (#strength-save-proficiency.checked)
+                    set #strength-save.textContent to `+${modifier + proficiency}`
+                  end
+                end
+
+                if modifier is less than 0 
+                  set #strength-modifier.textContent to modifier
+                  set #strength-save.textContent to modifier
+                  if (#strength-save-proficiency.checked)
+                    set #strength-save.textContent to modifier + proficiency
+                  end
+                end
+              end"
+        >
+          &#8722;
+        </button>
+        <output id="strength-score" name="strength-score">10</output>
+        <button
+          title="Increment"
+          _="on click 
+              set proficiency to #proficiency-bonus.textContent as an Int
+
+              if #strength-score.textContent < 30 
+                increment #strength-score.textContent
+                set score to (#strength-score.textContent) as an Int
+
+                set modifier to Math.floor((score - 10) / 2)
+
+                if modifier is greater than or equal to 0 
+                  set #strength-modifier.textContent to `+${modifier}`
+                  set #strength-save.textContent to `+${modifier}`
+                  if (#strength-save-proficiency.checked)
+                    set #strength-save.textContent to `+${modifier + proficiency}`
+                  end
+                end
+
+                if modifier is less than 0 
+                  set #strength-modifier.textContent to modifier
+                  set #strength-save.textContent to modifier
+                  if (#strength-save-proficiency.checked)
+                    set #strength-save.textContent to modifier + proficiency
+                  end
+                end
+              end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="strength-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #strength-modifier.textContent
+              set sign to '+' if modifier is less than 0 set sign to '-' end
+              set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+              send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="strength-modifier"
+            name="strength-modifier"
+          >+0</output>
+        </button>
+        <input
+          id="strength-modifier-proficiency"
+          type="checkbox"
+          name="strength-modifier-proficiency"
+          _="on input set modifier to #strength-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #strength-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #strength-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #strength-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+
+    <label for="strength-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #strength-save.textContent
+              set sign to '+' if modifier is less than 0 set sign to '-' end
+              set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+              send click to the last <button/> in #dice-roller"
+        >
+          <output id="strength-save" name="strength-save">+0</output>
+        </button>
+        <input
+          id="strength-save-proficiency"
+          type="checkbox"
+          name="strength-save-proficiency"
+          _="on input set modifier to #strength-save.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #strength-save-proficiency.checked set total to modifier + proficiency end
+              if not #strength-save-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #strength-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+
+  <fieldset
+    name="character-sheet-abiility-dexterity-score"
+    class="character-sheet-ability"
+  >
+    <legend>DEXTERITY</legend>
+    <label for="dexterity-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #dexterity-score.textContent >= 0 
+                  decrement #dexterity-score.textContent
+                  set score to (#dexterity-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #dexterity-modifier.textContent to `+${modifier}`
+                    set #dexterity-save.textContent to `+${modifier}`
+
+                    if (#dexterity-save-proficiency.checked)
+                      set #dexterity-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #dexterity-modifier.textContent to modifier
+                    set #dexterity-save.textContent to modifier
+
+                    if (#dexterity-save-proficiency.checked)
+                      set #dexterity-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#8722;
+        </button>
+        <output id="dexterity-score" name="strength-score">10</output>
+        <button
+          title="Increment"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+
+                if #dexterity-score.textContent < 30 
+                  increment #dexterity-score.textContent
+                  set score to (#dexterity-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #dexterity-modifier.textContent to `+${modifier}`
+                    set #dexterity-save.textContent to `+${modifier}`
+
+                    if (#dexterity-save-proficiency.checked)
+                      set #dexterity-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #dexterity-modifier.textContent to modifier
+                    set #dexterity-save.textContent to modifier
+
+                    if (#dexterity-save-proficiency.checked)
+                      set #dexterity-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="dexterity-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #dexterity-modifier.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="dexterity-modifier"
+            name="dexterity-modifier"
+          >+0</output>
+        </button>
+        <input
+          id="dexterity-modifier-proficiency"
+          type="checkbox"
+          name="dexterity-modifier-proficiency"
+          _="on input set modifier to #dexterity-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #dexterity-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #dexterity-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #dexterity-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+      </span>
+    </label>
+    <label for="dexterity-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #dexterity-save.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output id="dexterity-save" name="dexterity-save">+0</output>
+        </button>
+        <input
+          id="dexterity-save-proficiency"
+          type="checkbox"
+          name="dexterity-save-proficiency"
+          _="on input set modifier to #dexterity-save.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #dexterity-save-proficiency.checked set total to modifier + proficiency end
+                if not #dexterity-save-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #dexterity-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+
+  <fieldset
+    name="character-sheet-abiility-constitution-score"
+    class="character-sheet-ability"
+  >
+    <legend>CONSTITUTION</legend>
+    <label for="constitution-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #constitution-score.textContent >= 0 
+                  decrement #constitution-score.textContent
+                  set score to (#constitution-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #constitution-modifier.textContent to `+${modifier}`
+                    set #constitution-save.textContent to `+${modifier}`
+
+                    if (#constitution-save-proficiency.checked)
+                      set #constitution-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #constitution-modifier.textContent to modifier
+                    set #constitution-save.textContent to modifier
+
+                    if (#constitution-save-proficiency.checked)
+                      set #constitution-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#8722;
+        </button>
+        <output
+          id="constitution-score"
+          name="constitution-score"
+        >10</output>
+        <button
+          title="Increment"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+
+                if #constitution-score.textContent < 30 
+                  increment #constitution-score.textContent
+                  set score to (#constitution-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #constitution-modifier.textContent to `+${modifier}`
+                    set #constitution-save.textContent to `+${modifier}`
+
+                    if (#constitution-save-proficiency.checked)
+                      set #constitution-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #constitution-modifier.textContent to modifier
+                    set #constitution-save.textContent to modifier
+
+                    if (#constitution-save-proficiency.checked)
+                      set #constitution-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="constitution-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #constitution-modifier.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="constitution-modifier"
+            name="constitution-modifier"
+          >+0</output>
+        </button>
+        <input
+          id="constitution-modifier-proficiency"
+          type="checkbox"
+          name="constitution-modifier-proficiency"
+          _="on input set modifier to #constitution-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #constitution-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #constitution-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #constitution-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+      </span>
+    </label>
+    <label for="constitution-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #constitution-save.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="constitution-save"
+            name="constitution-save"
+          >+0</output>
+        </button>
+        <input
+          id="constitution-save-proficiency"
+          type="checkbox"
+          name="constitution-save-proficiency"
+          _="on input set modifier to #constitution-save.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #constitution-save-proficiency.checked set total to modifier + proficiency end
+                if not #constitution-save-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #constitution-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+
+  <fieldset
+    name="character-sheet-abiility-intelligence-score"
+    class="character-sheet-ability"
+  >
+    <legend>INTELLIGENCE</legend>
+    <label for="intelligence-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #intelligence-score.textContent >= 0 
+                  decrement #intelligence-score.textContent
+                  set score to (#intelligence-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #intelligence-modifier.textContent to `+${modifier}`
+                    set #intelligence-save.textContent to `+${modifier}`
+
+                    if (#intelligence-save-proficiency.checked)
+                      set #intelligence-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #intelligence-modifier.textContent to modifier
+                    set #intelligence-save.textContent to modifier
+
+                    if (#intelligence-save-proficiency.checked)
+                      set #intelligence-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#8722;
+        </button>
+        <output
+          id="intelligence-score"
+          name="intelligence-score"
+        >10</output>
+        <button
+          title="Increment"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #intelligence-score.textContent < 30 
+                  increment #intelligence-score.textContent
+                  set score to (#intelligence-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #intelligence-modifier.textContent to `+${modifier}`
+                    set #intelligence-save.textContent to `+${modifier}`
+
+                    if (#intelligence-save-proficiency.checked)
+                      set #intelligence-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #intelligence-modifier.textContent to modifier
+                    set #intelligence-save.textContent to modifier
+
+                    if (#intelligence-save-proficiency.checked)
+                      set #intelligence-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="intelligence-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #intelligence-modifier.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="intelligence-modifier"
+            name="intelligence-modifier"
+          >+0</output>
+        </button>
+        <input
+          id="intelligence-modifier-proficiency"
+          type="checkbox"
+          name="intelligence-modifier-proficiency"
+          _="on input set modifier to #intelligence-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #intelligence-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #intelligence-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #intelligence-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+      </span>
+    </label>
+    <label for="intelligence-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #intelligence-save.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="intelligence-save"
+            name="intelligence-save"
+          >+0</output>
+        </button>
+        <input
+          id="intelligence-save-proficiency"
+          type="checkbox"
+          name="intelligence-save-proficiency"
+          _="on input set modifier to #intelligence-save.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #intelligence-save-proficiency.checked set total to modifier + proficiency end
+                if not #intelligence-save-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #intelligence-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+
+  <fieldset
+    name="character-sheet-abiility-wisdom-score"
+    class="character-sheet-ability"
+  >
+    <legend>WISDOM</legend>
+    <label for="wisdom-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #wisdom-score.textContent >= 0 
+                  decrement #wisdom-score.textContent
+                  set score to (#wisdom-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #wisdom-modifier.textContent to `+${modifier}`
+                    set #wisdom-save.textContent to `+${modifier}`
+
+                    if (#wisdom-save-proficiency.checked)
+                      set #wisdom-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #wisdom-modifier.textContent to modifier
+                    set #wisdom-save.textContent to modifier
+
+                    if (#wisdom-save-proficiency.checked)
+                      set #wisdom-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#8722;
+        </button>
+        <output id="wisdom-score" name="wisdom-score">10</output>
+        <button
+          title="Increment"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #wisdom-score.textContent < 30 
+                  increment #wisdom-score.textContent
+                  set score to (#wisdom-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #wisdom-modifier.textContent to `+${modifier}`
+                    set #wisdom-save.textContent to `+${modifier}`
+
+                    if (#wisdom-save-proficiency.checked)
+                      set #wisdom-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #wisdom-modifier.textContent to modifier
+                    set #wisdom-save.textContent to modifier
+
+                    if (#wisdom-save-proficiency.checked)
+                      set #wisdom-save.textContent to modifier + proficiency
+                    end
+                  end    
+                end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="wisdom-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #wisdom-modifier.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output id="wisdom-modifier" name="wisdom-modifier">+0</output>
+        </button>
+        <input
+          id="wisdom-modifier-proficiency"
+          type="checkbox"
+          name="wisdom-modifier-proficiency"
+          _="on input set modifier to #wisdom-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #wisdom-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #wisdom-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #wisdom-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+      </span>
+    </label>
+    <label for="wisdom-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #wisdom-save.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output id="wisdom-save" name="wisdom-save">+0</output>
+        </button>
+        <input
+          id="wisdom-save-proficiency"
+          type="checkbox"
+          name="wisdom-save-proficiency"
+          _="on input set modifier to #wisdom-save.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #wisdom-save-proficiency.checked set total to modifier + proficiency end
+                if not #wisdom-save-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #wisdom-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+
+  <fieldset
+    name="character-sheet-abiility-charisma-score"
+    class="character-sheet-ability"
+  >
+    <legend>CHARISMA</legend>
+    <label for="charisma-score">
+      Score
+      <span class="chip">
+        <button
+          title="Decrement"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #charisma-score.textContent >= 0 
+                  decrement #charisma-score.textContent
+                  set score to (#charisma-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #charisma-modifier.textContent to `+${modifier}`
+                    set #charisma-save.textContent to `+${modifier}`
+
+                    if (#charisma-save-proficiency.checked)
+                      set #charisma-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #charisma-modifier.textContent to modifier
+                    set #charisma-save.textContent to modifier
+
+                    if (#charisma-save-proficiency.checked)
+                      set #charisma-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#8722;
+        </button>
+        <output id="charisma-score" name="charisma-score">10</output>
+        <button
+          title="Increment"
+          _="on click 
+                set proficiency to #proficiency-bonus.textContent as an Int
+
+                if #charisma-score.textContent < 30 
+                  increment #charisma-score.textContent
+                  set score to (#charisma-score.textContent) as an Int
+
+                  set modifier to Math.floor((score - 10) / 2)
+
+                  if modifier is greater than or equal to 0 
+                    set #charisma-modifier.textContent to `+${modifier}`
+                    set #charisma-save.textContent to `+${modifier}`
+
+                    if (#charisma-save-proficiency.checked)
+                      set #charisma-save.textContent to `+${modifier + proficiency}`
+                    end
+                  end
+
+                  if modifier is less than 0 
+                    set #charisma-modifier.textContent to modifier
+                    set #charisma-save.textContent to modifier
+
+                    if (#charisma-save-proficiency.checked)
+                      set #charisma-save.textContent to modifier + proficiency
+                    end
+                  end
+                end"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
+
+    <label for="charisma-modifier">
+      Mod
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #charisma-modifier.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output
+            id="charisma-modifier"
+            name="charisma-modifier"
+          >+0</output>
+        </button>
+        <input
+          id="charisma-modifier-proficiency"
+          type="checkbox"
+          name="charisma-modifier-proficiency"
+          _="on input set modifier to #charisma-modifier.textContent as an Int
+              set total to modifier
+              set proficiency to #proficiency-bonus.textContent as an Int
+              if #charisma-modifier-proficiency.checked set total to modifier + proficiency end
+              if not #charisma-modifier-proficiency.checked set total to modifier - proficiency end
+              set sign to '+' if total is less than 0 set sign to '-' end
+              set #charisma-modifier.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+    <label for="charisma-save">
+      Save
+      <span class="chip">
+        <button
+          class="roller"
+          popovertarget="dice-roller"
+          popoveraction="show"
+          _="on click set modifier to #charisma-save.textContent
+                set sign to '+' if modifier is less than 0 set sign to '-' end
+                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                send click to the last <button/> in #dice-roller"
+        >
+          <output id="charisma-save" name="charisma-save">+0</output>
+        </button>
+        <input
+          id="charisma-save-proficiency"
+          type="checkbox"
+          name="charisma-save-proficiency"
+          _="on input set modifier to #charisma-save.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #charisma-save-proficiency.checked set total to modifier + proficiency end
+                if not #charisma-save-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #charisma-save.textContent to sign + Math.abs(total)"
+        />
+      </span>
+    </label>
+  </fieldset>
+</fieldset>

@@ -32,6 +32,7 @@ const functions = [
   "roll",
   "sortInitiativeTable",
   "evaluateEncounter",
+  "imageUpload",
 ];
 
 const source = "src/index.ts";

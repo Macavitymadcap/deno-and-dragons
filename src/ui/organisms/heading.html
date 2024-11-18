@@ -1,0 +1,112 @@
+<fieldset class="character-sheet-heading">
+  <legend>DANGEONS & DRAGONS</legend>
+  <div class="grid columns-2">
+    <fieldset>
+      <label for="character-name">
+        Character Name
+        <input id="character-name" type="text" name="character-name" />
+        <form method="post" enctype="multipart/form-data">
+          <input
+            type="file"
+            id="image-upload"
+            name="image-upload"
+            accept=".jpg, .jpeg, .png, .webp"
+            _="on change imageUpload()"
+          />
+          <output id="image" class="centred"></output>
+        </form>
+      </label>
+    </fieldset>
+  
+    <fieldset class="character-sheet-core">
+      <div class="grid columns-2">
+        <label for="character-class">
+          Class & Level
+          <div class="grid columns-2">
+            <input type="text" id="character-class" />
+            <span class="chip" id="character-level">
+              <button
+                title="Decrement"
+                _="on click if (the next <output/>).textContent > 1 decrement (the next <output/>).textContent"
+              >
+                &#8722;
+              </button>
+              <output id="character-level">1</output>
+              <button
+                title="Increment"
+                _="on click if (the previous <output/>).textContent < 20 increment (the previous <output/>).textContent"
+              >
+                &#43;
+              </button>
+            </span>
+          </div>
+        </label>
+  
+        <label for="character-race">
+          Race
+          <input type="text" name="character-race" />
+        </label>
+      </div>
+  
+      <div class="grid columns-2">
+        <label for="character-background">
+          Background
+          <input type="text" name="character-background" />
+        </label>
+  
+        <label for="character-alignment">
+          Alignment
+          <input type="text" name="character-alignment" />
+        </label>
+      </div>
+  
+      <div class="grid columns-2">
+        <label for="player-name">
+          Player Name
+          <input type="text" name="player-name" />
+        </label>
+  
+        <label for="character-experience-points">
+          Experience Points
+          <input type="number" name="character-experience-points" />
+        </label>
+      </div>
+  
+      <div class="grid columns-2">
+        <label for="character-height">
+          Height
+          <input type="text" name="character-height" />
+        </label>
+  
+        <label for="character-weight">
+          Weight
+          <input type="text" name="character-weight" />
+        </label>
+      </div>
+  
+      <div class="grid columns-2">
+        <label for="character-age">
+          Age
+          <input type="number" name="character-age" />
+        </label>
+  
+        <label for="character-eyes">
+          Eyes
+          <input type="text" name="character-eyes" />
+        </label>
+      </div>
+  
+      <div class="grid columns-2">
+        <label for="character-skin">
+          Skin
+          <input type="text" name="character-skin" />
+        </label>
+  
+        <label for="character-hair">
+          Hair
+          <input type="text" name="character-hair" />
+        </label>
+      </div>
+    </fieldset>
+  </div>
+</fieldset>

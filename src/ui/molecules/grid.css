@@ -1,16 +1,20 @@
-div.rows {
-    justify-items: center;
-    align-items: center;
-    display: grid;
-    gap: var(--spacing-sm);
+div.grid {
+  display: grid;
+  gap: var(--spacing-sm);
 }
 
 div.columns-2 {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 div.columns-3 {
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
+div.rows-2 {
+  grid-template-rows: repeat(2, 1fr);
+}
 
+div.rows-3 {
+  grid-template-rows: repeat(3, 1fr);
+}

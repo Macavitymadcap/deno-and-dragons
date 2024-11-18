@@ -1,52 +1,7 @@
 section.character-sheet {
-  label {
-    span {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-
   input,
   label {
     display: block;
     margin: 0.125em;
-  }
-
-  div.sheet-heading {
-    grid-template-columns: .75 1.25fr;
-  }
-    
-  fieldset {
-    height: min-content;
-    margin: 0.125em;
-  }
-
-  fieldset.character-sheet-heading {
-
-    align-items: center;
-
-    #character-name {
-      width: 96%;
-      margin-bottom: var(--spacing-md);
-
-    }
-
-    input {
-      width: 10em;
-    }
-
-    input[name="character-class"] {
-      width: 4.5em;
-    }
-
-  }
-
-  fieldset.character-sheet-ability {
-    display: flex;
-    flex-direction: row;
-
-    input[type="number"] {
-      width: 2em;
-    }
   }
 }
