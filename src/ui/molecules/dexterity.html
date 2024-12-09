@@ -1,0 +1,281 @@
+<div class="grid columns-2">
+    <div>
+        <label for="dexterity-score">
+            Score
+            <span class="chip">
+                <button title="Decrement" _="on click 
+                  set proficiency to #proficiency-bonus.textContent as an Int
+                  if #dexterity-score.textContent >= 0 
+                    decrement #dexterity-score.textContent
+                    set score to (#dexterity-score.textContent) as an Int
+                    set modifier to Math.floor((score - 10) / 2)
+  
+                    if modifier is greater than or equal to 0 
+                      set #dexterity-modifier.textContent to `+${modifier}`
+                      set #dexterity-save.textContent to `+${modifier}`
+  
+                      if (#dexterity-save-proficiency.checked)
+                        set #dexterity-save.textContent to `+${modifier + proficiency}`
+                      end
+
+                      set #acrobatics-check.textContent to `+${modifier}`
+                      if (#acrobatics-proficiency.checked)
+                        set #acrobatics-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#acrobatics-proficiency.checked) and (#acrobatics-expertise.checked)
+                        set #acrobatics-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+
+                      set #sleight-of-hand-check.textContent to `+${modifier}`
+                      if (#sleight-of-hand-proficiency.checked)
+                        set #sleight-of-hand-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#sleight-of-hand-proficiency.checked) and (#sleight-of-hand-expertise.checked)
+                        set #sleight-of-hand-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+
+                      set #stealth-check.textContent to `+${modifier}`
+                      if (#stealth-proficiency.checked)
+                        set #stealth-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#stealth-proficiency.checked) and (#stealth-expertise.checked)
+                        set #stealth-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+                    end
+  
+                    if modifier is less than 0 
+                      set #dexterity-modifier.textContent to modifier
+                      set #dexterity-save.textContent to modifier
+  
+                      if (#dexterity-save-proficiency.checked)
+                        set #dexterity-save.textContent to modifier + proficiency
+                      end
+
+                      set #acrobatics-check.textContent to modifier
+                      if (#acrobatics-proficiency.checked)
+                        set #acrobatics-check.textContent to modifier + proficiency
+                      end
+                      if (#acrobatics-proficiency.checked) and (#acrobatics-expertise.checked)
+                        set #acrobatics-check.textContent to modifier + (proficiency * 2)
+                      end
+
+                      set #sleight-of-hand-check.textContent to modifier
+                      if (#sleight-of-hand-proficiency.checked)
+                        set #sleight-of-hand-check.textContent to modifier + proficiency
+                      end
+                      if (#sleight-of-hand-proficiency.checked) and (#sleight-of-hand-expertise.checked)
+                        set #sleight-of-hand-check.textContent to modifier + (proficiency * 2)
+                      end
+
+                      set #stealth-check.textContent to modifier
+                      if (#stealth-proficiency.checked)
+                        set #stealth-check.textContent to modifier + proficiency
+                      end
+                      if (#stealth-proficiency.checked) and (#stealth-expertise.checked)
+                        set #stealth-check.textContent to modifier + (proficiency * 2)
+                      end
+                    end
+                  end">
+                    &#8722;
+                </button>
+                <output id="dexterity-score" name="strength-score">10</output>
+                <button title="Increment" _="on click 
+                  set proficiency to #proficiency-bonus.textContent as an Int
+  
+                  if #dexterity-score.textContent < 30 
+                    increment #dexterity-score.textContent
+                    set score to (#dexterity-score.textContent) as an Int
+                    set modifier to Math.floor((score - 10) / 2)
+  
+                    if modifier is greater than or equal to 0 
+                      set #dexterity-modifier.textContent to `+${modifier}`
+                      set #dexterity-save.textContent to `+${modifier}`
+  
+                      if (#dexterity-save-proficiency.checked)
+                        set #dexterity-save.textContent to `+${modifier + proficiency}`
+                      end
+
+                      set #acrobatics-check.textContent to `+${modifier}`
+                      if (#acrobatics-proficiency.checked)
+                        set #acrobatics-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#acrobatics-proficiency.checked) and (#acrobatics-expertise.checked)
+                        set #acrobatics-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+
+                      set #sleight-of-hand-check.textContent to `+${modifier}`
+                      if (#sleight-of-hand-proficiency.checked)
+                        set #sleight-of-hand-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#sleight-of-hand-proficiency.checked) and (#sleight-of-hand-expertise.checked)
+                        set #sleight-of-hand-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+
+                      set #stealth-check.textContent to `+${modifier}`
+                      if (#stealth-proficiency.checked)
+                        set #stealth-check.textContent to `+${modifier + proficiency}`
+                      end
+                      if (#stealth-proficiency.checked) and (#stealth-expertise.checked)
+                        set #stealth-check.textContent to `+${modifier + (proficiency * 2)}`
+                      end
+                    end
+  
+                    if modifier is less than 0 
+                      set #dexterity-modifier.textContent to modifier
+                      set #dexterity-save.textContent to modifier
+  
+                      if (#dexterity-save-proficiency.checked)
+                        set #dexterity-save.textContent to modifier + proficiency
+                      end
+
+                      set #acrobatics-check.textContent to modifier
+                      if (#acrobatics-proficiency.checked)
+                        set #acrobatics-check.textContent to modifier + proficiency
+                      end
+                      if (#acrobatics-proficiency.checked) and (#acrobatics-expertise.checked)
+                        set #acrobatics-check.textContent to modifier + (proficiency * 2)
+                      end
+
+                      set #sleight-of-hand-check.textContent to modifier
+                      if (#sleight-of-hand-proficiency.checked)
+                        set #sleight-of-hand-check.textContent to modifier + proficiency
+                      end
+                      if (#sleight-of-hand-proficiency.checked) and (#sleight-of-hand-expertise.checked)
+                        set #sleight-of-hand-check.textContent to modifier + (proficiency * 2)
+                      end
+
+                      set #stealth-check.textContent to modifier
+                      if (#stealth-proficiency.checked)
+                        set #stealth-check.textContent to modifier + proficiency
+                      end
+                      if (#stealth-proficiency.checked) and (#stealth-expertise.checked)
+                        set #stealth-check.textContent to modifier + (proficiency * 2)
+                      end
+                    end
+                  end">
+                    &#43;
+                </button>
+            </span>
+        </label>
+
+        <label for="dexterity-modifier">
+            Mod
+            <span class="chip">
+                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #dexterity-modifier.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                    <output id="dexterity-modifier" name="dexterity-modifier">+0</output>
+                </button>
+                <input id="dexterity-modifier-proficiency" class="switch" type="checkbox"
+                    name="dexterity-modifier-proficiency" _="on input set modifier to #dexterity-modifier.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #dexterity-modifier-proficiency.checked set total to modifier + proficiency end
+                if not #dexterity-modifier-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #dexterity-modifier.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+
+        <label for="dexterity-save">
+            Save
+            <span class="chip">
+                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #dexterity-save.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                    <output id="dexterity-save" name="dexterity-save">+0</output>
+                </button>
+                <input id="dexterity-save-proficiency" class="switch" type="checkbox" name="dexterity-save-proficiency"
+                    _="on input set modifier to #dexterity-save.textContent as an Int
+                  set total to modifier
+                  set proficiency to #proficiency-bonus.textContent as an Int
+                  if #dexterity-save-proficiency.checked set total to modifier + proficiency end
+                  if not #dexterity-save-proficiency.checked set total to modifier - proficiency end
+                  set sign to '+' if total is less than 0 set sign to '-' end
+                  set #dexterity-save.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+    </div>
+
+    <div>
+        <label for="acrobatics-check"></label>
+        Acrobatics
+        <span class="chip">
+            <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
+            set sign to '+' if modifier is less than 0 set sign to '-' end
+            set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+            send click to the last <button/> in #dice-roller">
+                <output id="acrobatics-check" name="acrobatics-check">+0</output>
+            </button>
+            <input id="acrobatics-proficiency" class="switch" type="checkbox" name="acrobatics-proficiency" _="on input set modifier to #acrobatics-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #acrobatics-proficiency.checked set total to modifier + proficiency end
+                if not #acrobatics-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #acrobatics-check.textContent to sign + Math.abs(total)" />
+            <input id="acrobatics-expertise" class="switch" type="checkbox" name="acrobatics-expertise" _="on input set modifier to #acrobatics-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #acrobatics-expertise.checked set total to modifier + proficiency end
+                if not #acrobatics-expertise.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #acrobatics-check.textContent to sign + Math.abs(total)" />
+        </span>
+        </label>
+
+        <label for="sleight-of-hand-check"></label>
+        Sleight of Hand
+        <span class="chip">
+            <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
+            set sign to '+' if modifier is less than 0 set sign to '-' end
+            set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+            send click to the last <button/> in #dice-roller">
+                <output id="sleight-of-hand-check" name="sleight-of-hand-check">+0</output>
+            </button>
+            <input id="sleight-of-hand-proficiency" class="switch" type="checkbox" name="sleight-of-hand-proficiency" _="on input set modifier to #sleight-of-hand-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #sleight-of-hand-proficiency.checked set total to modifier + proficiency end
+                if not #sleight-of-hand-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #sleight-of-hand-check.textContent to sign + Math.abs(total)" />
+            <input id="sleight-of-hand-expertise" class="switch" type="checkbox" name="sleight-of-hand-expertise" _="on input set modifier to #sleight-of-hand-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #sleight-of-hand-expertise.checked set total to modifier + proficiency end
+                if not #sleight-of-hand-expertise.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #sleight-of-hand-check.textContent to sign + Math.abs(total)" />
+        </span>
+        </label>
+
+        <label for="stealth-check"></label>
+        Stealth
+        <span class="chip">
+            <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
+            set sign to '+' if modifier is less than 0 set sign to '-' end
+            set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+            send click to the last <button/> in #dice-roller">
+                <output id="stealth-check" name="stealth-check">+0</output>
+            </button>
+            <input id="stealth-proficiency" class="switch" type="checkbox" name="stealth-proficiency" _="on input set modifier to #stealth-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #stealth-proficiency.checked set total to modifier + proficiency end
+                if not #stealth-proficiency.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #stealth-check.textContent to sign + Math.abs(total)" />
+            <input id="stealth-expertise" class="switch" type="checkbox" name="stealth-expertise" _="on input set modifier to #stealth-check.textContent as an Int
+                set total to modifier
+                set proficiency to #proficiency-bonus.textContent as an Int
+                if #stealth-expertise.checked set total to modifier + proficiency end
+                if not #stealth-expertise.checked set total to modifier - proficiency end
+                set sign to '+' if total is less than 0 set sign to '-' end
+                set #stealth-check.textContent to sign + Math.abs(total)" />
+        </span>
+        </label>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 fieldset.character-sheet-passives {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
