@@ -1,0 +1,104 @@
+<div class="flex-column constitution">
+  <label for="constitution-score">
+    Score
+    <span class="chip">
+      <button title="Decrement" _="on click 
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #constitution-score.textContent >= 0 
+                        decrement #constitution-score.textContent
+                        set score to (#constitution-score.textContent) as an Int
+      
+                        set modifier to Math.floor((score - 10) / 2)
+      
+                        if modifier is greater than or equal to 0 
+                          set #constitution-modifier.textContent to `+${modifier}`
+                          set #constitution-save.textContent to `+${modifier}`
+      
+                          if (#constitution-save-proficiency.checked)
+                            set #constitution-save.textContent to `+${modifier + proficiency}`
+                          end
+                        end
+      
+                        if modifier is less than 0 
+                          set #constitution-modifier.textContent to modifier
+                          set #constitution-save.textContent to modifier
+      
+                          if (#constitution-save-proficiency.checked)
+                            set #constitution-save.textContent to modifier + proficiency
+                          end
+                        end
+                      end">
+        &#8722;
+      </button>
+      <output id="constitution-score" name="constitution-score">10</output>
+      <button title="Increment" _="on click 
+                      set proficiency to #proficiency-bonus.textContent as an Int
+      
+                      if #constitution-score.textContent < 30 
+                        increment #constitution-score.textContent
+                        set score to (#constitution-score.textContent) as an Int
+      
+                        set modifier to Math.floor((score - 10) / 2)
+      
+                        if modifier is greater than or equal to 0 
+                          set #constitution-modifier.textContent to `+${modifier}`
+                          set #constitution-save.textContent to `+${modifier}`
+      
+                          if (#constitution-save-proficiency.checked)
+                            set #constitution-save.textContent to `+${modifier + proficiency}`
+                          end
+                        end
+      
+                        if modifier is less than 0 
+                          set #constitution-modifier.textContent to modifier
+                          set #constitution-save.textContent to modifier
+      
+                          if (#constitution-save-proficiency.checked)
+                            set #constitution-save.textContent to modifier + proficiency
+                          end
+                        end
+                      end">
+        &#43;
+      </button>
+    </span>
+  </label>
+
+  <label for="constitution-modifier">
+    Mod
+    <span class="chip">
+      <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #constitution-modifier.textContent
+                      set sign to '+' if modifier is less than 0 set sign to '-' end
+                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                      send click to the last <button/> in #dice-roller">
+        <output id="constitution-modifier" name="constitution-modifier">+0</output>
+      </button>
+      <input id="constitution-modifier-proficiency" class="switch" type="checkbox"
+        name="constitution-modifier-proficiency" _="on input set modifier to #constitution-modifier.textContent as an Int
+                    set total to modifier
+                    set proficiency to #proficiency-bonus.textContent as an Int
+                    if #constitution-modifier-proficiency.checked set total to modifier + proficiency end
+                    if not #constitution-modifier-proficiency.checked set total to modifier - proficiency end
+                    set sign to '+' if total is less than 0 set sign to '-' end
+                    set #constitution-modifier.textContent to sign + Math.abs(total)" />
+    </span>
+    </span>
+  </label>
+  <label for="constitution-save">
+    Save
+    <span class="chip">
+      <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #constitution-save.textContent
+                      set sign to '+' if modifier is less than 0 set sign to '-' end
+                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                      send click to the last <button/> in #dice-roller">
+        <output id="constitution-save" name="constitution-save">+0</output>
+      </button>
+      <input id="constitution-save-proficiency" class="switch" type="checkbox" name="constitution-save-proficiency" _="on input set modifier to #constitution-save.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #constitution-save-proficiency.checked set total to modifier + proficiency end
+                      if not #constitution-save-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #constitution-save.textContent to sign + Math.abs(total)" />
+    </span>
+  </label>
+</div>

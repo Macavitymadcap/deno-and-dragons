@@ -1,17 +1,12 @@
 label  {
   text-shadow: var(--text-shadow);
-  display: grid;
-  grid-template-areas: 
-    "text"
-    "content";
-  gap: 0.25rem;
 }
 
-label::before {
+/* label::before {
   grid-area: text;
 }
 
 label > span.chip {
   grid-area: content;
-}
+} */
 

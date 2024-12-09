@@ -1,0 +1,40 @@
+<tr>
+    <td>
+        <span class="chip">
+            <span class="chip-label" contenteditable="true">Attack</span>
+        </span>
+    </td>
+
+    <td>
+        <span class="chip">
+            <output contenteditable="true">+0</output>
+            <button
+                popovertarget="dice-roller"
+                popovertargetaction="toggle"
+                _="on click set #dice-input's value to 'd20' + (the previous <output/>).textContent
+                send click to the last <button/> in #dice-roller"
+            >
+                &#127922;
+            </button>
+        </span>
+    </td>
+    <td>
+        <span class="chip">
+            <output contenteditable="true">1d4</output>
+            <button
+                popovertarget="dice-roller"
+                popovertargetaction="toggle"
+                _="on click set #dice-input's value to (the previous <output/>).textContent
+                send click to the last <button/> in #dice-roller"
+            >
+                &#127922;
+            </button>
+            <span class="span-label" contenteditable="true">damage</span>
+        </span>
+    </td>
+    <td>
+        <button class="destructive" _="on click remove the closest <tr/>">
+            &#10006;
+        </button>
+    </td>
+</tr>

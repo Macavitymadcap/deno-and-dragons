@@ -1,9 +1,9 @@
 <div class="grid columns-2">
-    <div>
-        <label for="strength-score">
-            Score
-            <span class="chip">
-                <button title="Decrement" _="on click 
+  <div class="flex-column">
+    <label for="strength-score">
+      Score
+      <span class="chip">
+        <button title="Decrement" _="on click 
                 set proficiency to #proficiency-bonus.textContent as an Int
                 if #strength-score.textContent >= 0 
                   decrement #strength-score.textContent
@@ -44,12 +44,11 @@
                     end
                   end
                 end">
-                    &#8722;
-                </button>
-                <output id="strength-score" name="strength-score">10</output>
-                <button title="Increment" _="on click 
+          &#8722;
+        </button>
+        <output id="strength-score" name="strength-score">10</output>
+        <button title="Increment" _="on click 
                 set proficiency to #proficiency-bonus.textContent as an Int
-  
                 if #strength-score.textContent < 30 
                   increment #strength-score.textContent
                   set score to (#strength-score.textContent) as an Int
@@ -89,76 +88,75 @@
                     end
                   end
                 end">
-                    &#43;
-                </button>
-            </span>
-        </label>
+          &#43;
+        </button>
+      </span>
+    </label>
 
-        <label for="strength-modifier">
-            Mod
-            <span class="chip">
-                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-modifier.textContent
+    <label for="strength-modifier">
+      Mod
+      <span class="chip">
+        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-modifier.textContent
                 set sign to '+' if modifier is less than 0 set sign to '-' end
                 set #dice-input's value to 'd20' + sign + Math.abs(modifier)
                 send click to the last <button/> in #dice-roller">
-                    <output id="strength-modifier" name="strength-modifier">+0</output>
-                </button>
-                <input id="strength-modifier-proficiency" class="switch" type="checkbox"
-                    name="strength-modifier-proficiency" _="on input set modifier to #strength-modifier.textContent as an Int
+          <output id="strength-modifier" name="strength-modifier">+0</output>
+        </button>
+        <input id="strength-modifier-proficiency" class="switch" type="checkbox" name="strength-modifier-proficiency" _="on input set modifier to #strength-modifier.textContent as an Int
                 set total to modifier
                 set proficiency to #proficiency-bonus.textContent as an Int
                 if #strength-modifier-proficiency.checked set total to modifier + proficiency end
                 if not #strength-modifier-proficiency.checked set total to modifier - proficiency end
                 set sign to '+' if total is less than 0 set sign to '-' end
                 set #strength-modifier.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
+      </span>
+    </label>
 
-        <label for="strength-save">
-            Save
-            <span class="chip">
-                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-save.textContent
+    <label for="strength-save">
+      Save
+      <span class="chip">
+        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-save.textContent
                 set sign to '+' if modifier is less than 0 set sign to '-' end
                 set #dice-input's value to 'd20' + sign + Math.abs(modifier)
                 send click to the last <button/> in #dice-roller">
-                    <output id="strength-save" name="strength-save">+0</output>
-                </button>
-                <input id="strength-save-proficiency" class="switch" type="checkbox" name="strength-save-proficiency" _="on input set modifier to #strength-save.textContent as an Int
+          <output id="strength-save" name="strength-save">+0</output>
+        </button>
+        <input id="strength-save-proficiency" class="switch" type="checkbox" name="strength-save-proficiency" _="on input set modifier to #strength-save.textContent as an Int
                 set total to modifier
                 set proficiency to #proficiency-bonus.textContent as an Int
                 if #strength-save-proficiency.checked set total to modifier + proficiency end
                 if not #strength-save-proficiency.checked set total to modifier - proficiency end
                 set sign to '+' if total is less than 0 set sign to '-' end
                 set #strength-save.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-    </div>
+      </span>
+    </label>
+  </div>
 
-    <div>
-        <label for="athletics-check">
-            Athletics
-            <span class="chip">
-                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
+  <div>
+    <label for="athletics-check">
+      Athletics
+      <span class="chip">
+        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
             set sign to '+' if modifier is less than 0 set sign to '-' end
             set #dice-input's value to 'd20' + sign + Math.abs(modifier)
             send click to the last <button/> in #dice-roller">
-                    <output id="athletics-check" name="athletics-check">+0</output>
-                </button>
-                <input id="athletics-proficiency" class="switch" type="checkbox" name="athletics-proficiency" _="on input set modifier to #athletics-check.textContent as an Int
+          <output id="athletics-check" name="athletics-check">+0</output>
+        </button>
+        <input id="athletics-proficiency" class="switch" type="checkbox" name="athletics-proficiency" _="on input set modifier to #athletics-check.textContent as an Int
                 set total to modifier
                 set proficiency to #proficiency-bonus.textContent as an Int
                 if #athletics-proficiency.checked set total to modifier + proficiency end
                 if not #athletics-proficiency.checked set total to modifier - proficiency end
                 set sign to '+' if total is less than 0 set sign to '-' end
                 set #athletics-check.textContent to sign + Math.abs(total)" />
-                <input id="athletics-expertise" class="switch" type="checkbox" name="athletics-expertise" _="on input set modifier to #athletics-check.textContent as an Int
+        <input id="athletics-expertise" class="switch" type="checkbox" name="athletics-expertise" _="on input set modifier to #athletics-check.textContent as an Int
                 set total to modifier
                 set proficiency to #proficiency-bonus.textContent as an Int
                 if #athletics-expertise.checked set total to modifier + proficiency end
                 if not #athletics-expertise.checked set total to modifier - proficiency end
                 set sign to '+' if total is less than 0 set sign to '-' end
                 set #athletics-check.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-    </div>
+      </span>
+    </label>
+  </div>
 </div>

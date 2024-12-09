@@ -1,0 +1,396 @@
+<div class="grid columns-2">
+    <div class="flex-column">
+        <label for="intelligence-score">
+            Score
+            <span class="chip">
+              <button title="Decrement" _="on click 
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #intelligence-score.textContent >= 0 
+                        decrement #intelligence-score.textContent
+                        set score to (#intelligence-score.textContent) as an Int
+                        set modifier to Math.floor((score - 10) / 2)
+      
+                        if modifier is greater than or equal to 0 
+                          set #intelligence-modifier.textContent to `+${modifier}`
+                          set #intelligence-save.textContent to `+${modifier}`
+      
+                          if (#intelligence-save-proficiency.checked)
+                            set #intelligence-save.textContent to `+${modifier + proficiency}`
+                          end
+
+                          set #arcana-check.textContent to `+${modifier}`
+                          if (#arcana-proficiency.checked)
+                            set #arcana-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#arcana-proficiency.checked) and (#arcana-expertise.checked)
+                            set #arcana-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #history-check.textContent to `+${modifier}`
+                          if (#history-proficiency.checked)
+                            set #history-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#history-proficiency.checked) and (#history-expertise.checked)
+                            set #history-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #investigation-check.textContent to `+${modifier}`
+                          if (#investigation-proficiency.checked)
+                            set #investigation-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#investigation-proficiency.checked) and (#investigation-expertise.checked)
+                            set #investigation-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #nature-check.textContent to `+${modifier}`
+                          if (#nature-proficiency.checked)
+                            set #nature-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#nature-proficiency.checked) and (#nature-expertise.checked)
+                            set #nature-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #religion-check.textContent to `+${modifier}`
+                          if (#religion-proficiency.checked)
+                            set #religion-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#religion-proficiency.checked) and (#religion-expertise.checked)
+                            set #religion-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+                        end
+      
+                        if modifier is less than 0 
+                          set #intelligence-modifier.textContent to modifier
+                          set #intelligence-save.textContent to modifier
+      
+                          if (#intelligence-save-proficiency.checked)
+                            set #intelligence-save.textContent to modifier + proficiency
+                          end
+
+                          set #arcana-check.textContent to modifier
+                          if (#arcana-proficiency.checked)
+                            set #arcana-check.textContent to modifier + proficiency
+                          end
+                          if (#arcana-proficiency.checked) and (#arcana-expertise.checked)
+                            set #arcana-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #history-check.textContent to modifier
+                          if (#history-proficiency.checked)
+                            set #history-check.textContent to modifier + proficiency
+                          end
+                          if (#history-proficiency.checked) and (#history-expertise.checked)
+                            set #history-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #investigation-check.textContent to modifier
+                          if (#investigation-proficiency.checked)
+                            set #investigation-check.textContent to modifier + proficiency
+                          end
+                          if (#investigation-proficiency.checked) and (#investigation-expertise.checked)
+                            set #investigation-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #nature-check.textContent to modifier
+                          if (#nature-proficiency.checked)
+                            set #nature-check.textContent to modifier + proficiency
+                          end
+                          if (#nature-proficiency.checked) and (#nature-expertise.checked)
+                            set #nature-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #religion-check.textContent to modifier
+                          if (#religion-proficiency.checked)
+                            set #religion-check.textContent to modifier + proficiency
+                          end
+                          if (#religion-proficiency.checked) and (#religion-expertise.checked)
+                            set #religion-check.textContent to modifier + (proficiency * 2)
+                          end
+                        end
+                      end">
+                &#8722;
+              </button>
+              <output id="intelligence-score" name="intelligence-score">10</output>
+              <button title="Increment" _="on click 
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #intelligence-score.textContent < 30 
+                        increment #intelligence-score.textContent
+                        set score to (#intelligence-score.textContent) as an Int
+                        set modifier to Math.floor((score - 10) / 2)
+      
+                        if modifier is greater than or equal to 0 
+                          set #intelligence-modifier.textContent to `+${modifier}`
+                          set #intelligence-save.textContent to `+${modifier}`
+      
+                          if (#intelligence-save-proficiency.checked)
+                            set #intelligence-save.textContent to `+${modifier + proficiency}`
+                          end
+
+                          set #arcana-check.textContent to `+${modifier}`
+                          if (#arcana-proficiency.checked)
+                            set #arcana-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#arcana-proficiency.checked) and (#arcana-expertise.checked)
+                            set #arcana-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #history-check.textContent to `+${modifier}`
+                          if (#history-proficiency.checked)
+                            set #history-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#history-proficiency.checked) and (#history-expertise.checked)
+                            set #history-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #investigation-check.textContent to `+${modifier}`
+                          if (#investigation-proficiency.checked)
+                            set #investigation-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#investigation-proficiency.checked) and (#investigation-expertise.checked)
+                            set #investigation-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #nature-check.textContent to `+${modifier}`
+                          if (#nature-proficiency.checked)
+                            set #nature-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#nature-proficiency.checked) and (#nature-expertise.checked)
+                            set #nature-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+
+                          set #religion-check.textContent to `+${modifier}`
+                          if (#religion-proficiency.checked)
+                            set #religion-check.textContent to `+${modifier + proficiency}`
+                          end
+                          if (#religion-proficiency.checked) and (#religion-expertise.checked)
+                            set #religion-check.textContent to `+${modifier + (proficiency * 2)}`
+                          end
+                        end
+      
+                        if modifier is less than 0 
+                          set #intelligence-modifier.textContent to modifier
+                          set #intelligence-save.textContent to modifier
+      
+                          if (#intelligence-save-proficiency.checked)
+                            set #intelligence-save.textContent to modifier + proficiency
+                          end
+
+                          set #arcana-check.textContent to modifier
+                          if (#arcana-proficiency.checked)
+                            set #arcana-check.textContent to modifier + proficiency
+                          end
+                          if (#arcana-proficiency.checked) and (#arcana-expertise.checked)
+                            set #arcana-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #history-check.textContent to modifier
+                          if (#history-proficiency.checked)
+                            set #history-check.textContent to modifier + proficiency
+                          end
+                          if (#history-proficiency.checked) and (#history-expertise.checked)
+                            set #history-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #investigation-check.textContent to modifier
+                          if (#investigation-proficiency.checked)
+                            set #investigation-check.textContent to modifier + proficiency
+                          end
+                          if (#investigation-proficiency.checked) and (#investigation-expertise.checked)
+                            set #investigation-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #nature-check.textContent to modifier
+                          if (#nature-proficiency.checked)
+                            set #nature-check.textContent to modifier + proficiency
+                          end
+                          if (#nature-proficiency.checked) and (#nature-expertise.checked)
+                            set #nature-check.textContent to modifier + (proficiency * 2)
+                          end
+
+                          set #religion-check.textContent to modifier
+                          if (#religion-proficiency.checked)
+                            set #religion-check.textContent to modifier + proficiency
+                          end
+                          if (#religion-proficiency.checked) and (#religion-expertise.checked)
+                            set #religion-check.textContent to modifier + (proficiency * 2)
+                          end
+                        end
+                      end">
+                &#43;
+              </button>
+            </span>
+          </label>
+      
+          <label for="intelligence-modifier">
+            Mod
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intelligence-modifier.textContent
+                      set sign to '+' if modifier is less than 0 set sign to '-' end
+                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                      send click to the last <button/> in #dice-roller">
+                <output id="intelligence-modifier" name="intelligence-modifier">+0</output>
+              </button>
+              <input id="intelligence-modifier-proficiency" class="switch" type="checkbox"
+                name="intelligence-modifier-proficiency" _="on input set modifier to #intelligence-modifier.textContent as an Int
+                    set total to modifier
+                    set proficiency to #proficiency-bonus.textContent as an Int
+                    if #intelligence-modifier-proficiency.checked set total to modifier + proficiency end
+                    if not #intelligence-modifier-proficiency.checked set total to modifier - proficiency end
+                    set sign to '+' if total is less than 0 set sign to '-' end
+                    set #intelligence-modifier.textContent to sign + Math.abs(total)" />
+            </span>
+            </span>
+          </label>
+          
+          <label for="intelligence-save">
+            Save
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intelligence-save.textContent
+                      set sign to '+' if modifier is less than 0 set sign to '-' end
+                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                      send click to the last <button/> in #dice-roller">
+                <output id="intelligence-save" name="intelligence-save">+0</output>
+              </button>
+              <input id="intelligence-save-proficiency" class="switch" type="checkbox" name="intelligence-save-proficiency" _="on input set modifier to #intelligence-save.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #intelligence-save-proficiency.checked set total to modifier + proficiency end
+                      if not #intelligence-save-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #intelligence-save.textContent to sign + Math.abs(total)" />
+            </span>
+          </label>
+    </div>
+
+    <div>
+        <label for="arcana-check">
+            Arcana
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intellgience-check.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                <output id="arcana-check" name="arcana-check">+0</output>
+              </button>
+              <input id="arcana-proficiency" class="switch" type="checkbox" name="arcana-proficiency" _="on input set modifier to #arcana-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #arcana-proficiency.checked set total to modifier + proficiency end
+                      if not #arcana-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #arcana-check.textContent to sign + Math.abs(total)" />
+              <input id="arcana-expertise" class="switch" type="checkbox" name="arcana-expertise" _="on input set modifier to #arcana-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #arcana-expertise.checked set total to modifier + proficiency end
+                      if not #arcana-expertise.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #arcana-check.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+        
+        <label for="history-check">
+            History
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intellgience-check.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                <output id="history-check" name="history-check">+0</output>
+              </button>
+              <input id="history-proficiency" class="switch" type="checkbox" name="history-proficiency" _="on input set modifier to #history-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #history-proficiency.checked set total to modifier + proficiency end
+                      if not #history-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #history-check.textContent to sign + Math.abs(total)" />
+              <input id="history-expertise" class="switch" type="checkbox" name="history-expertise" _="on input set modifier to #history-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #history-expertise.checked set total to modifier + proficiency end
+                      if not #history-expertise.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #history-check.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+        
+        <label for="investigation-check">
+            Investigation
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intellgience-check.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                <output id="investigation-check" name="investigation-check">+0</output>
+              </button>
+              <input id="investigation-proficiency" class="switch" type="checkbox" name="investigation-proficiency" _="on input set modifier to #investigation-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #investigation-proficiency.checked set total to modifier + proficiency end
+                      if not #investigation-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #investigation-check.textContent to sign + Math.abs(total)" />
+              <input id="investigation-expertise" class="switch" type="checkbox" name="investigation-expertise" _="on input set modifier to #investigation-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #investigation-expertise.checked set total to modifier + proficiency end
+                      if not #investigation-expertise.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #investigation-check.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+        
+        <label for="nature-check">
+            Nature
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intellgience-check.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                <output id="nature-check" name="nature-check">+0</output>
+              </button>
+              <input id="nature-proficiency" class="switch" type="checkbox" name="nature-proficiency" _="on input set modifier to #nature-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #nature-proficiency.checked set total to modifier + proficiency end
+                      if not #nature-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #nature-check.textContent to sign + Math.abs(total)" />
+              <input id="nature-expertise" class="switch" type="checkbox" name="nature-expertise" _="on input set modifier to #nature-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #nature-expertise.checked set total to modifier + proficiency end
+                      if not #nature-expertise.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #nature-check.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+
+        <label for="religion-check">
+            Religion
+            <span class="chip">
+              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intellgience-check.textContent
+                  set sign to '+' if modifier is less than 0 set sign to '-' end
+                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                  send click to the last <button/> in #dice-roller">
+                <output id="religion-check" name="religion-check">+0</output>
+              </button>
+              <input id="religion-proficiency" class="switch" type="checkbox" name="religion-proficiency" _="on input set modifier to #religion-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #religion-proficiency.checked set total to modifier + proficiency end
+                      if not #religion-proficiency.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #religion-check.textContent to sign + Math.abs(total)" />
+              <input id="religion-expertise" class="switch" type="checkbox" name="religion-expertise" _="on input set modifier to #religion-check.textContent as an Int
+                      set total to modifier
+                      set proficiency to #proficiency-bonus.textContent as an Int
+                      if #religion-expertise.checked set total to modifier + proficiency end
+                      if not #religion-expertise.checked set total to modifier - proficiency end
+                      set sign to '+' if total is less than 0 set sign to '-' end
+                      set #religion-check.textContent to sign + Math.abs(total)" />
+            </span>
+        </label>
+    </div>
+</div>

@@ -222,7 +222,14 @@
             </fieldset>
           </div>
 
-        <section name="column-2"></section>
+        <div name="column-2">
+          <fieldset hx-get="organisms/defence.html" hx-trigger="load" hx-swap="outerHTML">
+          </fieldset>
+
+          <fieldset hx-get="organisms/attacks.html" hx-trigger="load" hx-swap="outerHTML"></fieldset>
+          </fieldset>
+
+        </div>
 
         <section name="column-3"></section>
       </div>

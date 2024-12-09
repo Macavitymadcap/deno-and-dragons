@@ -1,0 +1,25 @@
+<fieldset>
+    <legend>ATTACKS & SPELLCASTING</legend>
+    <table>
+        <thead>
+            <th>
+                Name
+            </th>
+            <th>
+                Attack Bonus
+            </th>
+            <th>
+                Damage/Type
+            </th>
+            <th>
+                <button
+                    hx-get="molecules/attack.html"
+                    hx-trigger="click"
+                    hx-target="#attacks"
+                    hx-swap="beforeend"
+                >&#65291;</button>
+            </th>
+        </thead>
+        <tbody id="attacks"></tbody>
+    </table>
+</fieldset>
