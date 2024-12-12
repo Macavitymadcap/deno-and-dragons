@@ -1,51 +1,51 @@
 <fieldset>
     <div class="grid columns-3">
-        <label for="armour-class">
-            Armour Class
-            <span class="chip">
-                <button title="Decrement"
-                    _="on click if #armour-class.textContent >= 0 decrement #armour-class.textContent">
-                    &#8722;
-                </button>
-                <output id="armour-class" name="armour-class">10</output>
-                <button title="Increment"
-                    _="on click if #armour-class.textContent < 30 increment #armour-class.textContent">
+        <div class="flex-column">
+            <label for="armour-class">
+                Armour Class
+                <span class="chip">
+                    <button title="Decrement"
+                        _="on click if #armour-class.textContent >= 0 decrement #armour-class.textContent">
+                        &#8722;
+                    </button>
+                    <output id="armour-class" name="armour-class">10</output>
+                    <button title="Increment"
+                        _="on click if #armour-class.textContent < 30 increment #armour-class.textContent">
+                        &#43;
+                    </button>
+                </span>
+            </label>
+        
+            <label for="intiative">
+                Intiative
+                <span class="chip">
+                    <button title="Decrement" _="on click if #intiative.textContent >= -6 decrement #intiative.textContent">
+                        &#8722;
+                    </button>
+                    <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intiative.textContent as an Int
+                    set sign to '+' 
+                    if modifier is less than 0 set sign to '-' end
+                    set #dice-input's value to 'd20' + sign + Math.abs(modifier)
+                    send click to the last <button/> in #dice-roller">
+                        <output id="intiative" name="intiative">+0</output>
+                    </button>
+                <button title="Increment" _="on click if #intiative.textContent < 20 increment #intiative.textContent">
                     &#43;
                 </button>
-            </span>
-        </label>
-    
-        <label for="intiative">
-            Intiative
-            <span class="chip">
-                <button title="Decrement" _="on click if #intiative.textContent >= -6 decrement #intiative.textContent">
-                    &#8722;
-                </button>
-                <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #intiative.textContent as an Int
-                set sign to '+' 
-                if modifier is less than 0 set sign to '-' end
-                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                send click to the last <button/> in #dice-roller">
-                    <output id="intiative" name="intiative">+0</output>
-                </button>
-            <button title="Increment" _="on click if #intiative.textContent < 20 increment #intiative.textContent">
-                &#43;
-            </button>
-            </span>
-        </label>
-    
-        <label for="speed">
-            Speed (walk, etc)
-            <span class="chip">
-                <span class="chip-label" contenteditable="true" id="speed">30 ft.</span>
-            </span>
-        </label>
-    </div>
+                </span>
+            </label>
+        
+            <label for="speed">
+                Speed
+                <span class="chip">
+                    <span class="chip-label" contenteditable="true" id="speed">30 ft., climb 15 ft.,</span>
+                </span>
+            </label>
+        </div>
 
-    <div class="grid columns-2">
-        <div>
+        <div class="flex-column">
             <label for="maximum-hit-points">
-                Maximum Hit Points
+                Max HP
                 <span class="chip">
                     <button title="Decrement"
                         _="on click decrement #maximum-hit-points.textContent">
@@ -59,8 +59,8 @@
                 </span>
             </label>
 
-            <label for="current-hit-points"></label>
-                Current Hit Points
+            <label for="current-hit-points">
+                Current HP
                 <span class="chip">
                     <button title="Decrement"
                         _="on click decrement #current-hit-points.textContent">
@@ -74,11 +74,11 @@
                 </span>
             </label>
 
-            <label for="temporary-hit-points"></label>
-                Temporary Hit Points
+            <label for="temporary-hit-points">
+                Temporary HP
                 <span class="chip">
                     <button title="Decrement"
-                        _="on click if decrement #temporary-hit-points.textContent">
+                        _="on click decrement #temporary-hit-points.textContent">
                         &#8722;
                     </button>
                     <output id="temporary-hit-points" name="temporary-hit-points">0</output>
@@ -91,54 +91,53 @@
         </div>
 
         <div class="flex-column">
-            <label for="total-hit-dice">
-                Total Hit Dice
-                <span class="chip">
-                    <output id="total-hit-dice" name="total-hit-dice">1</output>
-                    d
-                    <select id="hit-die-select">
-                        <option>4</option>
-                        <option>6</option>
-                        <option>8</option>
-                        <option>10</option>
-                        <option>12</option>
-                    </select>
-                </span>
-            </label>
-
-            <label for="spent-hit-dice">
-                Spent Hit Dice
-                <span class="chip">
-                    <button title="Decrement"
-                        _="on click if #spent-hit-dice.textContent > 0 decrement #spent-hit-dice.textContent">
-                        &#8722;
-                    </button>
-                    <output id="spent-hit-dice" name="spent-hit-dice">0</output>
-                    <button title="Increment"
-                        _="on click if #spent-hit-dice.textContent < #total-hit-dice.textContent increment #spent-hit-dice.textContent">
-                        &#43;
-                    </button>
-                </span>
-            </label>
+            <div class="grid columns-2">
+                <label for="total-hit-dice">
+                    Total Hit Dice
+                    <span class="chip">
+                        <output id="total-hit-dice" name="total-hit-dice">1</output>
+                        d
+                        <select id="hit-die-select">
+                            <option>6</option>
+                            <option>8</option>
+                            <option>10</option>
+                            <option>12</option>
+                        </select>
+                    </span>
+                </label>
+                <label for="spent-hit-dice">
+                    Spent Hit Dice
+                    <span class="chip">
+                        <button title="Decrement"
+                            _="on click if #spent-hit-dice.textContent > 0 decrement #spent-hit-dice.textContent">
+                            &#8722;
+                        </button>
+                        <output id="spent-hit-dice" name="spent-hit-dice">0</output>
+                        <button title="Increment"
+                            _="on click if #spent-hit-dice.textContent < #total-hit-dice.textContent increment #spent-hit-dice.textContent">
+                            &#43;
+                        </button>
+                    </span>
+                </label>
+            </div>
 
             <label for="death-save-successes">
                 Death Save Success
                 <span class="chip">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" class="switch">
+                    <input type="checkbox" class="switch">
+                    <input type="checkbox" class="switch">
                 </span>
             </label>
 
             <label for="death-save-failures">
                 Death Save Failures
                 <span class="chip">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" class="switch">
+                    <input type="checkbox" class="switch">
+                    <input type="checkbox" class="switch">
                 </span>
             </label>
-
         </div>
     </div>
 </fieldset>

@@ -4,6 +4,12 @@
     justify-content: space-around;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .constitution {
     flex-direction: row;
 }

@@ -21,10 +21,8 @@
     </div>
 
     <section class="character-sheet">
-      <fieldset hx-get="organisms/heading.html" hx-trigger="load" hx-swap="outerHTML">
-      </fieldset>
-      <div class="grid columns-3">
-        <div name="column-1">
+      <div class="flex-row">
+        <div class="flex-column">
           <fieldset hx-get="organisms/passives.html" hx-trigger="load" hx-swap="outerHTML">
           </fieldset>
 
@@ -219,19 +217,22 @@
                 >&#43;</button>
             </div>
               <output id="other-proficiencies"></output>
-            </fieldset>
-          </div>
+          </fieldset>
+        </div>
 
-        <div name="column-2">
+        <div name="flex-row">
+          <fieldset hx-get="organisms/heading.html" hx-trigger="load" hx-swap="outerHTML">
+          </fieldset>
+          
           <fieldset hx-get="organisms/defence.html" hx-trigger="load" hx-swap="outerHTML">
           </fieldset>
 
-          <fieldset hx-get="organisms/attacks.html" hx-trigger="load" hx-swap="outerHTML"></fieldset>
+          <fieldset hx-get="organisms/attacks.html" hx-trigger="load" hx-swap="outerHTML">
           </fieldset>
 
+          <fieldset hx-get="organisms/equipment.html" hx-trigger="load" hx-swap="outerHTML">
+          </fieldset>
         </div>
-
-        <section name="column-3"></section>
       </div>
     </section>
   </main>
