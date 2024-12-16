@@ -1,10 +1,4 @@
-#search:popover-open {
-  width: 450px;
-  max-width: 90%;
-  height: 60vh;
-  position: fixed;
-  inset: unset;
-  top: 4em;
+.search-bar{
   margin: 0 auto;
   padding: 1rem;
 
