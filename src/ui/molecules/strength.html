@@ -3,91 +3,17 @@
     <label for="strength-score">
       Score
       <span class="chip">
-        <button title="Decrement" _="on click 
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #strength-score.textContent >= 0 
-                  decrement #strength-score.textContent
-                  set score to (#strength-score.textContent) as an Int
-                  set modifier to Math.floor((score - 10) / 2)
-  
-                  if modifier is greater than or equal to 0 
-                    set #strength-modifier.textContent to `+${modifier}`
-                    set #strength-save.textContent to `+${modifier}`
-
-                    if (#strength-save-proficiency.checked)
-                      set #strength-save.textContent to `+${modifier + proficiency}`
-                    end
-
-                    set #athletics-check.textContent to `+${modifier}`
-                    if (#athletics-proficiency.checked)
-                      set #athletics-check.textContent to `+${modifier + proficiency}`
-                    end
-                    if (#athletics-proficiency.checked) and (#athletics-expertise.checked)
-                      set #athletics-check.textContent to `+${modifier + (proficiency * 2)}`
-                    end
-                  end
-  
-                  if modifier is less than 0 
-                    set #strength-modifier.textContent to modifier
-                    set #strength-save.textContent to modifier
-
-                    if (#strength-save-proficiency.checked)
-                      set #strength-save.textContent to modifier + proficiency
-                    end
-
-                    set #athletics-check.textContent to modifier
-                    if (#athletics-proficiency.checked)
-                      set #athletics-check.textContent to modifier + proficiency
-                    end
-                    if (#athletics-proficiency.checked) and (#athletics-expertise.checked)
-                      set #athletics-check.textContent to modifier + (proficiency * 2)
-                    end
-                  end
-                end">
+        <button 
+          title="Decrement" 
+          _="on click decrementAbility('strength') updateSkills('strength', ['athletics'])"
+        >
           &#8722;
         </button>
         <output id="strength-score" name="strength-score">10</output>
-        <button title="Increment" _="on click 
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #strength-score.textContent < 30 
-                  increment #strength-score.textContent
-                  set score to (#strength-score.textContent) as an Int
-                  set modifier to Math.floor((score - 10) / 2)
-  
-                  if modifier is greater than or equal to 0 
-                    set #strength-modifier.textContent to `+${modifier}`
-                    set #strength-save.textContent to `+${modifier}`
-
-                    if (#strength-save-proficiency.checked)
-                      set #strength-save.textContent to `+${modifier + proficiency}`
-                    end
-
-                    set #athletics-check.textContent to `+${modifier}`
-                    if (#athletics-proficiency.checked)
-                      set #athletics-check.textContent to `+${modifier + proficiency}`
-                    end
-                    if (#athletics-proficiency.checked) and (#athletics-expertise.checked)
-                      set #athletics-check.textContent to `+${modifier + (proficiency * 2)}`
-                    end
-                  end
-  
-                  if modifier is less than 0 
-                    set #strength-modifier.textContent to modifier
-                    set #strength-save.textContent to modifier
-                    
-                    if (#strength-save-proficiency.checked)
-                      set #strength-save.textContent to modifier + proficiency
-                    end
-
-                    set #athletics-check.textContent to modifier
-                    if (#athletics-proficiency.checked)
-                      set #athletics-check.textContent to modifier + proficiency
-                    end
-                    if (#athletics-proficiency.checked) and (#athletics-expertise.checked)
-                      set #athletics-check.textContent to modifier + (proficiency * 2)
-                    end
-                  end
-                end">
+        <button 
+          title="Increment" 
+          _="on click incrementAbility('strength') updateSkills('strength', ['athletics'])"
+        >
           &#43;
         </button>
       </span>
@@ -96,38 +22,41 @@
     <label for="strength-modifier">
       Mod
       <span class="chip">
-        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-modifier.textContent
-                set sign to '+' if modifier is less than 0 set sign to '-' end
-                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                send click to the last <button/> in #dice-roller">
+        <button 
+        class="roller" 
+        popovertarget="dice-roller" 
+        popoveraction="show" 
+        _="on click rollD20Test('strength-modifier')"
+        >
           <output id="strength-modifier" name="strength-modifier">+0</output>
         </button>
-        <input id="strength-modifier-proficiency" class="switch" type="checkbox" name="strength-modifier-proficiency" _="on input set modifier to #strength-modifier.textContent as an Int
-                set total to modifier
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #strength-modifier-proficiency.checked set total to modifier + proficiency end
-                if not #strength-modifier-proficiency.checked set total to modifier - proficiency end
-                set sign to '+' if total is less than 0 set sign to '-' end
-                set #strength-modifier.textContent to sign + Math.abs(total)" />
+        <input 
+          id="strength-modifier-proficiency" 
+          class="switch" type="checkbox" 
+          name="strength-modifier-proficiency" 
+          _="on input toggleAbilityProficiency('strength-modifier')" 
+        />
       </span>
     </label>
 
     <label for="strength-save">
       Save
       <span class="chip">
-        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-save.textContent
-                set sign to '+' if modifier is less than 0 set sign to '-' end
-                set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                send click to the last <button/> in #dice-roller">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show"
+          _="on click rollD20Test('strength-save')"
+        >
           <output id="strength-save" name="strength-save">+0</output>
         </button>
-        <input id="strength-save-proficiency" class="switch" type="checkbox" name="strength-save-proficiency" _="on input set modifier to #strength-save.textContent as an Int
-                set total to modifier
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #strength-save-proficiency.checked set total to modifier + proficiency end
-                if not #strength-save-proficiency.checked set total to modifier - proficiency end
-                set sign to '+' if total is less than 0 set sign to '-' end
-                set #strength-save.textContent to sign + Math.abs(total)" />
+        <input 
+          id="strength-save-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="strength-save-proficiency" 
+          _="on input toggleAbilityProficiency('strength-save')"
+          />
       </span>
     </label>
   </div>
@@ -136,26 +65,28 @@
     <label for="athletics-check">
       Athletics
       <span class="chip">
-        <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #strength-check.textContent
-            set sign to '+' if modifier is less than 0 set sign to '-' end
-            set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-            send click to the last <button/> in #dice-roller">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show" 
+          _="on click rollD20Test('athletics-check')"
+        >
           <output id="athletics-check" name="athletics-check">+0</output>
         </button>
-        <input id="athletics-proficiency" class="switch" type="checkbox" name="athletics-proficiency" _="on input set modifier to #athletics-check.textContent as an Int
-                set total to modifier
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #athletics-proficiency.checked set total to modifier + proficiency end
-                if not #athletics-proficiency.checked set total to modifier - proficiency end
-                set sign to '+' if total is less than 0 set sign to '-' end
-                set #athletics-check.textContent to sign + Math.abs(total)" />
-        <input id="athletics-expertise" class="switch" type="checkbox" name="athletics-expertise" _="on input set modifier to #athletics-check.textContent as an Int
-                set total to modifier
-                set proficiency to #proficiency-bonus.textContent as an Int
-                if #athletics-expertise.checked set total to modifier + proficiency end
-                if not #athletics-expertise.checked set total to modifier - proficiency end
-                set sign to '+' if total is less than 0 set sign to '-' end
-                set #athletics-check.textContent to sign + Math.abs(total)" />
+        <input 
+          id="athletics-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="athletics-proficiency" 
+          _="on input toggleSkillProficiency('athletics')" 
+        />
+        <input 
+          id="athletics-expertise" 
+          class="switch"
+          type="checkbox"
+          name="athletics-expertise" 
+          _="on input toggleSkillExpertise('athletics')" 
+        />
       </span>
     </label>
   </div>

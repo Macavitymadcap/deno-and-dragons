@@ -16,7 +16,7 @@ append_file() {
 
 append_file "src/ui/atoms/properties.css"
 
-directories=("atoms" "molecules" "organisms" "templates" "pages")
+directories=("atoms" "molecules" "organisms" "pages")
 
 for dir in "${directories[@]}"; do
     if [ -d "src/ui/$dir" ]; then
@@ -30,9 +30,14 @@ for dir in "${directories[@]}"; do
     fi
 done
 
-cp -r src/ui/images/ build/images
+for file in src/ui/organisms/*/*.css; do
+    append_file "$file"
+done
 
 append_file "src/atoms/media.css"
 
 echo "CSS compilation complete."
 
+echo "Copying images to build directory..."
+cp -r src/ui/images/ build/images
+echo "Image copying complete."

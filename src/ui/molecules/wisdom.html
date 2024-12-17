@@ -231,7 +231,9 @@
                 <output id="wisdom-modifier" name="wisdom-modifier">+0</output>
               </button>
               <input id="wisdom-modifier-proficiency" class="switch" type="checkbox"
-                name="wisdom-modifier-proficiency" _="on input set modifier to #wisdom-modifier.textContent as an Int
+                name="wisdom-modifier-proficiency" 
+                _="on input 
+                    set modifier to #wisdom-modifier.textContent as an Int
                     set total to modifier
                     set proficiency to #proficiency-bonus.textContent as an Int
                     if #wisdom-modifier-proficiency.checked set total to modifier + proficiency end

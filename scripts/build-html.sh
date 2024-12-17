@@ -3,7 +3,7 @@
 cp src/ui/index.html build
 cp src/ui/sheet.html build
 
-directories=("atoms" "molecules" "organisms" "templates" "pages")
+directories=("atoms" "molecules" "organisms" "pages")
 
 for dir in "${directories[@]}"; do
     if [ -d "src/ui/$dir" ] && ls src/ui/$dir/*.html 1> /dev/null 2>&1; then
