@@ -1,0 +1,46 @@
+<fieldset class="character-sheet-passives">
+  <label for="inspiration">
+    Inspiration
+    <span class="chip">
+      <input id="inspiration" type="checkbox" class="switch" />
+    </span>
+  </label>
+
+  <label for="proficiency-bonus">
+    Proficiency Bonus
+    <span class="chip">
+      <button
+        title="Decrement"
+        _="on click if #proficiency-bonus.textContent > 2 decrement #proficiency-bonus.textContent end"
+      >
+        &#8722;
+      </button>
+      <output id="proficiency-bonus" name="proficiency-bonus">2</output>
+      <button
+        title="Increment"
+        _="on click if #proficiency-bonus.textContent < 10 increment #proficiency-bonus.textContent end"
+      >
+        &#43;
+      </button>
+    </span>
+  </label>
+
+  <label for="passive-perception">
+    Passive Perception
+    <span class="chip">
+      <button
+        title="Decrement"
+        _="on click if #passive-perception.textContent > 0 decrement #passive-perception.textContent end"
+      >
+        &#8722;
+      </button>
+      <output id="passive-perception" name="passive-perception">10</output>
+      <button
+        title="Increment"
+        _="on click if #passive-perception.textContent < 30 increment #passive-perception.textContent end"
+      >
+        &#43;
+      </button>
+    </span>
+  </label>
+</fieldset>

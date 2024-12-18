@@ -1,0 +1,154 @@
+<fieldset name="character-sheet-abiility-strength-score" class="character-sheet-ability">
+  <legend>STRENGTH</legend>
+  <div hx-get="molecules/strength.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<fieldset name="character-sheet-abiility-dexterity-score" class="character-sheet-ability">
+  <legend>DEXTERITY</legend>
+  <div hx-get="molecules/dexterity.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<fieldset name="character-sheet-abiility-constitution-score" class="character-sheet-ability">
+  <legend>CONSTITUTION</legend>
+  <div hx-get="molecules/constitution.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<fieldset name="character-sheet-abiility-intelligence-score" class="character-sheet-ability">
+  <legend>INTELLIGENCE</legend>
+  <div hx-get="molecules/intelligence.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<fieldset name="character-sheet-abiility-wisdom-score" class="character-sheet-ability">
+  <legend>WISDOM</legend>
+  <div hx-get="molecules/wisdom.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<fieldset name="character-sheet-abiility-charisma-score" class="character-sheet-ability">
+  <legend>CHARISMA</legend>
+  <div hx-get="molecules/charisma.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</fieldset>
+
+<script type="text/hyperscript">
+  def decrementAbility(ability)
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set scoreName to `${ability}-score`
+    set modifierName to `${ability}-modifier`
+    set saveProficiency to `${ability}-save-proficiency`
+    set saveName to `${ability}-save`
+
+    if #{scoreName}.textContent >= 0 
+      decrement #{scoreName}.textContent
+      set score to #{scoreName}.textContent as an Int
+      set modifier to Math.floor((score - 10) / 2)
+
+      if modifier is greater than or equal to 0 
+        set #{modifierName}.textContent to `+${modifier}`
+        set #{saveName}.textContent to `+${modifier}`
+        if (#{saveProficiency}.checked) set #{saveName}.textContent to `+${modifier + proficiency}` end
+      end
+
+      if modifier is less than 0 
+        set #{modifierName}.textContent to modifier
+        set #{saveName}.textContent to modifier
+        if #{saveProficiency}.checked set #{saveName}.textContent to modifier + proficiency end
+      end
+    end
+  end
+
+  def incrementAbility(ability)
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set scoreName to `${ability}-score`
+    set modifierName to `${ability}-modifier`
+    set saveProficiency to `${ability}-save-proficiency`
+    set saveName to `${ability}-save`
+
+    if #{scoreName}.textContent >= 0 
+      increment #{scoreName}.textContent
+      set score to #{scoreName}.textContent as an Int
+      set modifier to Math.floor((score - 10) / 2)
+
+      if modifier is greater than or equal to 0 
+        set #{modifierName}.textContent to `+${modifier}`
+        set #{saveName}.textContent to `+${modifier}`
+        if (#{saveProficiency}.checked) set #{saveName}.textContent to `+${modifier + proficiency}` end
+      end
+
+      if modifier is less than 0 
+        set #{modifierName}.textContent to modifier
+        set #{saveName}.textContent to modifier
+        if #{saveProficiency}.checked set #{saveName}.textContent to modifier + proficiency end
+      end
+    end
+  end
+
+  def rollD20Test(d20Test)
+    set modifier to #{d20Test}.textContent
+    set #dice-input's value to 'd20' + modifier
+    send click to the last <button/> in #dice-roller
+  end
+
+  def toggleAbilityProficiency(ability)
+    set modifier to #{ability}.textContent as an Int
+    set total to modifier
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set modifierProficiency to `${ability}-proficiency`
+    if #{modifierProficiency}.checked set total to modifier + proficiency end
+    if not #{modifierProficiency}.checked set total to modifier - proficiency end
+    set sign to '+' if total is less than 0 set sign to '-' end
+    set #{ability}.textContent to sign + Math.abs(total)
+  end
+
+  def updateSkills(score, skills)
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set modifierName to `${score}-modifier`
+    set modifier to #{modifierName}.textContent as an Int
+
+    for skill in skills
+      set skillCheck to `${skill}-check`
+      set skillProficiency to `${skill}-proficiency`
+      set skillExpertise to `${skill}-expertise`
+
+      if modifier >= 0 set #{skillCheck}.textContent to `+${modifier}`
+      else set #{skillCheck}.textContent to modifier end
+
+      if #{skillProficiency}.checked 
+        set proficient to modifier + proficiency
+        if proficient >= 0 set #{skillCheck}.textContent to `+${proficient}`
+        else set #{skillCheck}.textContent to proficient end
+      end
+
+      if #{skillProficiency}.checked and #{skillExpertise}.checked
+        set expert to proficiency * 2
+        if expert >= 0 set #{skillCheck}.textContent to `+${expert}`
+        else set #{skillCheck}.textContent to expert end
+      end
+    end
+  end
+
+  def toggleSkillProficiency(skill, ability)
+    set check to `${skill}-check`
+    set modifier to #{check}.textContent as an Int
+    set total to modifier
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set skillProficiency to `${skill}-proficiency`
+    if #{skillProficiency}.checked set total to modifier + proficiency end
+    if not #{skillProficiency}.checked set total to modifier - proficiency end
+    set sign to '+' if total is less than 0 set sign to '-' end
+    set #{check}.textContent to sign + Math.abs(total)
+  end
+
+  def toggleSkillExpertise(skill, ability)
+    set check to `${skill}-check`
+    set modifier to #{check}.textContent as an Int
+    set total to modifier
+    set proficiency to #proficiency-bonus.textContent as an Int
+    set skillProficiency to `${skill}-proficiency`
+    if #{skillProficiency}.checked 
+      set skillExpertise to `${skill}-expertise`
+      if #{skillExpertise}.checked set total to modifier + proficiency end
+      if not #{skillExpertise}.checked set total to modifier - proficiency end
+      set sign to '+' if total is less than 0 set sign to '-' end
+      set #{check}.textContent to sign + Math.abs(total)
+    end
+  end
+</script>

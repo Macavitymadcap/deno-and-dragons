@@ -1,0 +1,9 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  section#content {
+    padding-top: 5em;
+  }
+}

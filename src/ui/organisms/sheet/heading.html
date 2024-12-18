@@ -1,0 +1,263 @@
+<fieldset class="character-sheet-heading">
+  <legend>DANGEONS & DRAGONS</legend>
+  <div class="grid columns-2">
+    <fieldset>
+      <label for="character-name">
+        Character Name
+        <input id="character-name" type="text" name="character-name" />
+        <form method="post" enctype="multipart/form-data">
+          <input type="file" id="image-upload" name="image-upload" accept=".jpg, .jpeg, .png, .webp"
+            _="on change imageUpload()" />
+          <output id="image" class="centred"></output>
+        </form>
+      </label>
+    </fieldset>
+
+    <fieldset class="character-sheet-core">
+      <div class="grid columns-2">
+        <label for="character-class">
+          Class & Level
+          <div class="grid columns-2">
+            <input type="text" id="character-class" list="character-classes" />
+            <datalist id="character-classes">
+              <option>Artificer</option>
+              <option>Barbarian</option>
+              <option>Bard</option>
+              <option>Cleric</option>
+              <option>Druid</option>
+              <option>Fighter</option>
+              <option>Monk</option>
+              <option>Paladin</option>
+              <option>Ranger</option>
+              <option>Rogue</option>
+              <option>Sorcerer</option>
+              <option>Warlock</option>
+              <option>Wizard</option>
+            </datalist>
+            <span class="chip" id="character-level">
+              <button title="Decrement"
+                _="on click if (the next <output/>).textContent > 1 decrement (the next <output/>).textContent decrement #total-hit-dice.textContent">
+                &#8722;
+              </button>
+              <output id="character-level">1</output>
+              <button title="Increment"
+                _="on click if (the previous <output/>).textContent < 20 increment (the previous <output/>).textContent increment #total-hit-dice.textContent">
+                &#43;
+              </button>
+            </span>
+          </div>
+        </label>
+
+        <label for="character-race">
+          Race
+          <input type="text" name="character-race" list="character-races" />
+          <datalist id="character-races">
+            <!-- Core Races from Player's Handbook -->
+            <option value="Dragonborn">
+            <option value="Dwarf">
+            <option value="Elf">
+            <option value="Gnome">
+            <option value="Half-Elf">
+            <option value="Halfling">
+            <option value="Half-Orc">
+            <option value="Human">
+            <option value="Tiefling">
+
+              <!-- Dragonborn Variants -->
+            <option value="Black Dragonborn">
+            <option value="Blue Dragonborn">
+            <option value="Brass Dragonborn">
+            <option value="Bronze Dragonborn">
+            <option value="Copper Dragonborn">
+            <option value="Gold Dragonborn">
+            <option value="Green Dragonborn">
+            <option value="Red Dragonborn">
+            <option value="Silver Dragonborn">
+            <option value="White Dragonborn">
+            <option value="Amethyst Dragonborn">
+            <option value="Crystal Dragonborn">
+            <option value="Emerald Dragonborn">
+            <option value="Sapphire Dragonborn">
+            <option value="Topaz Dragonborn">
+
+              <!-- Dwarf Subraces -->
+            <option value="Hill Dwarf">
+            <option value="Mountain Dwarf">
+
+              <!-- Elf Subraces -->
+            <option value="High Elf">
+            <option value="Wood Elf">
+            <option value="Dark Elf (Drow)">
+
+              <!-- Gnome Subraces -->
+            <option value="Forest Gnome">
+            <option value="Rock Gnome">
+
+              <!-- Halfling Subraces -->
+            <option value="Lightfoot Halfling">
+            <option value="Stout Halfling">
+
+              <!-- Tiefling Variants -->
+            <option value="Asmodeus Tiefling">
+            <option value="Baalzebul Tiefling">
+            <option value="Dispater Tiefling">
+            <option value="Fierna Tiefling">
+            <option value="Glasya Tiefling">
+            <option value="Levistus Tiefling">
+            <option value="Mammon Tiefling">
+            <option value="Mephistopheles Tiefling">
+            <option value="Zariel Tiefling">
+
+              <!-- Genasi Variants -->
+            <option value="Air Genasi">
+            <option value="Earth Genasi">
+            <option value="Fire Genasi">
+            <option value="Water Genasi">
+
+              <!-- Aasimar Variants -->
+            <option value="Protector Aasimar">
+            <option value="Scourge Aasimar">
+            <option value="Fallen Aasimar">
+
+              <!-- Shifter Variants -->
+            <option value="Beasthide Shifter">
+            <option value="Longtooth Shifter">
+            <option value="Swiftstride Shifter">
+            <option value="Wildhunt Shifter">
+
+              <!-- Monsters of the Multiverse Races -->
+            <option value="Aarakocra">
+            <option value="Aasimar">
+            <option value="Air Genasi">
+            <option value="Bugbear">
+            <option value="Centaur">
+            <option value="Changeling">
+            <option value="Deep Gnome">
+            <option value="Duergar">
+            <option value="Earth Genasi">
+            <option value="Eladrin">
+            <option value="Fairy">
+            <option value="Firbolg">
+            <option value="Fire Genasi">
+            <option value="Githyanki">
+            <option value="Githzerai">
+            <option value="Goblin">
+            <option value="Goliath">
+            <option value="Harengon">
+            <option value="Hobgoblin">
+            <option value="Kenku">
+            <option value="Kobold">
+            <option value="Lizardfolk">
+            <option value="Minotaur">
+            <option value="Orc">
+            <option value="Satyr">
+            <option value="Sea Elf">
+            <option value="Shadar-kai">
+            <option value="Shifter">
+            <option value="Tabaxi">
+            <option value="Tortle">
+            <option value="Triton">
+            <option value="Water Genasi">
+            <option value="Yuan-ti">
+
+              <!-- Additional Published Races -->
+            <option value="Owlin">
+            <option value="Warforged">
+            <option value="Leonin">
+            <option value="Kalashtar">
+            <option value="Verdan">
+            <option value="Locathah">
+            <option value="Grung">
+          </datalist>
+        </label>
+      </div>
+
+      <div class="grid columns-2">
+        <label for="character-background">
+          Background
+          <input type="text" name="character-background" list="backgrounds"/>
+          <datalist id="backgrounds">
+            <option value="Acolyte">
+            <option value="Charlatan">
+            <option value="Criminal">
+            <option value="Entertainer">
+            <option value="Folk Hero">
+            <option value="Guild Artisan">
+            <option value="Hermit">
+            <option value="Noble">
+            <option value="Outlander">
+            <option value="Sage">
+            <option value="Sailor">
+            <option value="Soldier">
+            <option value="Urchin">
+        </datalist>
+        </label>
+
+        <label for="character-alignment">
+          Alignment
+          <input type="text" name="character-alignment" list="alignments"/>
+          <datalist id="alignments">
+            <option value="Lawful Good">
+            <option value="Neutral Good">
+            <option value="Chaotic Good">
+            <option value="Lawful Neutral">
+            <option value="True Neutral">
+            <option value="Chaotic Neutral">
+            <option value="Lawful Evil">
+            <option value="Neutral Evil">
+            <option value="Chaotic Evil">
+            <option value="Unaligned">
+        </datalist>
+        </label>
+      </div>
+
+      <div class="grid columns-2">
+        <label for="player-name">
+          Player Name
+          <input type="text" name="player-name" />
+        </label>
+
+        <label for="character-experience-points">
+          Experience Points
+          <input type="number" name="character-experience-points" />
+        </label>
+      </div>
+
+      <div class="grid columns-2">
+        <label for="character-height">
+          Height
+          <input type="text" name="character-height" />
+        </label>
+
+        <label for="character-weight">
+          Weight
+          <input type="text" name="character-weight" />
+        </label>
+      </div>
+
+      <div class="grid columns-2">
+        <label for="character-age">
+          Age
+          <input type="number" name="character-age" />
+        </label>
+
+        <label for="character-eyes">
+          Eyes
+          <input type="text" name="character-eyes" />
+        </label>
+      </div>
+
+      <div class="grid columns-2">
+        <label for="character-skin">
+          Skin
+          <input type="text" name="character-skin" />
+        </label>
+
+        <label for="character-hair">
+          Hair
+          <input type="text" name="character-hair" />
+        </label>
+      </div>
+    </fieldset>
+  </div>
+</fieldset>

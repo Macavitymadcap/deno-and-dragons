@@ -1,338 +1,182 @@
 <div class="flex-column">
-    <div class="flex-row">
-        <label for="charisma-score">
-            Score
-            <span class="chip">
-              <button title="Decrement" _="on click 
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #charisma-score.textContent >= 0 
-                        decrement #charisma-score.textContent
-                        set score to (#charisma-score.textContent) as an Int
-                        set modifier to Math.floor((score - 10) / 2)
-      
-                        if modifier is greater than or equal to 0 
-                          set #charisma-modifier.textContent to `+${modifier}`
-                          set #charisma-save.textContent to `+${modifier}`
-      
-                          if (#charisma-save-proficiency.checked)
-                            set #charisma-save.textContent to `+${modifier + proficiency}`
-                          end
+  <div class="flex-row">
+    <label for="charisma-score">
+      Score
+      <span class="chip">
+        <button 
+          title="Decrement" 
+          _="on click set skills to ['deception', 'intimidation', 'performance', 'persuasion']
+          decrementAbility('charisma') updateSkills('charisma', skills)"
+        >
+          &#8722;
+        </button>
+        <output id="charisma-score" name="charisma-score">10</output>
+        <button 
+          title="Increment" 
+          _="on click set skills to ['deception', 'intimidation', 'performance', 'persuasion']
+          incrementAbility('charisma') updateSkills('charisma', skills)"
+        >
+          &#43;
+        </button>
+      </span>
+    </label>
 
-                          set #deception-check.textContent to `+${modifier}`
-                          if (#deception-proficiency.checked)
-                            set #deception-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#deception-proficiency.checked) and (#deception-expertise.checked)
-                            set #deception-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
+    <label for="charisma-modifier">
+      Mod
+      <span class="chip">
+        <button 
+        class="roller" 
+        popovertarget="dice-roller" 
+        popoveraction="show" 
+        _="on click rollD20Test('charisma-modifier')"
+        >
+          <output id="charisma-modifier" name="charisma-modifier">+0</output>
+        </button>
+        <input 
+          id="charisma-modifier-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="charisma-modifier-proficiency" 
+          _="on input toggleAbilityProficiency('charisma-modifier')" 
+        />
+      </span>
+    </label>
 
-                          set #intimidation-check.textContent to `+${modifier}`
-                          if (#intimidation-proficiency.checked)
-                            set #intimidation-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#intimidation-proficiency.checked) and (#intimidation-expertise.checked)
-                            set #intimidation-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
+    <label for="charisma-save">
+      Save
+      <span class="chip">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show"
+          _="on click rollD20Test('charisma-save')"
+        >
+          <output id="charisma-save" name="charisma-save">+0</output>
+        </button>
+        <input 
+          id="charisma-save-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="charisma-save-proficiency" 
+          _="on input toggleAbilityProficiency('charisma-save')"
+          />
+      </span>
+    </label>
+  </div>
 
-                          set #performance-check.textContent to `+${modifier}`
-                          if (#performance-proficiency.checked)
-                            set #performance-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#performance-proficiency.checked) and (#performance-expertise.checked)
-                            set #performance-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
+  <div class="flex-row">
+    <label for="deception-check">
+      Deception
+      <span class="chip">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show" 
+          _="on click rollD20Test('deception-check')"
+        >
+          <output id="deception-check" name="deception-check">+0</output>
+        </button>
+        <input 
+          id="deception-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="deception-proficiency" 
+          _="on input toggleSkillProficiency('deception')" 
+        />
+        <input 
+          id="deception-expertise" 
+          class="switch"
+          type="checkbox"
+          name="deception-expertise" 
+          _="on input toggleSkillExpertise('deception')" 
+        />
+      </span>
+    </label>
 
-                          set #persuasion-check.textContent to `+${modifier}`
-                          if (#persuasion-proficiency.checked)
-                            set #persuasion-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#persuasion-proficiency.checked) and (#persuasion-expertise.checked)
-                            set #persuasion-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
-                        end
-      
-                        if modifier is less than 0 
-                          set #charisma-modifier.textContent to modifier
-                          set #charisma-save.textContent to modifier
-      
-                          if (#charisma-save-proficiency.checked)
-                            set #charisma-save.textContent to modifier + proficiency
-                          end
+    <label for="intimidation-check">
+      intimidation
+      <span class="chip">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show" 
+          _="on click rollD20Test('intimidation-check')"
+        >
+          <output id="intimidation-check" name="intimidation-check">+0</output>
+        </button>
+        <input 
+          id="intimidation-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="intimidation-proficiency" 
+          _="on input toggleSkillProficiency('intimidation')" 
+        />
+        <input 
+          id="intimidation-expertise" 
+          class="switch"
+          type="checkbox"
+          name="intimidation-expertise" 
+          _="on input toggleSkillExpertise('intimidation')" 
+        />
+      </span>
+    </label>
+  </div>
 
-                          set #deception-check.textContent to modifier
-                          if (#deception-proficiency.checked)
-                            set #deception-check.textContent to modifier + proficiency
-                          end
-                          if (#deception-proficiency.checked) and (#deception-expertise.checked)
-                            set #deception-check.textContent to modifier + (proficiency * 2)
-                          end
+  <div class="flex-row">
+    <label for="performance-check">
+      Performance
+      <span class="chip">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show" 
+          _="on click rollD20Test('performance-check')"
+        >
+          <output id="performance-check" name="performance-check">+0</output>
+        </button>
+        <input 
+          id="performance-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="performance-proficiency" 
+          _="on input toggleSkillProficiency('performance')" 
+        />
+        <input 
+          id="performance-expertise" 
+          class="switch"
+          type="checkbox"
+          name="performance-expertise" 
+          _="on input toggleSkillExpertise('performance')" 
+        />
+      </span>
+    </label>
 
-                          set #intimidation-check.textContent to modifier
-                          if (#intimidation-proficiency.checked)
-                            set #intimidation-check.textContent to modifier + proficiency
-                          end
-                          if (#intimidation-proficiency.checked) and (#intimidation-expertise.checked)
-                            set #intimidation-check.textContent to modifier + (proficiency * 2)
-                          end
-
-                          set #performance-check.textContent to modifier
-                          if (#performance-proficiency.checked)
-                            set #performance-check.textContent to modifier + proficiency
-                          end
-                          if (#performance-proficiency.checked) and (#performance-expertise.checked)
-                            set #performance-check.textContent to modifier + (proficiency * 2)
-                          end
-
-                          set #persuasion-check.textContent to modifier
-                          if (#persuasion-proficiency.checked)
-                            set #persuasion-check.textContent to modifier + proficiency
-                          end
-                          if (#persuasion-proficiency.checked) and (#persuasion-expertise.checked)
-                            set #persuasion-check.textContent to modifier + (proficiency * 2)
-                          end
-                        end
-                      end">
-                &#8722;
-              </button>
-              <output id="charisma-score" name="charisma-score">10</output>
-              <button title="Increment" _="on click 
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #charisma-score.textContent < 30 
-                        increment #charisma-score.textContent
-                        set score to (#charisma-score.textContent) as an Int
-                        set modifier to Math.floor((score - 10) / 2)
-      
-                        if modifier is greater than or equal to 0 
-                          set #charisma-modifier.textContent to `+${modifier}`
-                          set #charisma-save.textContent to `+${modifier}`
-      
-                          if (#charisma-save-proficiency.checked)
-                            set #charisma-save.textContent to `+${modifier + proficiency}`
-                          end
-
-                          set #deception-check.textContent to `+${modifier}`
-                          if (#deception-proficiency.checked)
-                            set #deception-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#deception-proficiency.checked) and (#deception-expertise.checked)
-                            set #deception-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
-
-                          set #intimidation-check.textContent to `+${modifier}`
-                          if (#intimidation-proficiency.checked)
-                            set #intimidation-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#intimidation-proficiency.checked) and (#intimidation-expertise.checked)
-                            set #intimidation-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
-
-                          set #performance-check.textContent to `+${modifier}`
-                          if (#performance-proficiency.checked)
-                            set #performance-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#performance-proficiency.checked) and (#performance-expertise.checked)
-                            set #performance-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
-
-                          set #persuasion-check.textContent to `+${modifier}`
-                          if (#persuasion-proficiency.checked)
-                            set #persuasion-check.textContent to `+${modifier + proficiency}`
-                          end
-                          if (#persuasion-proficiency.checked) and (#persuasion-expertise.checked)
-                            set #persuasion-check.textContent to `+${modifier + (proficiency * 2)}`
-                          end
-                        end
-      
-                        if modifier is less than 0 
-                          set #charisma-modifier.textContent to modifier
-                          set #charisma-save.textContent to modifier
-      
-                          if (#charisma-save-proficiency.checked)
-                            set #charisma-save.textContent to modifier + proficiency
-                          end
-
-                          set #deception-check.textContent to modifier
-                          if (#deception-proficiency.checked)
-                            set #deception-check.textContent to modifier + proficiency
-                          end
-                          if (#deception-proficiency.checked) and (#deception-expertise.checked)
-                            set #deception-check.textContent to modifier + (proficiency * 2)
-                          end
-
-                          set #intimidation-check.textContent to modifier
-                          if (#intimidation-proficiency.checked)
-                            set #intimidation-check.textContent to modifier + proficiency
-                          end
-                          if (#intimidation-proficiency.checked) and (#intimidation-expertise.checked)
-                            set #intimidation-check.textContent to modifier + (proficiency * 2)
-                          end
-
-                          set #performance-check.textContent to modifier
-                          if (#performance-proficiency.checked)
-                            set #performance-check.textContent to modifier + proficiency
-                          end
-                          if (#performance-proficiency.checked) and (#performance-expertise.checked)
-                            set #performance-check.textContent to modifier + (proficiency * 2)
-                          end
-
-                          set #persuasion-check.textContent to modifier
-                          if (#persuasion-proficiency.checked)
-                            set #persuasion-check.textContent to modifier + proficiency
-                          end
-                          if (#persuasion-proficiency.checked) and (#persuasion-expertise.checked)
-                            set #persuasion-check.textContent to modifier + (proficiency * 2)
-                          end
-                      end">
-                &#43;
-              </button>
-            </span>
-        </label>
-      
-        <label for="charisma-modifier">
-            Mod
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-modifier.textContent
-                      set sign to '+' if modifier is less than 0 set sign to '-' end
-                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                      send click to the last <button/> in #dice-roller">
-                <output id="charisma-modifier" name="charisma-modifier">+0</output>
-              </button>
-              <input id="charisma-modifier-proficiency" class="switch" type="checkbox"
-                name="charisma-modifier-proficiency" _="on input set modifier to #charisma-modifier.textContent as an Int
-                    set total to modifier
-                    set proficiency to #proficiency-bonus.textContent as an Int
-                    if #charisma-modifier-proficiency.checked set total to modifier + proficiency end
-                    if not #charisma-modifier-proficiency.checked set total to modifier - proficiency end
-                    set sign to '+' if total is less than 0 set sign to '-' end
-                    set #charisma-modifier.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-          
-        <label for="charisma-save">
-            Save
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-save.textContent
-                      set sign to '+' if modifier is less than 0 set sign to '-' end
-                      set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                      send click to the last <button/> in #dice-roller">
-                <output id="charisma-save" name="charisma-save">+0</output>
-              </button>
-              <input id="charisma-save-proficiency" class="switch" type="checkbox" name="charisma-save-proficiency" _="on input set modifier to #charisma-save.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #charisma-save-proficiency.checked set total to modifier + proficiency end
-                      if not #charisma-save-proficiency.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #charisma-save.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-    </div>
-
-    <div class="flex-row">
-        <label for="deception-check">
-            Deception
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-check.textContent
-                  set sign to '+' if modifier is less than 0 set sign to '-' end
-                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                  send click to the last <button/> in #dice-roller">
-                <output id="deception-check" name="deception-check">+0</output>
-                </button>
-                <input id="deception-proficiency" class="switch" type="checkbox" name="deception-proficiency" _="on input set modifier to #deception-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #deception-proficiency.checked set total to modifier + proficiency end
-                      if not #deception-proficiency.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #deception-check.textContent to sign + Math.abs(total)" />
-                <input id="deception-expertise" class="switch" type="checkbox" name="deception-expertise" _="on input set modifier to #deception-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #deception-expertise.checked set total to modifier + proficiency end
-                      if not #deception-expertise.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #deception-check.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-        
-        <label for="intimidation-check">
-            Intimidation
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-check.textContent
-                  set sign to '+' if modifier is less than 0 set sign to '-' end
-                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                  send click to the last <button/> in #dice-roller">
-                <output id="intimidation-check" name="intimidation-check">+0</output>
-              </button>
-              <input id="intimidation-proficiency" class="switch" type="checkbox" name="intimidation-proficiency" _="on input set modifier to #intimidation-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #intimidation-proficiency.checked set total to modifier + proficiency end
-                      if not #intimidation-proficiency.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #intimidation-check.textContent to sign + Math.abs(total)" />
-              <input id="intimidation-expertise" class="switch" type="checkbox" name="intimidation-expertise" _="on input set modifier to #intimidation-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #intimidation-expertise.checked set total to modifier + proficiency end
-                      if not #intimidation-expertise.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #intimidation-check.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-    </div>
-
-    <div class="flex-row">
-        <label for="performance-check">
-            Performance
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-check.textContent
-                  set sign to '+' if modifier is less than 0 set sign to '-' end
-                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                  send click to the last <button/> in #dice-roller">
-                <output id="performance-check" name="performance-check">+0</output>
-              </button>
-              <input id="performance-proficiency" class="switch" type="checkbox" name="performance-proficiency" _="on input set modifier to #performance-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #performance-proficiency.checked set total to modifier + proficiency end
-                      if not #performance-proficiency.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #performance-check.textContent to sign + Math.abs(total)" />
-              <input id="performance-expertise" class="switch" type="checkbox" name="performance-expertise" _="on input set modifier to #performance-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #performance-expertise.checked set total to modifier + proficiency end
-                      if not #performance-expertise.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #performance-check.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-        
-        <label for="persuasion-check">
-            Persuasion
-            <span class="chip">
-              <button class="roller" popovertarget="dice-roller" popoveraction="show" _="on click set modifier to #charisma-check.textContent
-                  set sign to '+' if modifier is less than 0 set sign to '-' end
-                  set #dice-input's value to 'd20' + sign + Math.abs(modifier)
-                  send click to the last <button/> in #dice-roller">
-                <output id="persuasion-check" name="persuasion-check">+0</output>
-              </button>
-              <input id="persuasion-proficiency" class="switch" type="checkbox" name="persuasion-proficiency" _="on input set modifier to #persuasion-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #persuasion-proficiency.checked set total to modifier + proficiency end
-                      if not #persuasion-proficiency.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #persuasion-check.textContent to sign + Math.abs(total)" />
-              <input id="persuasion-expertise" class="switch" type="checkbox" name="persuasion-expertise" _="on input set modifier to #persuasion-check.textContent as an Int
-                      set total to modifier
-                      set proficiency to #proficiency-bonus.textContent as an Int
-                      if #persuasion-expertise.checked set total to modifier + proficiency end
-                      if not #persuasion-expertise.checked set total to modifier - proficiency end
-                      set sign to '+' if total is less than 0 set sign to '-' end
-                      set #persuasion-check.textContent to sign + Math.abs(total)" />
-            </span>
-        </label>
-    </div>
+    <label for="persuasion-check">
+      Persuasion
+      <span class="chip">
+        <button 
+          class="roller" 
+          popovertarget="dice-roller" 
+          popoveraction="show" 
+          _="on click rollD20Test('persuasion-check')"
+        >
+          <output id="persuasion-check" name="persuasion-check">+0</output>
+        </button>
+        <input 
+          id="persuasion-proficiency" 
+          class="switch" 
+          type="checkbox" 
+          name="persuasion-proficiency" 
+          _="on input toggleSkillProficiency('persuasion')" 
+        />
+        <input 
+          id="persuasion-expertise" 
+          class="switch"
+          type="checkbox"
+          name="persuasion-expertise" 
+          _="on input toggleSkillExpertise('persuasion')" 
+        />
+      </span>
+    </label>
+  </div>
 </div>

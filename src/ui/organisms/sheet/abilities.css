@@ -1,0 +1,5 @@
+fieldset.character-sheet-abilities,
+fieldset.character-sheet-ability {
+  display: flex;
+  flex-direction: column;
+}

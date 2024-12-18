@@ -1,0 +1,33 @@
+fieldset.character-sheet-heading {
+  display: flex;
+  flex-direction: row;
+
+  #character-name {
+    width: 22em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  input {
+    width: 10em;
+  }
+
+  #character-class {
+    width: 4.5em;
+  }
+
+  #character-level {
+    width: 4em;
+  }
+
+  form {
+    height: 22em;
+    background: var(--secondary-gradient);
+    margin: 0 auto;
+    padding: var(--spacing-sm);
+  }
+
+  form img {
+    height: 20em;
+    order: 1;
+  }
+}
