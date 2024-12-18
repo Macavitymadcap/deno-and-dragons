@@ -1,7 +1,9 @@
 input[type="text"],
 input[type="number"],
 input[type="search"],
-select {
+select,
+textarea {
+  font-family: var(--font-family-sans);
   font-size: 1.25rem;
   background: var(--secondary-gradient);
   border: 1px solid var(--input-border);
@@ -21,6 +23,11 @@ select {
     box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.25);
     background: rgba(85, 85, 85, 0.4);
   }
+}
+
+textarea {
+  font-size: .8em;
+  height: 5em;
 }
 
 input[type="number"] {
