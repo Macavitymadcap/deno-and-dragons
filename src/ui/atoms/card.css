@@ -9,11 +9,6 @@
     transform var(--transition-medium),
     box-shadow var(--transition-medium);
 
-  /* &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  } */
-
   h2 {
     margin-top: 0;
     color: color-mix(in srgb, var(--text-colour) 90%, var(--primary-colour));

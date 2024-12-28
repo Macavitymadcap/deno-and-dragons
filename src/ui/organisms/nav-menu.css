@@ -17,7 +17,27 @@
     text-decoration: none;
   }
 
-  a {
+  button.menu-button {
+    all: unset;
+  }
+
+  #tools-menu-button {
+    anchor-name: --tools-menu-button;
+  }
+
+  #tools-menu[popover]:popover-open {
+    padding: var(--spacing-sm);
+    margin: 1em;
+    height: max-content;
+    border-radius: 5px;
+    inset-block-start: anchor(--tools-menu-button bottom);
+    inset-inline-start: anchor(--tools-menu-button center);
+    position-try: start end;
+    translate: -50% 0;
+  }
+
+  a,
+  button.menu-button {
     display: flex;
     position: relative;
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -43,7 +63,8 @@
     }
   }
 
-  a:hover {
+  a:hover,
+  button.menu-button:hover {
     cursor: pointer;
     color: var(--link-hover-colour);
   }

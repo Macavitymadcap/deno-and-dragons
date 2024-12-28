@@ -21,6 +21,28 @@
       </button>
     </li>
     <li>
+      <button id="tools-menu-button" class="menu-button" popovertarget="tools-menu">
+        Tools
+      </button>
+      <menu id="tools-menu" popover>
+          <a
+            href="pages/inititiative-table.html"
+            hx-target="#content"
+            hx-swap="innerHTML"
+            hx-replace-url="false"
+          >Initiative</a>
+          <a
+            href="pages/evaluate-encounter.html"
+            hx-target="#content"
+            hx-swap="innerHTML"
+            hx-replace-url="false"
+          >
+            Evaluate
+          </a>
+      </menu>
+    </li>
+
+    <li>
       <a
         href="sheet.html"
         target="_blank"
@@ -37,24 +59,7 @@
         hx-replace-url="false"
       >Cyclopaedia</a>
     </li>
-    <li>
-      <a
-        href="pages/inititiative-table.html"
-        hx-target="#content"
-        hx-swap="innerHTML"
-        hx-replace-url="false"
-      >Initiative</a>
-    </li>
-    <li>
-      <a
-        href="pages/evaluate-encounter.html"
-        hx-target="#content"
-        hx-swap="innerHTML"
-        hx-replace-url="false"
-      >
-        Evaluate
-      </a>
-    </li>
+   
     <li>
       <a
         href="pages/campaign.html"
